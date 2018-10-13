@@ -1,0 +1,142 @@
+<resources>
+    <string name="app_name">HATCHERY</string>
+
+
+    <string name="big_text">HATCHERY FISH INVENTORY SYSTEM</string>
+    <string name="small_text">Flemming College - Prost Campus</string>
+
+    <string name="audit">AUDIT</string>
+    <string name="search">SEARCH</string>
+    <string name="register">REGISTER/DISPOSE</string>
+    <string name="transfer">TRANSFER OUT/IN</string>
+    <string name="checkout">CHECK OUT/IN</string>
+    <string name="presence">VERIFY PRESENCE</string>
+    <string name="settings">SETTINGS</string>
+    <string name="logout">LOGOUT</string>
+    <string name="confirm_logout">CONFIRM LOGOUT?</string>
+
+
+    <string name="username">USERNAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="login">LOGIN</string>
+
+
+    <string name="asset_search">ASSET SEARCH</string>
+    <string name="asset_inquirey">ASSET INQUIRY</string>
+
+
+    <string name="transfer_out">TRANSFER OUT</string>
+    <string name="transfer_in">TRANSFER IN</string>
+    <string name="transfer_out_details">Transfer Out Details</string>
+    <string name="transfer_in_details">Transfer In Details</string>
+
+
+    <string name="tank_details">TANK DETAILS</string>
+    <string name="check_in">CHECK IN</string>
+    <string name="check_out_details">Check-Out Details</string>
+
+    <string name="update"> UPDATE</string>
+    <string name="save"> SAVE</string>
+
+
+    <string name="add_asset">ADD NEW ASSET</string>
+    <string name="affix_labels">AFFIX LABELS</string>
+    <string name="dispose">ASSET DISPOSAL</string>
+
+
+    <string name="rfid_setup">RFID SETUP</string>
+    <string name="update_default">UPDATE DEFAULT</string>
+    <string name="erase_database">ERASE DATABASE</string>
+    <string name="printer_setup">PRINTER SETUP</string>
+    <string name="sync_setup">SYNC SETUP</string>
+
+
+    <string name="asset_audit">ASSET AUDIT</string>
+    <string name="loctaion_audit">LOCATION AUDIT</string>
+    <string name="express_audit">EXPRESS AUDIT</string>
+
+    <string name="available_audits">AVAILABLE AUDITS</string>
+
+    <string name="refresh">REFRESH</string>
+    <string name="process">PROCESS</string>
+    <string name="clear">CLEAR</string>
+    <string name="cancel">CANCEL</string>
+    <string name="sort">SORT</string>
+    <string name="grid">GRID</string>
+
+
+    <string name="scan_assets">\t\tPlease Scan Assets \t\t</string>
+
+
+    <!--Transfer Out Screen Related-->
+    <string name="to1">Transfer To</string>
+    <string name="to2">Transfer-our ID</string>
+    <string name="to3">Transfer Reason</string>
+    <string name="to4">Delv Employee</string>
+    <string name="to5">Ref. Trans. Out ID</string>
+    <string name="to6">Transfer Type</string>
+
+    <array name="transfer_types">
+        <item>Permanent</item>
+        <item>Temporary</item>
+    </array>
+
+    <array name="transfer_reasons">
+        <item>Select</item>
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+    </array>
+
+    <array name="transfer_ids">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </array>
+
+    <array name="transfer_to">
+        <item>Al-Rajhi Investment</item>
+        <item>A2</item>
+        <item>B</item>
+        <item>C</item>
+    </array>
+
+    <array name="express_audit">
+        <item>Al-Rajhi Investment</item>
+        <item>In Transit</item>
+        <item>Pin Makkah</item>
+        <item>C</item>
+    </array>
+    <string name="next">NEXT</string>
+    <string name="pending_transfers">VIEW PENDING TRANSFERS</string>
+
+
+    <!--Check out Screen-->
+    <string name="user">USER</string>
+    <string name="roll">Roll</string>
+    <string name="vendor">Vendor</string>
+
+    <string name="tank_number">Tank Number :</string>
+    <string name="species">Species :</string>
+    <string name="group">Group :</string>
+    <string name="entry_date">Entry Date :</string>
+    <string name="last_sample_date">Last Sample Date :</string>
+    <string name="inventory_number">Inventory Number :</string>
+    <string name="avergae_weight">Average Weight :</string>
+    <string name="bio_mass">Biomass :</string>
+    <string name="source_tank">Source Tank :</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+
+    <string name="first_name">First Name :</string>
+    <string name="last_name">Last Name :</string>
+    <string name="student_id">Student/Faculty ID :</string>
+    <string name="email_id">Email ID :</string>
+    <string name="college_email">College Email ID :</string>
+    <string name="password_">Password :</string>
+    <string name="confirm_password">Confirm Password :</string>
+
+
+
+</resources>
