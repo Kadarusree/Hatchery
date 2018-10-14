@@ -73,6 +73,7 @@
                 android:layout_centerInParent="true"
                 android:textColorHint="@color/blue"
                 android:gravity="center"
+                android:id="@+id/username"
                 android:paddingLeft="@dimen/dp_10"/>
         </RelativeLayout>
         <RelativeLayout
@@ -89,6 +90,7 @@
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:inputType="textPassword"
+                android:id="@+id/password"
                 android:paddingLeft="@dimen/dp_10"/>
         </RelativeLayout>
 
@@ -117,7 +119,8 @@
                 android:textColor="@color/colorWhite"
                 android:layout_centerInParent="true"
                 android:onClick="login"
-                android:textSize="@dimen/dp_18"/>
+                android:textSize="@dimen/dp_18"
+               />
         </RelativeLayout>
 
         <RelativeLayout

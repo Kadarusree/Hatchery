@@ -1,18 +1,43 @@
 package shiva.com.hatchery;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
 
-    TextView mBigText, mSmallText ;
+    TextView mBigText, mSmallText;
+
+
+    EditText username, password;
+
+    private FirebaseAuth mAuth;
+    private FirebaseDatabase mFirebaseDatabse;
+    private DatabaseReference mDatabaseReference;
+
+    private ProgressDialog mProgressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,9 +45,8 @@ public class LoginActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
-        mBigText = (TextView)findViewById(R.id.big_text);
-        mSmallText = (TextView)findViewById(R.id.small_text);
-
+        mBigText = (TextView) findViewById(R.id.big_text);
+        mSmallText = (TextView) findViewById(R.id.small_text);
         Typeface tf = Typeface.createFromAsset
                 (getAssets(), "BigTetx.ttf");
         Typeface tf2 = Typeface.createFromAsset
@@ -30,15 +54,70 @@ public class LoginActivity extends AppCompatActivity {
         mBigText.setTypeface(tf);
         mSmallText.setTypeface(tf2);
 
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+
+
+        mAuth = FirebaseAuth.getInstance();
+        mFirebaseDatabse = FirebaseDatabase.getInstance();
+        mDatabaseReference = mFirebaseDatabse.getReference("Students");
+
+        mProgressDialog = new ProgressDialog(this);
+        mProgressDialog.setMessage("Authenticating...");
+        mProgressDialog.setCancelable(false);
+
     }
 
     public void login(View view) {
-        startActivity(new Intent(getApplicationContext(),TankDetals.class));
+        mProgressDialog.show();
+        mAuth.signInWithEmailAndPassword(username.getText().toString(), password.getText().toString())
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        mProgressDialog.dismiss();
+                        mProgressDialog.setMessage("Signing In");
+                        if (task.isSuccessful()) {
+                            mProgressDialog.show();
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            mDatabaseReference.child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    mProgressDialog.dismiss();
+                                    if (dataSnapshot!=null){
+                                        StudentModel mStudentModel = dataSnapshot.getValue(StudentModel.class);
+                                        Toast.makeText(getApplicationContext(),"Welcome "+mStudentModel.getFirstname()+"", Toast.LENGTH_LONG).show();
+                                         startActivity(new Intent(getApplicationContext(), TankDetals.class));
+
+                                    }
+
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+mProgressDialog.dismiss();
+                                }
+                            });
+                            // updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            //   Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            // updateUI(null);
+                        }
+
+                        // ...
+                    }
+                });
+
+
     }
 
 
     public void signup(View view) {
-        startActivity(new Intent(getApplicationContext(),Signup.class));
+        startActivity(new Intent(getApplicationContext(), Signup.class));
 
     }
+
+
 }
