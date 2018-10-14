@@ -84,7 +84,9 @@
                     android:gravity="left|center"
                     android:background="@drawable/bg_edittext"
                     android:paddingLeft="@dimen/dp_5"
-                    android:paddingRight="@dimen/dp_5"></EditText>
+                    android:paddingRight="@dimen/dp_5"
+                    android:inputType="number"
+                    android:id="@+id/edt_tank_number"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -110,7 +112,9 @@
                     android:layout_weight="0.6"
                     android:gravity="left|center"
                     android:background="@drawable/bg_edittext"
-                    android:paddingLeft="@dimen/dp_5"/>
+                    android:paddingLeft="@dimen/dp_5"
+                    android:maxLines="1"
+                    android:id="@+id/edt_species"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -136,7 +140,9 @@
                     android:layout_weight="0.6"
                     android:gravity="left|center"
                     android:background="@drawable/bg_edittext"
-                    android:paddingLeft="@dimen/dp_5"/>
+                    android:paddingLeft="@dimen/dp_5"
+                    android:maxLines="1"
+                    android:id="@+id/edt_group"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -163,7 +169,9 @@
                     android:gravity="left|center"
                     android:background="@drawable/bg_edittext"
                     android:drawableRight="@drawable/ic_date_range_black_24dp"
-                    android:paddingLeft="@dimen/dp_5"/>
+                    android:paddingLeft="@dimen/dp_5"
+                    android:inputType="date"
+                    android:id="@+id/edt_entry_date"/>
             </LinearLayout>
 
             <LinearLayout
@@ -191,7 +199,9 @@
                     android:gravity="left|center"
                     android:background="@drawable/bg_edittext"
                     android:drawableRight="@drawable/ic_date_range_black_24dp"
-                    android:paddingLeft="@dimen/dp_5"/>
+                    android:paddingLeft="@dimen/dp_5"
+                    android:inputType="date"
+                    android:id="@+id/edt_last_sample_date"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -218,7 +228,9 @@
                     android:gravity="left|center"
                     android:background="@drawable/bg_edittext"
                     android:paddingLeft="@dimen/dp_5"
-                    android:paddingRight="@dimen/dp_5"></EditText>
+                    android:paddingRight="@dimen/dp_5"
+                    android:inputType="number"
+                    android:id="@+id/edt_inventory_number"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -245,7 +257,9 @@
                     android:gravity="left|center"
                     android:background="@drawable/bg_edittext"
                     android:paddingLeft="@dimen/dp_5"
-                    android:paddingRight="@dimen/dp_5"></EditText>
+                    android:paddingRight="@dimen/dp_5"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/edt_avg_weight"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -272,7 +286,9 @@
                     android:gravity="left|center"
                     android:background="@drawable/bg_edittext"
                     android:paddingLeft="@dimen/dp_5"
-                    android:paddingRight="@dimen/dp_5"></EditText>
+                    android:paddingRight="@dimen/dp_5"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/edt_biomass"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -299,7 +315,8 @@
                     android:gravity="left|center"
                     android:background="@drawable/bg_edittext"
                     android:paddingLeft="@dimen/dp_5"
-                    android:paddingRight="@dimen/dp_5"></EditText>
+                    android:paddingRight="@dimen/dp_5"
+                    android:id="@+id/edt_source_tank"></EditText>
             </LinearLayout>
         </LinearLayout>
 
@@ -318,6 +335,7 @@
         android:gravity="center"
         android:text="SAVE"
         android:textColor="@color/colorWhite"
-        android:textSize="@dimen/dp_20" />
+        android:textSize="@dimen/dp_20"
+        android:id="@+id/tv_save_tank_details"/>
 
 </LinearLayout>
