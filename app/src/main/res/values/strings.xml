@@ -6,15 +6,9 @@
     <string name="small_text">Flemming College - Frost Campus</string>
 
 
-
     <string name="username">USERNAME</string>
     <string name="password">PASSWORD</string>
     <string name="login">LOGIN</string>
-
-
-
-
-
 
 
     <string name="tank_number">Tank Number :</string>
@@ -29,6 +23,21 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
 
+    <string-array name="tanks">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+
+    </string-array>
+
+
     <string name="first_name">First Name :</string>
     <string name="last_name">Last Name :</string>
     <string name="student_id">Student/Faculty ID :</string>
@@ -38,6 +47,31 @@
     <string name="confirm_password">Confirm Password :</string>
 
     <string name="tank_details">Tank Details</string>
+
+
+    <string name="opt1">Daily Oxygen &amp; Temp</string>
+    <string name="opt2">Daily Feeding Data</string>
+    <string name="opt3">Drug Treatment Record</string>
+    <string name="opt4">Mortality Collection</string>
+    <string name="opt6">ATU\'s</string>
+    <string name="opt5">Transfer &amp; Grading</string>
+    <string name="opt7">Weight Sample</string>
+    <string name="opt8">Checklist</string>
+    <string name="opt9">Status</string>
+
+    <string name="eod_chkl_opt1">All standpipes in place and secure</string>
+    <string name="eod_chkl_opt2">All tank levels good</string>
+    <string name="eod_chkl_opt3">Flows good, inflows set correctly</string>
+    <string name="eod_chkl_opt4">Air stones active</string>
+    <string name="eod_chkl_opt5">Feeders set, belts working</string>
+    <string name="eod_chkl_opt6">O2 receiver pressure OK</string>
+    <string name="eod_chkl_opt7">Wase sumps in auto</string>
+    <string name="eod_chkl_opt8">All pumps running</string>
+    <string name="eod_chkl_opt9">Incubators checked</string>
+    <string name="eod_chkl_opt10">Filter cloths checked</string>
+    <string name="eod_chkl_opt11">Backup O2 cylinders</string>
+    <string name="eod_chkl_opt12">Bio trench water level OK</string>
+    <string name="eod_chkl_opt13">Safety check</string>
 
 
 

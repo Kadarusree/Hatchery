@@ -132,8 +132,8 @@ public class Signup extends AppCompatActivity {
             email.setError("Invalid Email");
             isValid = false;
         }
-        if (firstName.getText().toString().length() < 10) {
-            firstName.setError("First Name must be minimum 3 characters");
+        if (firstName.getText().toString().length() < 1) {
+            firstName.setError("First Name must be minimum 1 character");
             isValid = false;
         }
         if (lastName.getText().toString().length() < 3) {

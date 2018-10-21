@@ -9,8 +9,8 @@
         android:roundIcon="@drawable/ic_aquarium"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".TankDetals"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".TankDetals" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Signup"></activity>
+        <activity android:name=".Signup" />
+        <activity android:name=".DashboardActivity" />
+        <activity
+            android:name=".ATU_Activity"
+            android:parentActivityName=".DashboardActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".EOD_Checkilist"></activity>
     </application>
 
 </manifest>

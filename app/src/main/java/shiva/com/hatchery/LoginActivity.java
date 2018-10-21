@@ -83,10 +83,10 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onDataChange(DataSnapshot dataSnapshot) {
                                     mProgressDialog.dismiss();
-                                    if (dataSnapshot!=null){
+                                    if (dataSnapshot != null) {
                                         StudentModel mStudentModel = dataSnapshot.getValue(StudentModel.class);
-                                        Toast.makeText(getApplicationContext(),"Welcome "+mStudentModel.getFirstname()+"", Toast.LENGTH_LONG).show();
-                                         startActivity(new Intent(getApplicationContext(), TankDetals.class));
+                                        Toast.makeText(getApplicationContext(), "Welcome " + mStudentModel.getFirstname() + "", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
 
                                     }
 
@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onCancelled(DatabaseError databaseError) {
-mProgressDialog.dismiss();
+                                    mProgressDialog.dismiss();
                                 }
                             });
                             // updateUI(user);
