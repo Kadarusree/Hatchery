@@ -31,7 +31,7 @@
                 android:layout_weight="0.8"
                 android:gravity="left|center"
                 android:paddingLeft="@dimen/dp_5"
-                android:text="@string/opt6"
+                android:text=" End of Day Checklist"
                 android:textColor="@color/colorWhite"
                 android:textSize="22dp" />
 
