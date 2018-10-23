@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -88,6 +89,8 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), "Welcome " + mStudentModel.getFirstname() + "", Toast.LENGTH_LONG).show();
                                         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
 
+                                        Constants.username = mStudentModel.getFirstname() + "/"+mStudentModel.getLastname();
+
                                     }
 
                                 }
@@ -120,4 +123,23 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+
+
+    public void forgotPassword(View view) {
+        mProgressDialog.show();
+        FirebaseAuth.getInstance().sendPasswordResetEmail(username.getText().toString())
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        mProgressDialog.dismiss();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(),"Email Sent to reset password",Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(),"Email is not registered",Toast.LENGTH_LONG).show();
+
+                        }
+                    }
+                });
+    }
 }

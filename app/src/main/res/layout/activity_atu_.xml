@@ -88,7 +88,7 @@
                     android:drawableRight="@drawable/ic_date_range_black_24dp"
                     android:paddingLeft="@dimen/dp_5"
                     android:inputType="date"
-                    android:id="@+id/edt_entry_date"/>
+                    android:id="@+id/atu_date"/>
             </LinearLayout>
 
             <LinearLayout
@@ -117,8 +117,8 @@
                     android:background="@drawable/bg_edittext"
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
-                    android:inputType="number"
-                    android:id="@+id/edt_inventory_number"></EditText>
+                    android:inputType="numberDecimal"
+                    android:id="@+id/atu_temp"></EditText>
             </LinearLayout>
 
             <LinearLayout
@@ -148,7 +148,7 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:inputType="numberDecimal"
-                    android:id="@+id/edt_biomass"></EditText>
+                    android:id="@+id/atu_count"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -176,7 +176,7 @@
                     android:background="@drawable/bg_edittext"
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
-                    android:id="@+id/edt_source_tank"></EditText>
+                    android:id="@+id/atu_initials"></EditText>
             </LinearLayout>
         </LinearLayout>
 
@@ -196,6 +196,7 @@
         android:text="SAVE"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/dp_20"
+        android:onClick="save"
         android:id="@+id/tv_save_tank_details"/>
 
 </LinearLayout>
