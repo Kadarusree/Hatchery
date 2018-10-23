@@ -73,6 +73,8 @@
                 android:layout_centerInParent="true"
                 android:textColorHint="@color/blue"
                 android:gravity="center"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
                 android:id="@+id/username"
                 android:paddingLeft="@dimen/dp_10"/>
         </RelativeLayout>
