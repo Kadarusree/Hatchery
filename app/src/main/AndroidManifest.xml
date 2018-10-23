@@ -24,7 +24,7 @@
             android:name=".ATU_Activity"
             android:parentActivityName=".DashboardActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".EOD_Checkilist"></activity>
+        <activity android:name=".EOD_Checkilist" android:windowSoftInputMode="adjustPan"></activity>
     </application>
 
 </manifest>
