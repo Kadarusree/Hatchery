@@ -1,5 +1,6 @@
 package shiva.com.hatchery;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class DashboardActivity extends AppCompatActivity {
@@ -35,7 +37,27 @@ public class DashboardActivity extends AppCompatActivity {
         checklist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), EOD_Checkilist.class));
+               Dialog d = new Dialog(DashboardActivity.this);
+               d.setContentView(R.layout.dialog_checklist);
+                Button morning = d.findViewById(R.id.morning);
+                Button eod = d.findViewById(R.id.eod);
+
+                morning.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_LONG).show();
+                    }
+                });
+
+                eod.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getApplicationContext(), EOD_Checkilist.class));
+
+                    }
+                });
+                d.show();
+               // startActivity(new Intent(getApplicationContext(), EOD_Checkilist.class));
             }
         });
 

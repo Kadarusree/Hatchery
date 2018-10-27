@@ -132,6 +132,12 @@ public class Signup extends AppCompatActivity {
             email.setError("Invalid Email");
             isValid = false;
         }
+        else {
+            if (!email.getText().toString().contains("flemingcollege.ca")){
+                email.setError("Enter College Email Only");
+                isValid = false;
+            }
+        }
         if (firstName.getText().toString().length() < 1) {
             firstName.setError("First Name must be minimum 1 character");
             isValid = false;

@@ -9,9 +9,17 @@
         android:roundIcon="@drawable/ic_aquarium"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
-        <activity android:name=".TankDetals" />
-        <activity android:name=".LoginActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TankDetals"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,8 +31,12 @@
         <activity
             android:name=".ATU_Activity"
             android:parentActivityName=".DashboardActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".EOD_Checkilist" android:windowSoftInputMode="adjustPan"></activity>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".EOD_Checkilist"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
     </application>
 
 </manifest>

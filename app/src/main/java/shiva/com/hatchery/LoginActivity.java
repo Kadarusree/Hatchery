@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), "Welcome " + mStudentModel.getFirstname() + "", Toast.LENGTH_LONG).show();
                                         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
 
-                                        Constants.username = mStudentModel.getFirstname() + "/"+mStudentModel.getLastname();
+                                        Constants.username = mStudentModel.getFirstname();
 
                                     }
 
