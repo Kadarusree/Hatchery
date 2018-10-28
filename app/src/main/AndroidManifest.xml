@@ -27,7 +27,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Signup" />
-        <activity android:name=".DashboardActivity" />
+        <activity android:name=".DashboardActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ATU_Activity"
             android:parentActivityName=".DashboardActivity"
