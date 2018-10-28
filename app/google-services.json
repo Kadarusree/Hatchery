@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "283627574903",
+    "firebase_url": "https://hatchery-734c1.firebaseio.com",
+    "project_id": "hatchery-734c1",
+    "storage_bucket": "hatchery-734c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283627574903:android:f051451663b4adf6",
+        "android_client_info": {
+          "package_name": "shiva.com.hatchery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283627574903-f5at9da9b30v0b73n7fn1930cp1sq8qp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "shiva.com.hatchery",
+            "certificate_hash": "d60887c0299313335cc43202acea8333dcffb0d3"
+          }
+        },
+        {
+          "client_id": "283627574903-0sg482g3gr9uu7algkk2of79r1qe356d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt7tw2efA2I1ESMMZi6R7mQEH3GSGaezI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283627574903-0sg482g3gr9uu7algkk2of79r1qe356d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
