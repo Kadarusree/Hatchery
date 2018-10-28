@@ -190,7 +190,8 @@
 
                         <EditText
                             android:id="@+id/eod_f2"
-
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginBottom="@dimen/dp_5"
