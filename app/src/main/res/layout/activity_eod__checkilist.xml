@@ -531,7 +531,7 @@
                         <EditText
                             android:id="@+id/eod_f13"
                             android:singleLine="true"
-                            android:imeOptions="actionNext"
+                            android:imeOptions="actionDone"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginBottom="@dimen/dp_5"
