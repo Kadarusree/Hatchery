@@ -34,7 +34,14 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
     </string-array>
 
 
@@ -73,6 +80,14 @@
     <string name="eod_chkl_opt12">Bio trench water level OK</string>
     <string name="eod_chkl_opt13">Safety check</string>
 
-
+    <string name="oxy_temp">Oxygen &amp; Temperature</string>
+    <string name="ot_opt1">Outside Air Temp</string>
+    <string name="ot_opt2">Hatchery Air Temp</string>
+    <string name="ot_opt3">Tank Temp</string>
+    <string name="ot_opt4">Dissolved Oxygen(mg/DL)</string>
+    <string name="ot_opt5">% Saturation Oxygen</string>
+    <string name="ot_opt6">Pre-Backwash flow(L/min)</string>
+    <string name="ot_opt7">Post-Backwash Flow</string>
+    <string name="ot_opt8">Adjustments</string>
 
 </resources>

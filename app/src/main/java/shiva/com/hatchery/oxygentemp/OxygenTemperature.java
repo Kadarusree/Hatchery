@@ -1,4 +1,4 @@
-package shiva.com.hatchery;
+package shiva.com.hatchery.oxygentemp;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
@@ -23,11 +23,15 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class EOD_Checkilist extends AppCompatActivity {
+import shiva.com.hatchery.Constants;
+import shiva.com.hatchery.EOD_Checkilist;
+import shiva.com.hatchery.R;
+
+public class OxygenTemperature extends AppCompatActivity {
 
 
-    EditText date, initials;
-    EditText f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13;
+    EditText date, initial, tank_number;
+    EditText f1, f2, f3, f4, f5, f6, f7, f8;
 
     FirebaseFirestore db;
     private ProgressDialog mProgressDialog;
@@ -35,29 +39,23 @@ public class EOD_Checkilist extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eod__checkilist);
+        setContentView(R.layout.activity_oxygen_temperature);
+        date = findViewById(R.id.ot_date);
+        initial = findViewById(R.id.ot_initials);
+        tank_number = findViewById(R.id.ot_tank_number);
 
-        date = findViewById(R.id.eod_chk_date);
-        initials = findViewById(R.id.eod_chk_initials);
+        f1 = findViewById(R.id.ot_f1);
+        f2 = findViewById(R.id.ot_f2);
+        f3 = findViewById(R.id.ot_f3);
+        f4 = findViewById(R.id.ot_f4);
+        f5 = findViewById(R.id.ot_f5);
+        f6 = findViewById(R.id.ot_f6);
+        f7 = findViewById(R.id.ot_f7);
+        f8 = findViewById(R.id.ot_f8);
 
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setMessage("Saving Data...");
         mProgressDialog.setCancelable(false);
-
-
-        f1 = findViewById(R.id.eod_f1);
-        f2 = findViewById(R.id.eod_f2);
-        f3 = findViewById(R.id.eod_f3);
-        f4 = findViewById(R.id.eod_f4);
-        f5 = findViewById(R.id.eod_f5);
-        f6 = findViewById(R.id.eod_f6);
-        f7 = findViewById(R.id.eod_f7);
-        f8 = findViewById(R.id.eod_f8);
-        f9 = findViewById(R.id.eod_f9);
-        f10 = findViewById(R.id.eod_f10);
-        f11 = findViewById(R.id.eod_f11);
-        f12 = findViewById(R.id.eod_f12);
-        f13 = findViewById(R.id.eod_f13);
 
         db = FirebaseFirestore.getInstance();
         date.setOnClickListener(new View.OnClickListener() {
@@ -68,8 +66,8 @@ public class EOD_Checkilist extends AppCompatActivity {
             }
         });
 
-        initials.setText(Constants.username);
-        initials.setEnabled(false);
+        initial.setText(Constants.username);
+        initial.setEnabled(false);
         date.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {
@@ -79,11 +77,10 @@ public class EOD_Checkilist extends AppCompatActivity {
             }
         });
     }
-
     public void showEntryDatePicker() {
         final Calendar currentDate = Calendar.getInstance();
         final Calendar date_ = Calendar.getInstance();
-        new DatePickerDialog(EOD_Checkilist.this, new DatePickerDialog.OnDateSetListener() {
+        new DatePickerDialog(OxygenTemperature.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 date_.set(year, monthOfYear, dayOfMonth);
@@ -93,46 +90,38 @@ public class EOD_Checkilist extends AppCompatActivity {
             }
         }, currentDate.get(Calendar.YEAR), currentDate.get(Calendar.MONTH), currentDate.get(Calendar.DATE)).show();
     }
-
-    public void eod_chk_save(View view) {
+    public void saveData(View view) {
         Map<String, Object> checklist = new HashMap<>();
         checklist.put("Tank_ID", Constants.TANK_NUMBER);
         checklist.put("Date", date.getText().toString());
-        checklist.put("Initials", initials.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt1), f1.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt2), f2.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt3), f3.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt4), f4.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt5), f5.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt6), f6.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt7), f7.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt8), f8.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt9), f9.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt10), f10.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt11), f11.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt12), f12.getText().toString());
-        checklist.put(getResources().getString(R.string.eod_chkl_opt13), f13.getText().toString());
+        checklist.put("Initials", initial.getText().toString());
+
+        checklist.put(getResources().getString(R.string.ot_opt1), f1.getText().toString());
+        checklist.put(getResources().getString(R.string.ot_opt2), f2.getText().toString());
+        checklist.put(getResources().getString(R.string.ot_opt3), f3.getText().toString());
+        checklist.put(getResources().getString(R.string.ot_opt4), f4.getText().toString());
+        checklist.put(getResources().getString(R.string.ot_opt5), f5.getText().toString());
+        checklist.put(getResources().getString(R.string.ot_opt6), f6.getText().toString());
+        checklist.put(getResources().getString(R.string.ot_opt7), f7.getText().toString());
+        checklist.put(getResources().getString(R.string.ot_opt8), f8.getText().toString());
 
 
         mProgressDialog.show();
-// Add a new document with a generated ID
-        db.collection("EOD_CHECKLIST")
+        db.collection("OXYGEN_AND_TEMPERATURE")
                 .add(checklist)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Log.d("", "DocumentSnapshot added with ID: " + documentReference.getId());
-
                         mProgressDialog.dismiss();
-
-                        Toast.makeText(getApplicationContext(), "Checklist Saved", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Data Saved", Toast.LENGTH_LONG).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         mProgressDialog.dismiss();
-                        Toast.makeText(getApplicationContext(), "Checklist Saveing Failed", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Saveing Failed", Toast.LENGTH_LONG).show();
                     }
                 });
     }

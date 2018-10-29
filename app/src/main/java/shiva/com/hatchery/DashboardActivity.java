@@ -10,11 +10,13 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import shiva.com.hatchery.oxygentemp.OxygenTemperature;
+
 
 public class DashboardActivity extends AppCompatActivity {
 
 
-    Button atu,checklist,status;
+    Button atu,checklist,status,oxygen_temp;
 
     Spinner tanks;
 
@@ -26,7 +28,13 @@ public class DashboardActivity extends AppCompatActivity {
         checklist = findViewById(R.id.checklist);
         tanks = findViewById(R.id.spn_tanks);
         status = findViewById(R.id.status);
-
+        oxygen_temp = findViewById(R.id.oxygen_temp);
+        oxygen_temp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), OxygenTemperature.class));
+            }
+        });
         atu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
