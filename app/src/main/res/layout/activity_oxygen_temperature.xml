@@ -163,7 +163,9 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:inputType="numberDecimal"
-                    android:id="@+id/ot_f2"></EditText>
+                    android:id="@+id/ot_f2"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
