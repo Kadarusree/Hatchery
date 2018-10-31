@@ -162,7 +162,7 @@ public class OxygenTemperatureResults extends Activity {
         // Save the job object for later status checking
         mPrintJobs.add(printJob);*/
     }
-
+//
     public void Print(View view) {
         createWebPrintJob(mWebView);
     }
