@@ -42,20 +42,20 @@
             android:name=".EOD_Checkilist"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
-            android:label="@string/opt1"
+            android:label="End of Day Checklist"
             android:parentActivityName=".DashboardActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+            />
         <activity
             android:name=".oxygentemp.OxygenTemperature"
             android:label="@string/opt1"
             android:parentActivityName=".DashboardActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+             />
         <activity android:name=".feedingData.DailyFeedingData"
             android:label="@string/opt2"
             android:parentActivityName=".DashboardActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"></activity>
+           ></activity>
     </application>
 
 </manifest>
