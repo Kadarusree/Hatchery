@@ -65,6 +65,7 @@
     <string name="opt7">Weight Sample</string>
     <string name="opt8">Checklist</string>
     <string name="opt9">Status</string>
+    <string name="opt10">Deliveries and Status</string>
 
     <string name="eod_chkl_opt1">All standpipes in place and secure</string>
     <string name="eod_chkl_opt2">All tank levels good</string>

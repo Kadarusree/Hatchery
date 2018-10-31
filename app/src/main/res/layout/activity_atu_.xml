@@ -6,41 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.11"
-        android:background="@color/red">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/dp_10">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.1"
-                android:src="@drawable/home" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.8"
-                android:gravity="left|center"
-                android:paddingLeft="@dimen/dp_5"
-                android:text="@string/opt6"
-                android:textColor="@color/colorWhite"
-                android:textSize="22dp" />
-
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.1"
-                android:src="@drawable/ic_aquarium"></ImageView>
-        </LinearLayout>
-    </LinearLayout>
 
 
     <LinearLayout
@@ -81,7 +46,9 @@
                     android:background="@drawable/bg_edittext"
                     android:gravity="left|center"
                     android:paddingLeft="@dimen/dp_5"
-                    android:paddingRight="@dimen/dp_5"></EditText>
+                    android:paddingRight="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -110,7 +77,9 @@
                     android:drawableRight="@drawable/ic_date_range_black_24dp"
                     android:gravity="left|center"
                     android:inputType="date"
-                    android:paddingLeft="@dimen/dp_5" />
+                    android:paddingLeft="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"/>
             </LinearLayout>
 
             <LinearLayout
@@ -140,7 +109,9 @@
                     android:gravity="left|center"
                     android:inputType="numberDecimal"
                     android:paddingLeft="@dimen/dp_5"
-                    android:paddingRight="@dimen/dp_5"></EditText>
+                    android:paddingRight="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"></EditText>
             </LinearLayout>
 
             <LinearLayout
@@ -170,7 +141,9 @@
                     android:gravity="left|center"
                     android:inputType="numberDecimal"
                     android:paddingLeft="@dimen/dp_5"
-                    android:paddingRight="@dimen/dp_5"></EditText>
+                    android:paddingRight="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone"></EditText>
             </LinearLayout>
 
 

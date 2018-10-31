@@ -102,20 +102,26 @@ public class ATU_Activity extends AppCompatActivity {
     public void save(View view) {
 
 
-        mProgressDialog.show();
-        ATUmodel mATU = new ATUmodel(date.getText().toString(), initials.getText().toString(), temp.getText().toString(), atu.getText().toString());
-        mDatabaseReference.child(mDatabaseReference.push().getKey()).setValue(mATU).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                mProgressDialog.dismiss();
-                if (task.isSuccessful()) {
-                    date.setText("");
-                    temp.setText("");
-                    atu.setText("");
+        if (validations()) {
+            mProgressDialog.show();
+            ATUmodel mATU = new ATUmodel(date.getText().toString(), initials.getText().toString(), temp.getText().toString(), atu.getText().toString());
+            mDatabaseReference.child(mDatabaseReference.push().getKey()).setValue(mATU).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    mProgressDialog.dismiss();
+                    if (task.isSuccessful()) {
+                        date.setText("");
+                        temp.setText("");
+                        atu.setText("");
 
+                    }
                 }
-            }
-        });
+            });
+        } else {
+            Toast.makeText(getApplicationContext(), "Enter All Fields", Toast.LENGTH_LONG).show();
+        }
+
+
     }
 
     public void showEntryDatePicker() {
@@ -200,5 +206,17 @@ public class ATU_Activity extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    public boolean validations() {
+        boolean valid = true;
+        if (initials.getText().toString().trim().equalsIgnoreCase("") ||
+                date.getText().toString().trim().equalsIgnoreCase("") ||
+                temp.getText().toString().trim().equalsIgnoreCase("") ||
+                atu.getText().toString().trim().equalsIgnoreCase("")) {
+            valid = false;
+        }
+        return valid;
     }
 }

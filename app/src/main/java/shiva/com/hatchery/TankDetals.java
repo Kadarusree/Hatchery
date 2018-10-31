@@ -44,9 +44,6 @@ public class TankDetals extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.tank_detalis);
 
         tank_number = (EditText) findViewById(R.id.edt_tank_number);
@@ -58,8 +55,10 @@ public class TankDetals extends AppCompatActivity {
         avg_weight = (EditText) findViewById(R.id.edt_avg_weight);
         biomass = (EditText) findViewById(R.id.edt_biomass);
         source_tank = (EditText) findViewById(R.id.edt_source_tank);
-
         btnSave = findViewById(R.id.tv_save_tank_details);
+
+        tank_number.setText(Constants.TANK_NUMBER);
+        tank_number.setEnabled(false);
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mDatabaseReference = mFirebaseDatabase.getReference(Constants.TANK_DETAILS);
@@ -104,49 +103,55 @@ public class TankDetals extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mProgressDialog.show();
-                TankModel tankModel = new TankModel(tank_number.getText().toString().trim(),
-                        species.getText().toString().trim(),
-                        group.getText().toString().trim(),
-                        entry_date.getText().toString().trim(),
-                        last_sample_date.getText().toString().trim(),
-                        avg_weight.getText().toString().trim(),
-                        biomass.getText().toString().trim(),
-                        source_tank.getText().toString().trim());
 
-                String key = mDatabaseReference.push().getKey();
+                if (validations()){
+                    mProgressDialog.show();
+                    TankModel tankModel = new TankModel(tank_number.getText().toString().trim(),
+                            species.getText().toString().trim(),
+                            group.getText().toString().trim(),
+                            entry_date.getText().toString().trim(),
+                            last_sample_date.getText().toString().trim(),
+                            avg_weight.getText().toString().trim(),
+                            biomass.getText().toString().trim(),
+                            source_tank.getText().toString().trim());
 
-                mDatabaseReference.child(key).setValue(tankModel).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        mProgressDialog.dismiss();
-                        if (task.isSuccessful()) {
-                            AlertDialog.Builder ad =
-                                    new AlertDialog.Builder(TankDetals.this);
-                            ad.setTitle("Hatchery");
-                            ad.setMessage("Saved Successfully");
-                            ad.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    dialogInterface.dismiss();
+                    String key = mDatabaseReference.push().getKey();
 
-                                    tank_number.setText("");
-                                    species.setText("");
-                                    group.setText("");
-                                    entry_date.setText("");
-                                    last_sample_date.setText("");
-                                    inventory_number.setText("");
-                                    avg_weight.setText("");
-                                    biomass.setText("");
-                                    source_tank.setText("");
-                                }
-                            });
-                            ad.setCancelable(false);
-                            ad.show();
+                    mDatabaseReference.child(key).setValue(tankModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            mProgressDialog.dismiss();
+                            if (task.isSuccessful()) {
+                                AlertDialog.Builder ad =
+                                        new AlertDialog.Builder(TankDetals.this);
+                                ad.setTitle("Hatchery");
+                                ad.setMessage("Saved Successfully");
+                                ad.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        dialogInterface.dismiss();
+
+                                        tank_number.setText("");
+                                        species.setText("");
+                                        group.setText("");
+                                        entry_date.setText("");
+                                        last_sample_date.setText("");
+                                        inventory_number.setText("");
+                                        avg_weight.setText("");
+                                        biomass.setText("");
+                                        source_tank.setText("");
+                                    }
+                                });
+                                ad.setCancelable(false);
+                                ad.show();
+                            }
+
                         }
-
-                    }
-                });
+                    });
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Enter All Fields", Toast.LENGTH_LONG).show();
+                }
 
             }
         });
@@ -179,4 +184,23 @@ public class TankDetals extends AppCompatActivity {
         }, currentDate.get(Calendar.YEAR), currentDate.get(Calendar.MONTH), currentDate.get(Calendar.DATE)).show();
     }
 
+
+    public boolean validations() {
+
+
+
+        boolean valid = true;
+        if (tank_number.getText().toString().trim().equalsIgnoreCase("") ||
+                species.getText().toString().trim().equalsIgnoreCase("") ||
+                group.getText().toString().trim().equalsIgnoreCase("") ||
+                entry_date.getText().toString().trim().equalsIgnoreCase("") ||
+                last_sample_date.getText().toString().trim().equalsIgnoreCase("") ||
+                avg_weight.getText().toString().trim().equalsIgnoreCase("") ||
+                inventory_number.getText().toString().trim().equalsIgnoreCase("") ||
+                biomass.getText().toString().trim().equalsIgnoreCase("") ||
+                source_tank.getText().toString().trim().equalsIgnoreCase("")) {
+            valid = false;
+        }
+        return valid;
+    }
 }
