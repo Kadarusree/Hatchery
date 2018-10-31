@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import shiva.com.hatchery.oxygentemp.OxygenTemperature;
+import shiva.com.hatchery.oxygentemp.OxygenTemperatureResults;
 
 
 public class DashboardActivity extends Activity {

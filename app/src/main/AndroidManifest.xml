@@ -14,10 +14,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".TankDetals"
-            android:windowSoftInputMode="adjustPan"
             android:label="Tank Details"
             android:parentActivityName=".DashboardActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
@@ -34,28 +34,27 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ATU_Activity"
+            android:label="@string/opt6"
             android:parentActivityName=".DashboardActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"
-            android:label="@string/opt6"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".EOD_Checkilist"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"
             android:label="End of Day Checklist"
             android:parentActivityName=".DashboardActivity"
-            />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".oxygentemp.OxygenTemperature"
             android:label="@string/opt1"
             android:parentActivityName=".DashboardActivity"
-            android:screenOrientation="portrait"
-             />
-        <activity android:name=".feedingData.DailyFeedingData"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feedingData.DailyFeedingData"
             android:label="@string/opt2"
             android:parentActivityName=".DashboardActivity"
-            android:screenOrientation="portrait"
-           ></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name=".oxygentemp.OxygenTemperatureResults" android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

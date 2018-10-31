@@ -2,6 +2,7 @@ package shiva.com.hatchery.oxygentemp;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,7 +46,6 @@ public class OxygenTemperature extends AppCompatActivity {
         tank_number = findViewById(R.id.ot_tank_number);
 
 
-
         f1 = findViewById(R.id.ot_f1);
         f2 = findViewById(R.id.ot_f2);
         f3 = findViewById(R.id.ot_f3);
@@ -82,6 +82,7 @@ public class OxygenTemperature extends AppCompatActivity {
             }
         });
     }
+
     public void showEntryDatePicker() {
         final Calendar currentDate = Calendar.getInstance();
         final Calendar date_ = Calendar.getInstance();
@@ -95,9 +96,9 @@ public class OxygenTemperature extends AppCompatActivity {
             }
         }, currentDate.get(Calendar.YEAR), currentDate.get(Calendar.MONTH), currentDate.get(Calendar.DATE)).show();
     }
+
     public void saveData(View view) {
-        if (validations())
-        {
+        if (validations()) {
             Map<String, Object> checklist = new HashMap<>();
             checklist.put("Tank_ID", Constants.TANK_NUMBER);
             checklist.put("Date", date.getText().toString());
@@ -106,9 +107,9 @@ public class OxygenTemperature extends AppCompatActivity {
             checklist.put(getResources().getString(R.string.ot_opt1), f1.getText().toString());
             checklist.put(getResources().getString(R.string.ot_opt2), f2.getText().toString());
             checklist.put(getResources().getString(R.string.ot_opt3), f3.getText().toString());
-            checklist.put(getResources().getString(R.string.ot_opt4), f4.getText().toString());
+            checklist.put(getResources().getString(R.string.ot_opt4_key), f4.getText().toString());
             checklist.put(getResources().getString(R.string.ot_opt5), f5.getText().toString());
-            checklist.put(getResources().getString(R.string.ot_opt6), f6.getText().toString());
+            checklist.put(getResources().getString(R.string.ot_opt6_key), f6.getText().toString());
             checklist.put(getResources().getString(R.string.ot_opt7), f7.getText().toString());
             checklist.put(getResources().getString(R.string.ot_opt8), f8.getText().toString());
 
@@ -131,9 +132,7 @@ public class OxygenTemperature extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Saveing Failed", Toast.LENGTH_LONG).show();
                         }
                     });
-        }
-        else
-        {
+        } else {
             Toast.makeText(getApplicationContext(), "Enter all fields", Toast.LENGTH_LONG).show();
 
         }
@@ -158,5 +157,9 @@ public class OxygenTemperature extends AppCompatActivity {
             valid = false;
         }
         return valid;
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(getApplicationContext(), OxygenTemperatureResults.class));
     }
 }

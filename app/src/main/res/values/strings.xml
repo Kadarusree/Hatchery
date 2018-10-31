@@ -86,8 +86,11 @@
     <string name="ot_opt2">Hatchery Air Temp</string>
     <string name="ot_opt3">Tank Temp</string>
     <string name="ot_opt4">Dissolved Oxygen(mg/DL)</string>
+    <string name="ot_opt4_key">Dissolved Oxygen(mgDL)</string>
     <string name="ot_opt5">% Saturation Oxygen</string>
     <string name="ot_opt6">Pre-Backwash flow(L/min)</string>
+    <string name="ot_opt6_key">Pre-Backwash flow(Lmin)</string>
+
     <string name="ot_opt7">Post-Backwash Flow</string>
     <string name="ot_opt8">Adjustments</string>
 
