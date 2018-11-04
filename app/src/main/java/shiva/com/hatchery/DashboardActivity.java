@@ -52,7 +52,7 @@ public class DashboardActivity extends Activity {
         checklist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Dialog d = new Dialog(DashboardActivity.this);
+               final Dialog d = new Dialog(DashboardActivity.this);
                d.setContentView(R.layout.dialog_checklist);
                 Button morning = d.findViewById(R.id.morning);
                 Button eod = d.findViewById(R.id.eod);
@@ -68,6 +68,7 @@ public class DashboardActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(getApplicationContext(), EOD_Checkilist.class));
+                        d.dismiss();
 
                     }
                 });

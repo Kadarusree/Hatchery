@@ -57,6 +57,16 @@ public class ATU_Activity extends AppCompatActivity {
         temp = findViewById(R.id.atu_temp);
         atu = findViewById(R.id.atu_count);
 
+        final Calendar currentDate = Calendar.getInstance();
+        final Calendar date_ = Calendar.getInstance();
+
+        // date_.get(Calendar.DAY_OF_MONTH);
+        // date_.get(Calendar.YEAR);
+        /// date_.get(Calendar.MONTH);
+
+        DateFormat fmt = new SimpleDateFormat("MMMM dd/ yyyy", Locale.US);
+        date.setText(fmt.format(date_.getTime()));
+
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mDatabaseReference = mFirebaseDatabase.getReference(Constants.ATU + "/" + Constants.TANK_NUMBER);
 

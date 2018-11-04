@@ -54,7 +54,10 @@
             android:label="@string/opt2"
             android:parentActivityName=".DashboardActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".oxygentemp.OxygenTemperatureResults" android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".oxygentemp.OxygenTemperatureResults"
+            android:screenOrientation="landscape" />
+        <activity android:name=".EOD_CHK_History" android:screenOrientation="landscape" android:parentActivityName=".EOD_Checkilist"></activity>
     </application>
 
 </manifest>

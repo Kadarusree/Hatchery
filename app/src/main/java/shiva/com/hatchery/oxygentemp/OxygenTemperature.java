@@ -45,6 +45,15 @@ public class OxygenTemperature extends AppCompatActivity {
         initial = findViewById(R.id.ot_initials);
         tank_number = findViewById(R.id.ot_tank_number);
 
+        final Calendar currentDate = Calendar.getInstance();
+        final Calendar date_ = Calendar.getInstance();
+
+        // date_.get(Calendar.DAY_OF_MONTH);
+        // date_.get(Calendar.YEAR);
+        /// date_.get(Calendar.MONTH);
+
+        DateFormat fmt = new SimpleDateFormat("MMMM dd/ yyyy", Locale.US);
+        date.setText(fmt.format(date_.getTime()));
 
         f1 = findViewById(R.id.ot_f1);
         f2 = findViewById(R.id.ot_f2);
