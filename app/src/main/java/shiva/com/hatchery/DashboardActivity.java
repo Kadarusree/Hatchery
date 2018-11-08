@@ -1,31 +1,41 @@
 package shiva.com.hatchery;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import shiva.com.hatchery.feedingData.DailyFeedingData;
 import shiva.com.hatchery.oxygentemp.OxygenTemperature;
+import shiva.com.hatchery.oxygentemp.OxygenTemperatureResults;
 
 
-public class DashboardActivity extends AppCompatActivity {
+public class DashboardActivity extends Activity {
 
 
-    Button atu,checklist,status,oxygen_temp;
+    Button atu,checklist,status,oxygen_temp, daily_feedingData;
 
     Spinner tanks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
         atu = findViewById(R.id.btn_atu);
         checklist = findViewById(R.id.checklist);
+        daily_feedingData = findViewById(R.id.daily_feedingData);
+
         tanks = findViewById(R.id.spn_tanks);
         status = findViewById(R.id.status);
         oxygen_temp = findViewById(R.id.oxygen_temp);
@@ -41,11 +51,16 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), ATU_Activity.class));
             }
         });
-
+        daily_feedingData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), DailyFeedingData.class));
+            }
+        });
         checklist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Dialog d = new Dialog(DashboardActivity.this);
+               final Dialog d = new Dialog(DashboardActivity.this);
                d.setContentView(R.layout.dialog_checklist);
                 Button morning = d.findViewById(R.id.morning);
                 Button eod = d.findViewById(R.id.eod);
@@ -61,6 +76,7 @@ public class DashboardActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(getApplicationContext(), EOD_Checkilist.class));
+                        d.dismiss();
 
                     }
                 });

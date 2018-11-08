@@ -14,6 +14,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".TankDetals"
+            android:label="Tank Details"
+            android:parentActivityName=".DashboardActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity
@@ -32,14 +34,30 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ATU_Activity"
+            android:label="@string/opt6"
             android:parentActivityName=".DashboardActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".EOD_Checkilist"
+            android:label="End of Day Checklist"
+            android:parentActivityName=".DashboardActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".oxygentemp.OxygenTemperature"></activity>
+        <activity
+            android:name=".oxygentemp.OxygenTemperature"
+            android:label="@string/opt1"
+            android:parentActivityName=".DashboardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feedingData.DailyFeedingData"
+            android:label="@string/opt2"
+            android:parentActivityName=".DashboardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".oxygentemp.OxygenTemperatureResults"
+            android:screenOrientation="landscape" />
+        <activity android:name=".EOD_CHK_History" android:screenOrientation="landscape" android:parentActivityName=".EOD_Checkilist"></activity>
     </application>
 
 </manifest>

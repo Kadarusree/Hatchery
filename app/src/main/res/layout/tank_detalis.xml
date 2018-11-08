@@ -8,42 +8,7 @@
     android:orientation="vertical"
     >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.11"
-        android:background="@color/red">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/dp_10">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.1"
-                android:src="@drawable/home" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.8"
-                android:gravity="left|center"
-                android:paddingLeft="@dimen/dp_5"
-                android:text="@string/tank_details"
-                android:textColor="@color/colorWhite"
-                android:textSize="22dp" />
-
-
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.1"
-                android:src="@drawable/ic_aquarium"></ImageView>
-        </LinearLayout>
-    </LinearLayout>
 
 
     <LinearLayout
@@ -86,7 +51,9 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:inputType="number"
-                    android:id="@+id/edt_tank_number"></EditText>
+                    android:id="@+id/edt_tank_number"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -114,7 +81,9 @@
                     android:background="@drawable/bg_edittext"
                     android:paddingLeft="@dimen/dp_5"
                     android:maxLines="1"
-                    android:id="@+id/edt_species"/>
+                    android:id="@+id/edt_species"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -142,7 +111,9 @@
                     android:background="@drawable/bg_edittext"
                     android:paddingLeft="@dimen/dp_5"
                     android:maxLines="1"
-                    android:id="@+id/edt_group"/>
+                    android:id="@+id/edt_group"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -171,7 +142,9 @@
                     android:drawableRight="@drawable/ic_date_range_black_24dp"
                     android:paddingLeft="@dimen/dp_5"
                     android:inputType="date"
-                    android:id="@+id/edt_entry_date"/>
+                    android:id="@+id/edt_entry_date"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"/>
             </LinearLayout>
 
             <LinearLayout
@@ -230,7 +203,9 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:inputType="number"
-                    android:id="@+id/edt_inventory_number"></EditText>
+                    android:id="@+id/edt_inventory_number"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -259,7 +234,9 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:inputType="numberDecimal"
-                    android:id="@+id/edt_avg_weight"></EditText>
+                    android:id="@+id/edt_avg_weight"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -288,7 +265,9 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:inputType="numberDecimal"
-                    android:id="@+id/edt_biomass"></EditText>
+                    android:id="@+id/edt_biomass"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -316,7 +295,9 @@
                     android:background="@drawable/bg_edittext"
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
-                    android:id="@+id/edt_source_tank"></EditText>
+                    android:id="@+id/edt_source_tank"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone"></EditText>
             </LinearLayout>
         </LinearLayout>
 
