@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".feedingData.DailyFeedingData">
 
 
 
@@ -140,7 +141,8 @@
                     android:inputType="numberDecimal"
                     android:layout_marginRight="@dimen/dp_10"
                     android:imeOptions="actionNext"
-                    android:hint="Feed size in mm"></EditText>
+                    android:hint="Feed size in mm"
+                    android:id="@+id/feed_size1"></EditText>
 
                 <EditText
                     android:layout_width="0dp"
@@ -154,9 +156,11 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="numberDecimal"
+                    android:inputType="number"
+                    android:id="@+id/feed1"
                     android:hint="Amount Fed"
-                    android:imeOptions="actionNext"></EditText>
+                    android:imeOptions="actionNext"
+                    ></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -179,7 +183,8 @@
                     android:inputType="numberDecimal"
                     android:layout_marginRight="@dimen/dp_10"
                     android:imeOptions="actionNext"
-                    android:hint="Feed size in mm"></EditText>
+                    android:hint="Feed size in mm"
+                    android:id="@+id/feed_size2"></EditText>
 
                 <EditText
                     android:layout_width="0dp"
@@ -193,7 +198,8 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="numberDecimal"
+                    android:inputType="number"
+                    android:id="@+id/feed2"
                     android:hint="Amount Fed"
                     android:imeOptions="actionDone"></EditText>
             </LinearLayout>
@@ -218,7 +224,8 @@
                     android:inputType="numberDecimal"
                     android:layout_marginRight="@dimen/dp_10"
                     android:imeOptions="actionNext"
-                    android:hint="Feed size in mm"></EditText>
+                    android:hint="Feed size in mm"
+                    android:id="@+id/feed_size3"></EditText>
 
                 <EditText
                     android:layout_width="0dp"
@@ -232,7 +239,8 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="numberDecimal"
+                    android:inputType="number"
+                    android:id="@+id/feed3"
                     android:hint="Amount Fed"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
@@ -257,7 +265,8 @@
                     android:inputType="numberDecimal"
                     android:layout_marginRight="@dimen/dp_10"
                     android:imeOptions="actionNext"
-                    android:hint="Feed size in mm"></EditText>
+                    android:hint="Feed size in mm"
+                    android:id="@+id/feed_size4"></EditText>
 
                 <EditText
                     android:layout_width="0dp"
@@ -271,7 +280,8 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="numberDecimal"
+                    android:inputType="number"
+                    android:id="@+id/feed4"
                     android:hint="Amount Fed"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
@@ -296,7 +306,8 @@
                     android:inputType="numberDecimal"
                     android:layout_marginRight="@dimen/dp_10"
                     android:imeOptions="actionNext"
-                    android:hint="Feed size in mm"></EditText>
+                    android:hint="Feed size in mm"
+                    android:id="@+id/feed_size5"></EditText>
 
                 <EditText
                     android:layout_width="0dp"
@@ -310,7 +321,8 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="numberDecimal"
+                    android:inputType="number"
+                    android:id="@+id/feed5"
                     android:hint="Amount Fed"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
@@ -335,7 +347,8 @@
                     android:inputType="numberDecimal"
                     android:layout_marginRight="@dimen/dp_10"
                     android:imeOptions="actionNext"
-                    android:hint="Feed size in mm"></EditText>
+                    android:hint="Feed size in mm"
+                    android:id="@+id/feed_size6"></EditText>
 
                 <EditText
                     android:layout_width="0dp"
@@ -349,7 +362,8 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="numberDecimal"
+                    android:inputType="number"
+                    android:id="@+id/feed6"
                     android:hint="Amount Fed"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
@@ -374,7 +388,8 @@
                     android:inputType="numberDecimal"
                     android:layout_marginRight="@dimen/dp_10"
                     android:imeOptions="actionNext"
-                    android:hint="Feed size in mm"></EditText>
+                    android:hint="Feed size in mm"
+                    android:id="@+id/feed_size7"></EditText>
 
                 <EditText
                     android:layout_width="0dp"
@@ -388,7 +403,8 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="numberDecimal"
+                    android:inputType="number"
+                    android:id="@+id/feed7"
                     android:hint="Amount Fed"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
@@ -419,6 +435,8 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
+                    android:inputType="number"
+                    android:id="@+id/feed_total"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
 
@@ -449,21 +467,40 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:imeOptions="actionDone"></EditText>
+                    android:imeOptions="actionDone"
+                    android:id="@+id/feed_comments"></EditText>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_save_tank_details"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:background="@color/blue"
-        android:gravity="center"
-        android:onClick="save"
-        android:text="SAVE"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/dp_20" />
+        android:layout_weight="0.08">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:layout_marginRight="@dimen/dp_5"
+            android:background="@color/blue"
+            android:gravity="center"
+            android:onClick="history"
+            android:text="HISTORY"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/dp_20" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:background="@color/blue"
+            android:gravity="center"
+            android:onClick="save"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:text="SAVE"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/dp_20" />
+    </LinearLayout>
+
+
 
 </LinearLayout>

@@ -60,6 +60,9 @@ public class LoginActivity extends Activity {
         password = findViewById(R.id.password);
 
 
+        username.setText("spanthul@flemingcollege.ca");
+        password.setText("1234567");
+
         mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabse = FirebaseDatabase.getInstance();
         mDatabaseReference = mFirebaseDatabse.getReference("Students");
@@ -124,8 +127,6 @@ public class LoginActivity extends Activity {
     }
 
 
-
-
     public void forgotPassword(View view) {
         mProgressDialog.show();
         FirebaseAuth.getInstance().sendPasswordResetEmail(username.getText().toString())
@@ -134,10 +135,9 @@ public class LoginActivity extends Activity {
                     public void onComplete(@NonNull Task<Void> task) {
                         mProgressDialog.dismiss();
                         if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(),"Email Sent to reset password",Toast.LENGTH_LONG).show();
-                        }
-                        else {
-                            Toast.makeText(getApplicationContext(),"Email is not registered",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Email Sent to reset password", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Email is not registered", Toast.LENGTH_LONG).show();
 
                         }
                     }

@@ -53,11 +53,16 @@
             android:name=".feedingData.DailyFeedingData"
             android:label="@string/opt2"
             android:parentActivityName=".DashboardActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".oxygentemp.OxygenTemperatureResults"
             android:screenOrientation="landscape" />
-        <activity android:name=".EOD_CHK_History" android:screenOrientation="landscape" android:parentActivityName=".EOD_Checkilist"></activity>
+        <activity
+            android:name=".EOD_CHK_History"
+            android:parentActivityName=".EOD_Checkilist"
+            android:screenOrientation="landscape" />
+        <activity android:name=".feedingData.FeedingHistory" android:screenOrientation="portrait" android:parentActivityName=".feedingData.DailyFeedingData"></activity>
     </application>
 
 </manifest>
