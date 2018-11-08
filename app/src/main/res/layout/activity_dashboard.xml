@@ -122,6 +122,7 @@
                 android:text="@string/opt2"
                 android:textColor="@color/colorWhite"
                 android:textStyle="bold"
+                android:id="@+id/daily_feedingData"
                 android:background="@drawable/shape_blue_round"/>
         </LinearLayout>
         <LinearLayout

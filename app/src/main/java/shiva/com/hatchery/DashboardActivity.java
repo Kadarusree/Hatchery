@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import shiva.com.hatchery.feedingData.DailyFeedingData;
 import shiva.com.hatchery.oxygentemp.OxygenTemperature;
 import shiva.com.hatchery.oxygentemp.OxygenTemperatureResults;
 
@@ -20,7 +21,7 @@ import shiva.com.hatchery.oxygentemp.OxygenTemperatureResults;
 public class DashboardActivity extends Activity {
 
 
-    Button atu,checklist,status,oxygen_temp;
+    Button atu,checklist,status,oxygen_temp, daily_feedingData;
 
     Spinner tanks;
 
@@ -33,6 +34,8 @@ public class DashboardActivity extends Activity {
         setContentView(R.layout.activity_dashboard);
         atu = findViewById(R.id.btn_atu);
         checklist = findViewById(R.id.checklist);
+        daily_feedingData = findViewById(R.id.daily_feedingData);
+
         tanks = findViewById(R.id.spn_tanks);
         status = findViewById(R.id.status);
         oxygen_temp = findViewById(R.id.oxygen_temp);
@@ -48,7 +51,12 @@ public class DashboardActivity extends Activity {
                 startActivity(new Intent(getApplicationContext(), ATU_Activity.class));
             }
         });
-
+        daily_feedingData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), DailyFeedingData.class));
+            }
+        });
         checklist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
