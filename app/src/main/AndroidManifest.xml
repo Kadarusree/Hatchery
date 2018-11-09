@@ -62,7 +62,11 @@
             android:name=".EOD_CHK_History"
             android:parentActivityName=".EOD_Checkilist"
             android:screenOrientation="landscape" />
-        <activity android:name=".feedingData.FeedingHistory" android:screenOrientation="portrait" android:parentActivityName=".feedingData.DailyFeedingData"></activity>
+        <activity
+            android:name=".feedingData.FeedingHistory"
+            android:parentActivityName=".feedingData.DailyFeedingData"
+            android:screenOrientation="portrait" />
+        <activity android:name=".mortality.MortalityActivity" android:parentActivityName=".DashboardActivity" android:screenOrientation="portrait" android:label="Mortality Collection"></activity>
     </application>
 
 </manifest>

@@ -94,4 +94,25 @@
     <string name="ot_opt7">Post-Backwash Flow</string>
     <string name="ot_opt8">Adjustments</string>
 
+
+
+
+    <string name="mc_type1">POOR PERFORMER</string>
+    <string name="mc_type2">FUNGUS</string>
+    <string name="mc_type3">NON CODEABLE</string>
+    <string name="mc_type4">FRESHMORT</string>
+    <string name="mc_type5">VACCINATION</string>
+    <string name="mc_type6">HUMAN ERROR</string>
+    <string name="mc_type7">JUMPERS</string>
+    <string name="mc_type8">DEFORMITY</string>
+    <string name="mc_type9">LEATHEL SAMPLING</string>
+    <string name="mc_type10">EYE PECK</string>
+    <string name="mc_type11">PREDATORS</string>
+    <string name="mc_type12">SYSTEM</string>
+    <string name="mc_type13">DISEASE</string>
+    <string name="mc_type14">TRANSPORT</string>
+    <string name="mc_type15">HANDLING</string>
+    <string name="mc_type16">CULLED</string>
+
+
 </resources>
