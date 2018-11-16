@@ -12,6 +12,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import shiva.com.hatchery.Constants;
 import shiva.com.hatchery.R;
 import shiva.com.hatchery.pojos.ATUmodel;
 
@@ -85,60 +86,65 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.MyView
         holder.temp.setText(mAtu.getTemperature());
         holder.initial.setText(mAtu.getInitial());*/
 
-        holder.initials.setText("Initials : " + mDocuments.get(position).get("Initials").toString());
-        holder.date.setText("Date : " + mDocuments.get(position).get("Date").toString());
-        holder.total.setText(mDocuments.get(position).get("Total").toString());
-        holder.notes.setText(mDocuments.get(position).get("Notes").toString());
+
+       if (mDocuments.get(position).get("Tank_ID").equals(Constants.TANK_NUMBER)){
+           holder.initials.setText("Initials : " + mDocuments.get(position).get("Initials").toString());
+           holder.date.setText("Date : " + mDocuments.get(position).get("Date").toString());
+           holder.total.setText(mDocuments.get(position).get("Total").toString());
+           holder.notes.setText(mDocuments.get(position).get("Notes").toString());
 
 
-        String data1 = mDocuments.get(position).get("F1").toString();
-        if (!data1.equalsIgnoreCase("mm_")) {
-            StringTokenizer mStringTokenizer = new StringTokenizer(data1, "_");
-            holder.s1.setText(mStringTokenizer.nextToken());
-            holder.f1.setText(mStringTokenizer.nextToken());
-        }
+           String data1 = mDocuments.get(position).get("F1").toString();
+           if (!data1.equalsIgnoreCase("mm_")) {
+               StringTokenizer mStringTokenizer = new StringTokenizer(data1, "_");
+               holder.s1.setText(mStringTokenizer.nextToken());
+               holder.f1.setText(mStringTokenizer.nextToken());
+           }
 
-        String data2 = mDocuments.get(position).get("F2").toString();
-        if (!data2.equalsIgnoreCase("mm_")) {
-            StringTokenizer mStringTokenizer = new StringTokenizer(data2, "_");
-            holder.s2.setText(mStringTokenizer.nextToken());
-            holder.f2.setText(mStringTokenizer.nextToken());
-        }
+           String data2 = mDocuments.get(position).get("F2").toString();
+           if (!data2.equalsIgnoreCase("mm_")) {
+               StringTokenizer mStringTokenizer = new StringTokenizer(data2, "_");
+               holder.s2.setText(mStringTokenizer.nextToken());
+               holder.f2.setText(mStringTokenizer.nextToken());
+           }
 
-        String data3 = mDocuments.get(position).get("F3").toString();
-        if (!data3.equalsIgnoreCase("mm_")) {
-            StringTokenizer mStringTokenizer = new StringTokenizer(data3, "_");
-            holder.s3.setText(mStringTokenizer.nextToken());
-            holder.f3.setText(mStringTokenizer.nextToken());
-        }
+           String data3 = mDocuments.get(position).get("F3").toString();
+           if (!data3.equalsIgnoreCase("mm_")) {
+               StringTokenizer mStringTokenizer = new StringTokenizer(data3, "_");
+               holder.s3.setText(mStringTokenizer.nextToken());
+               holder.f3.setText(mStringTokenizer.nextToken());
+           }
 
-        String data4 = mDocuments.get(position).get("F4").toString();
-        if (!data4.equalsIgnoreCase("mm_")) {
-            StringTokenizer mStringTokenizer = new StringTokenizer(data4, "_");
-            holder.s4.setText(mStringTokenizer.nextToken());
-            holder.f4.setText(mStringTokenizer.nextToken());
-        }
+           String data4 = mDocuments.get(position).get("F4").toString();
+           if (!data4.equalsIgnoreCase("mm_")) {
+               StringTokenizer mStringTokenizer = new StringTokenizer(data4, "_");
+               holder.s4.setText(mStringTokenizer.nextToken());
+               holder.f4.setText(mStringTokenizer.nextToken());
+           }
 
-        String data5 = mDocuments.get(position).get("F5").toString();
-        if (!data5.equalsIgnoreCase("mm_")) {
-            StringTokenizer mStringTokenizer = new StringTokenizer(data5, "_");
-            holder.s5.setText(mStringTokenizer.nextToken());
-            holder.f5.setText(mStringTokenizer.nextToken());
-        }
+           String data5 = mDocuments.get(position).get("F5").toString();
+           if (!data5.equalsIgnoreCase("mm_")) {
+               StringTokenizer mStringTokenizer = new StringTokenizer(data5, "_");
+               holder.s5.setText(mStringTokenizer.nextToken());
+               holder.f5.setText(mStringTokenizer.nextToken());
+           }
 
-        String data6 = mDocuments.get(position).get("F6").toString();
-        if (!data6.equalsIgnoreCase("mm_")) {
-            StringTokenizer mStringTokenizer = new StringTokenizer(data6, "_");
-            holder.s6.setText(mStringTokenizer.nextToken());
-            holder.f6.setText(mStringTokenizer.nextToken());
-        }
+           String data6 = mDocuments.get(position).get("F6").toString();
+           if (!data6.equalsIgnoreCase("mm_")) {
+               StringTokenizer mStringTokenizer = new StringTokenizer(data6, "_");
+               holder.s6.setText(mStringTokenizer.nextToken());
+               holder.f6.setText(mStringTokenizer.nextToken());
+           }
 
-        String data7 = mDocuments.get(position).get("F7").toString();
-        if (!data7.equalsIgnoreCase("mm_")) {
-            StringTokenizer mStringTokenizer = new StringTokenizer(data7, "_");
-            holder.s7.setText(mStringTokenizer.nextToken());
-            holder.f7.setText(mStringTokenizer.nextToken());
-        }
+           String data7 = mDocuments.get(position).get("F7").toString();
+           if (!data7.equalsIgnoreCase("mm_")) {
+               StringTokenizer mStringTokenizer = new StringTokenizer(data7, "_");
+               holder.s7.setText(mStringTokenizer.nextToken());
+               holder.f7.setText(mStringTokenizer.nextToken());
+           }
+       }
+
+
     }
 
 

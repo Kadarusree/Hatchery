@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,11 +36,11 @@ public class MortalityActivity extends AppCompatActivity {
 
     EditText initials, date;
 
-    EditText f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16;
+    EditText f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16,f17;
 
-    EditText total, notes;
+    EditText total, notes,others;
 
-    int total_count, c1,c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12,c13, c14, c15, c16;
+    int total_count, c1,c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12,c13, c14, c15, c16,c17;
 
 
     FirebaseFirestore db;
@@ -54,7 +55,7 @@ public class MortalityActivity extends AppCompatActivity {
         date = findViewById(R.id.mc_date);
         notes = findViewById(R.id.mc_notes);
         total = findViewById(R.id.mc_total);
-
+        others = findViewById(R.id.f_other);
 
         f1 = findViewById(R.id.mc_t1);
         f2 = findViewById(R.id.mc_t2);
@@ -72,6 +73,7 @@ public class MortalityActivity extends AppCompatActivity {
         f14 = findViewById(R.id.mc_t14);
         f15 = findViewById(R.id.mc_t15);
         f16 = findViewById(R.id.mc_t16);
+        f17 = findViewById(R.id.mc_t17);
 
 
         f1.addTextChangedListener(new TextWatcher() {
@@ -93,7 +95,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -123,7 +125,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -151,7 +153,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -180,7 +182,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -210,7 +212,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -240,7 +242,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -270,7 +272,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -300,7 +302,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -330,7 +332,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -360,7 +362,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -389,7 +391,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -419,7 +421,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -449,7 +451,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -479,7 +481,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -509,7 +511,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -539,7 +541,7 @@ public class MortalityActivity extends AppCompatActivity {
                         c4 +c5 +
                         c6 +
                         c7 +
-                        c8+c9+c10+c11+c12+c13+c14+c15+c16;
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
                 total.setText(total_count + "");
             }
 
@@ -549,7 +551,34 @@ public class MortalityActivity extends AppCompatActivity {
             }
         });
 
+        f17.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (charSequence.length() > 0) {
+                    c17 = Integer.parseInt(charSequence.toString());
+                } else {
+                    c17 = 0;
+                }
+                total_count = c1 +
+                        c2 +
+                        c3 +
+                        c4 +c5 +
+                        c6 +
+                        c7 +
+                        c8+c9+c10+c11+c12+c13+c14+c15+c16+c17;
+                total.setText(total_count + "");
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         final Calendar currentDate = Calendar.getInstance();
         final Calendar date_ = Calendar.getInstance();
 
@@ -585,86 +614,107 @@ public class MortalityActivity extends AppCompatActivity {
     }
 
     public void history(View view) {
-        if (total_count!=0){
-            Map<String, Object> feedData = new HashMap<>();
-            feedData.put("Tank_ID", Constants.TANK_NUMBER);
-            feedData.put("Date", date.getText().toString());
-            feedData.put("Initials", initials.getText().toString());
-            feedData.put("Total", total.getText().toString());
-            feedData.put("Notes", notes.getText().toString());
-
-            feedData.put(getResources().getString(R.string.mc_type1), c1);
-            feedData.put(getResources().getString(R.string.mc_type2), c2);
-            feedData.put(getResources().getString(R.string.mc_type3), c3);
-            feedData.put(getResources().getString(R.string.mc_type4), c4);
-            feedData.put(getResources().getString(R.string.mc_type5), c5);
-            feedData.put(getResources().getString(R.string.mc_type6), c6);
-            feedData.put(getResources().getString(R.string.mc_type7), c7);
-            feedData.put(getResources().getString(R.string.mc_type8), c8);
-            feedData.put(getResources().getString(R.string.mc_type9), c9);
-            feedData.put(getResources().getString(R.string.mc_type10), c10);
-            feedData.put(getResources().getString(R.string.mc_type11), c12);
-            feedData.put(getResources().getString(R.string.mc_type13), c13);
-            feedData.put(getResources().getString(R.string.mc_type14), c14);
-            feedData.put(getResources().getString(R.string.mc_type15), c15);
-            feedData.put(getResources().getString(R.string.mc_type16), c16);
-
-            mProgressDialog.show();
-            db.collection("MORTALITY_COLLECTION")
-                    .add(feedData)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Log.d("", "DocumentSnapshot added with ID: " + documentReference.getId());
-                            mProgressDialog.dismiss();
-                            AlertDialog.Builder alert = new AlertDialog.Builder(MortalityActivity.this);
-                            alert.setTitle(getResources().getString(R.string.app_name));
-                            alert.setMessage("Data Saved");
-                            alert.setCancelable(false);
-                            alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    dialogInterface.dismiss();
-
-                                    f1.setText("");
-                                    f2.setText("");
-                                    f3.setText("");
-                                    f4.setText("");
-                                    f5.setText("");
-                                    f6.setText("");
-                                    f7.setText("");
-                                    f8.setText("");
-                                    f9.setText("");
-                                    f10.setText("");
-                                    f11.setText("");
-                                    f12.setText("");
-                                    f13.setText("");
-                                    f14.setText("");
-                                    f15.setText("");
-                                    f16.setText("");
-
-                                    total.setText("");
-                                    notes.setText("");
-                                }
-                            });
-                            alert.show();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            mProgressDialog.dismiss();
-                            Toast.makeText(getApplicationContext(), "Saveing Failed", Toast.LENGTH_LONG).show();
-                        }
-                    });
-
-
-        }
-        else {
-            Toast.makeText(getApplicationContext(),"Cannot Save Empty Data",Toast.LENGTH_LONG).show();
-        }
+startActivity(new Intent(getApplicationContext(),MortalityHistory.class));
     }
 
     public void mc_save(View view) {
+
+        if (validatons()){
+            if (total_count!=0){
+                Map<String, Object> feedData = new HashMap<>();
+                feedData.put("Tank_ID", Constants.TANK_NUMBER);
+                feedData.put("Date", date.getText().toString());
+                feedData.put("Initials", initials.getText().toString());
+                feedData.put("Total", total.getText().toString());
+                feedData.put("Notes", notes.getText().toString());
+
+                feedData.put(getResources().getString(R.string.mc_type1), c1);
+                feedData.put(getResources().getString(R.string.mc_type2), c2);
+                feedData.put(getResources().getString(R.string.mc_type3), c3);
+                feedData.put(getResources().getString(R.string.mc_type4), c4);
+                feedData.put(getResources().getString(R.string.mc_type5), c5);
+                feedData.put(getResources().getString(R.string.mc_type6), c6);
+                feedData.put(getResources().getString(R.string.mc_type7), c7);
+                feedData.put(getResources().getString(R.string.mc_type8), c8);
+                feedData.put(getResources().getString(R.string.mc_type9), c9);
+                feedData.put(getResources().getString(R.string.mc_type10), c10);
+                feedData.put(getResources().getString(R.string.mc_type11), c11);
+                feedData.put(getResources().getString(R.string.mc_type12), c12);
+                feedData.put(getResources().getString(R.string.mc_type13), c13);
+                feedData.put(getResources().getString(R.string.mc_type14), c14);
+                feedData.put(getResources().getString(R.string.mc_type15), c15);
+                feedData.put(getResources().getString(R.string.mc_type16), c16);
+                feedData.put("OTHERS_NAME", others.getText().toString());
+                feedData.put("OTHERS_COUNT", c17);
+
+                mProgressDialog.show();
+                db.collection("MORTALITY_COLLECTION")
+                        .add(feedData)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Log.d("", "DocumentSnapshot added with ID: " + documentReference.getId());
+                                mProgressDialog.dismiss();
+                                AlertDialog.Builder alert = new AlertDialog.Builder(MortalityActivity.this);
+                                alert.setTitle(getResources().getString(R.string.app_name));
+                                alert.setMessage("Data Saved");
+                                alert.setCancelable(false);
+                                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        dialogInterface.dismiss();
+
+                                        f1.setText("");
+                                        f2.setText("");
+                                        f3.setText("");
+                                        f4.setText("");
+                                        f5.setText("");
+                                        f6.setText("");
+                                        f7.setText("");
+                                        f8.setText("");
+                                        f9.setText("");
+                                        f10.setText("");
+                                        f11.setText("");
+                                        f12.setText("");
+                                        f13.setText("");
+                                        f14.setText("");
+                                        f15.setText("");
+                                        f16.setText("");
+                                        f17.setText("");
+
+
+                                        others.setText("");
+                                        total.setText("");
+                                        notes.setText("");
+                                    }
+                                });
+                                alert.show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                mProgressDialog.dismiss();
+                                Toast.makeText(getApplicationContext(), "Saveing Failed", Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+
+            }
+            else {
+                Toast.makeText(getApplicationContext(),"Cannot Save Empty Data",Toast.LENGTH_LONG).show();
+            }
+        }
+
+    }
+
+    public boolean validatons(){
+        boolean isValid = true;
+
+        if (!f17.getText().toString().equalsIgnoreCase("")&&others.getText().toString().equalsIgnoreCase("")){
+            isValid = false;
+            others.setError("Please enter type");
+        }
+        return isValid;
     }
 }

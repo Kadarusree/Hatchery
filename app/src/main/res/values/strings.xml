@@ -95,8 +95,6 @@
     <string name="ot_opt8">Adjustments</string>
 
 
-
-
     <string name="mc_type1">POOR PERFORMER</string>
     <string name="mc_type2">FUNGUS</string>
     <string name="mc_type3">NON CODEABLE</string>
@@ -113,6 +111,25 @@
     <string name="mc_type14">TRANSPORT</string>
     <string name="mc_type15">HANDLING</string>
     <string name="mc_type16">CULLED</string>
+
+
+
+    <string name="mc_type_code_1">PP</string>
+    <string name="mc_type_code_2">FU</string>
+    <string name="mc_type_code_3">NC</string>
+    <string name="mc_type_code_4">FR</string>
+    <string name="mc_type_code_5">VC</string>
+    <string name="mc_type_code_6">HE</string>
+    <string name="mc_type_code_7">J</string>
+    <string name="mc_type_code_8">DF</string>
+    <string name="mc_type_code_9">LS</string>
+    <string name="mc_type_code_10">EP</string>
+    <string name="mc_type_code_11">PR</string>
+    <string name="mc_type_code_12">SYS</string>
+    <string name="mc_type_code_13">DI</string>
+    <string name="mc_type_code_14">TR</string>
+    <string name="mc_type_code_15">H</string>
+    <string name="mc_type_code_16">CU</string>
 
 
 </resources>

@@ -37,14 +37,18 @@ public class FeedingHistory extends AppCompatActivity {
         feedList = findViewById(R.id.feed_list);
 
 
-        getSupportActionBar().setTitle("Feeding History : Tank"+ Constants.TANK_NUMBER);
+        getSupportActionBar().setTitle("Feeding History : Tank "+ Constants.TANK_NUMBER);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         feedList.setLayoutManager(mLayoutManager);
         feedList.addItemDecoration(new FeedingHistory.GridSpacingItemDecoration(1, dpToPx(2), true));
         feedList.setItemAnimator(new DefaultItemAnimator());
         db = FirebaseFirestore.getInstance();
-        db.collection("DAILY_FEEDING_DATA").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
+
+
+
+        db.collection("DAILY_FEEDING_DATA").whereEqualTo("Tank_ID",Constants.TANK_NUMBER).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 List<DocumentSnapshot> mDocuments = task.getResult().getDocuments();

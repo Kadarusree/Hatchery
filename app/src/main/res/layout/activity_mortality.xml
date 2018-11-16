@@ -129,7 +129,7 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
+
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -166,7 +166,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -203,7 +202,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -240,7 +238,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -277,7 +274,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -314,7 +310,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -351,7 +346,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -388,7 +382,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -425,7 +418,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -462,7 +454,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -499,7 +490,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -536,7 +526,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -573,7 +562,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -610,7 +598,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -647,7 +634,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -684,7 +670,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
@@ -703,14 +688,67 @@
 
                         >
 
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:hint="OTHER"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dp_15"
+                            android:id="@+id/f_other"
+                            android:paddingLeft="@dimen/dp_5"
+                            android:paddingRight="@dimen/dp_5"
+                            android:singleLine="true"
+                            android:maxLength="30"
+                            android:background="@drawable/bg_edittext"
+                            android:gravity="left|center"
+                            android:imeOptions="actionNext"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:layout_marginRight="@dimen/dp_5"/>
+
+
+                        <EditText
+                            android:id="@+id/mc_t17"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:layout_weight="0.4"
+                            android:background="@drawable/bg_edittext"
+                            android:gravity="left|center"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:paddingLeft="@dimen/dp_5"
+                            android:paddingRight="@dimen/dp_5"
+                            android:singleLine="true"></EditText>
+
+                    </LinearLayout>
+<View
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:background="@color/blue"
+    ></View>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="@dimen/dp_15"
+                        android:layout_marginRight="@dimen/dp_15"
+                        android:layout_weight="0.15"
+
+                        >
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.6"
                             android:gravity="left|center"
-                            android:text="Total"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/dp_15" />
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:textSize="@dimen/dp_15"
+                            android:text="Total"
+                           />
 
 
                         <EditText
@@ -721,12 +759,12 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="5"
                             android:gravity="left|center"
                             android:imeOptions="actionNext"
                             android:inputType="number"
                             android:paddingLeft="@dimen/dp_5"
                             android:paddingRight="@dimen/dp_5"
+                            android:enabled="false"
                             android:singleLine="true"></EditText>
 
                     </LinearLayout>
@@ -758,7 +796,6 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:background="@drawable/bg_edittext"
-                            android:digits="500"
                             android:gravity="left|center"
                             android:imeOptions="actionDone"
                             android:inputType="text"
@@ -778,19 +815,18 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.07">
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="@dimen/dp_5"
             android:layout_weight="0.5"
             android:background="@color/blue"
             android:gravity="center"
-            android:onClick="history"
             android:text="History"
+            android:onClick="history"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/dp_20" />
-
+            android:textSize="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_5"
+            />
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -801,6 +837,8 @@
             android:text="SAVE"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/dp_20" />
+
+
     </LinearLayout>
 
 </LinearLayout>

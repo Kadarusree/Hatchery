@@ -201,7 +201,7 @@
                     android:inputType="number"
                     android:id="@+id/feed2"
                     android:hint="Amount Fed"
-                    android:imeOptions="actionDone"></EditText>
+                    android:imeOptions="actionNext"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -408,6 +408,9 @@
                     android:hint="Amount Fed"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
+            <View android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/blue"></View>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
