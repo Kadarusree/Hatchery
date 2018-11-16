@@ -72,7 +72,7 @@
             android:parentActivityName=".DashboardActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".mortality.MortalityHistory" android:screenOrientation="landscape"></activity>
+        <activity android:name=".mortality.MortalityHistory" android:screenOrientation="landscape" android:parentActivityName=".mortality.MortalityActivity"></activity>
     </application>
 
 </manifest>
