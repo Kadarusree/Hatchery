@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:layout_height="160dp"
+    android:background="#00000000">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.44"
+                android:gravity="center"
+                android:text="INITIAL ATU"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp_15"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_weight="0.28"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center"
+                android:maxLength="6"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/dp_15"
+                android:id="@+id/edt_default_atu"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_weight="0.28"
+                android:background="@drawable/shape_green"
+                android:gravity="center"
+                android:text=" SAVE "
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dp_15"
+                android:id="@+id/atu_d_save"/>
+        </LinearLayout>
+
+</LinearLayout>
+

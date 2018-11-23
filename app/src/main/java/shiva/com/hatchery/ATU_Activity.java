@@ -1,6 +1,7 @@
 package shiva.com.hatchery;
 
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -10,8 +11,11 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -38,13 +42,16 @@ public class ATU_Activity extends AppCompatActivity {
 
     EditText date, initials, temp, atu;
     FirebaseDatabase mFirebaseDatabase;
-    DatabaseReference mDatabaseReference;
+    DatabaseReference mDatabaseReference, databaseReference2;
 
     private ProgressDialog mProgressDialog;
 
     private RecyclerView recyclerView;
     private List<ATUmodel> mAtuList;
     ATU_Adapter mAdapter;
+
+    float default_value;
+    String last_values_path=  "ATU_DEFAULT_VALUES/" + Constants.TANK_NUMBER;
 
 
     @Override
@@ -56,6 +63,32 @@ public class ATU_Activity extends AppCompatActivity {
         initials = findViewById(R.id.atu_initials);
         temp = findViewById(R.id.atu_temp);
         atu = findViewById(R.id.atu_count);
+        atu.setEnabled(false);
+
+
+        temp.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (charSequence.length()>0&&!charSequence.toString().equals(".")){
+                    atu.setText((default_value+Float.parseFloat(charSequence.toString())+""));
+                }
+                else if (charSequence.length()==0){
+                    atu.setText(default_value+"");
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         final Calendar currentDate = Calendar.getInstance();
         final Calendar date_ = Calendar.getInstance();
@@ -65,12 +98,13 @@ public class ATU_Activity extends AppCompatActivity {
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mDatabaseReference = mFirebaseDatabase.getReference(Constants.ATU + "/" + Constants.TANK_NUMBER);
-
+databaseReference2 = mFirebaseDatabase.getReference(last_values_path);
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setMessage("Saving Details...");
         mProgressDialog.setCancelable(false);
 
         initials.setText(Constants.username);
+        initials.setEnabled(false);
 
         date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +137,47 @@ public class ATU_Activity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
 
         getOffers();
+
+        databaseReference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (dataSnapshot.getValue()==null){
+                  //  Toast.makeText(getApplicationContext(),"Show Dialog",Toast.LENGTH_SHORT).show();
+                  final  Dialog d = new Dialog(ATU_Activity.this);
+                    d.setContentView(R.layout.dialog_atu);
+                    d.setCancelable(false);
+                    final EditText value = d.findViewById(R.id.edt_default_atu);
+                    Button save= d.findViewById(R.id.atu_d_save);
+
+                    save.setOnClickListener(
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    if (value.getText().toString().trim().length()>0&&!value.getText().toString().equals(".")){
+                                        databaseReference2.setValue(value.getText().toString().trim());
+                                        d.dismiss();
+                                    }
+                                    else {
+                                        value.setError("Enter Value");
+                                    }
+                                }
+                            }
+                    );
+                    d.show();
+                }
+                else {
+                    default_value = Float.parseFloat(dataSnapshot.getValue().toString());
+                    atu.setText(default_value+"");
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void save(View view) {
@@ -115,12 +190,14 @@ public class ATU_Activity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     mProgressDialog.dismiss();
+                    databaseReference2.setValue(atu.getText().toString().trim());
                     if (task.isSuccessful()) {
-                        date.setText("");
+                       // date.setText("");
                         temp.setText("");
                         atu.setText("");
 
                     }
+
                 }
             });
         } else {
