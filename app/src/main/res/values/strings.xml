@@ -113,7 +113,6 @@
     <string name="mc_type16">CULLED</string>
 
 
-
     <string name="mc_type_code_1">PP</string>
     <string name="mc_type_code_2">FU</string>
     <string name="mc_type_code_3">NC</string>
@@ -131,5 +130,27 @@
     <string name="mc_type_code_15">H</string>
     <string name="mc_type_code_16">CU</string>
 
+
+    <string name="dtr_opt1">Initials</string>
+    <string name="dtr_opt2">Date</string>
+    <string name="dtr_opt3">Treatment Product</string>
+    <string name="dtr_opt4">Treatment Style</string>
+    <string name="dtr_opt5">Notes</string>
+
+    <string-array name="treatment_products">
+        <item>Salt</item>
+        <item>Peroxide (H2O2)</item>
+        <item>Chloramine T</item>
+        <item>Parasite S</item>
+        <item>MS-222</item>
+        <item>Clove Oil</item>
+    </string-array>
+
+
+    <string-array name="treatment_style">
+        <item>Bath</item>
+        <item>Shock and Drip</item>
+        <item>Drip</item>
+    </string-array>
 
 </resources>

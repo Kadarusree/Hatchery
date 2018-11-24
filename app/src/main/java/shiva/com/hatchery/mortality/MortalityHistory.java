@@ -97,8 +97,6 @@ public class MortalityHistory extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 List<DocumentSnapshot> mDocuments = task.getResult().getDocuments();
-                String Date = mDocuments.get(0).get("Date").toString();
-                System.out.println(Date);
 
                 for (int i = 0; i < mDocuments.size(); i++) {
 

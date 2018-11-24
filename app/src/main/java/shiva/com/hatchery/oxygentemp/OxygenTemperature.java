@@ -127,9 +127,9 @@ public class OxygenTemperature extends AppCompatActivity {
             db.collection("OXYGEN_AND_TEMPERATURE")
                     .add(checklist)
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Log.d("", "DocumentSnapshot added with ID: " + documentReference.getId());
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Log.d("", "DocumentSnapshot added with ID: " + documentReference.getId());
                             mProgressDialog.dismiss();
                             Toast.makeText(getApplicationContext(), "Data Saved", Toast.LENGTH_LONG).show();
                         }

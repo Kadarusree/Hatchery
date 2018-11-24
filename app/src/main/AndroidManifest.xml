@@ -72,7 +72,21 @@
             android:parentActivityName=".DashboardActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".mortality.MortalityHistory" android:screenOrientation="landscape" android:parentActivityName=".mortality.MortalityActivity"></activity>
+        <activity
+            android:name=".mortality.MortalityHistory"
+            android:parentActivityName=".mortality.MortalityActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".drugtreatment.DrugTreatmentRecord"
+            android:label="Drug Treatment Record"
+            android:parentActivityName=".DashboardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".drugtreatment.DrugTreatmentResults"
+            android:parentActivityName=".drugtreatment.DrugTreatmentRecord"
+            android:screenOrientation="landscape"
+            android:label="Drug Treatment History"
+            ></activity>
     </application>
 
 </manifest>

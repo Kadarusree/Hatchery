@@ -1,6 +1,5 @@
-package shiva.com.hatchery.oxygentemp;
+package shiva.com.hatchery.drugtreatment;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.print.PrintAttributes;
@@ -29,31 +28,36 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
+import shiva.com.hatchery.Constants;
 import shiva.com.hatchery.R;
+import shiva.com.hatchery.oxygentemp.OxygenTemperatureResults;
 
-public class OxygenTemperatureResults extends Activity {
+public class DrugTreatmentResults extends AppCompatActivity {
 
 
     WebView mWebView;
     FirebaseFirestore db;
 
     String htmlString;
-    private ProgressDialog mProgressDialog;
-
+    ProgressDialog mProgressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_oxygen_temperature_results);
         mWebView = findViewById(R.id.mWebView);
-        mWebView.addJavascriptInterface(new WebAppInterface(this), "AndroidInterface"); // To call methods in Android from using js in the html, AndroidInterface.showToast, AndroidInterface.getAndroidVersion etc
+        mWebView.addJavascriptInterface(new DrugTreatmentResults.WebAppInterface(this), "AndroidInterface"); // To call methods in Android from using js in the html, AndroidInterface.showToast, AndroidInterface.getAndroidVersion etc
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        mWebView.setWebViewClient(new MyWebViewClient());
-        mWebView.setWebChromeClient(new MyWebChromeClient());
+        mWebView.setWebViewClient(new DrugTreatmentResults.MyWebViewClient());
+        mWebView.setWebChromeClient(new DrugTreatmentResults.MyWebChromeClient());
+
+
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setMessage("Loading Data...");
         mProgressDialog.setCancelable(false);
+
+
         htmlString = "<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<head>\n" +
@@ -69,32 +73,26 @@ public class OxygenTemperatureResults extends Activity {
                 "</head>\n" +
                 "<body>\n" +
                 "\n" +
-                "<h2>Daily Oxygen and temperature</h2>\n" +
+                "<h2>Drug Treatment Record for Tank : "+Constants.TANK_NUMBER+"</h2>\n" +
                 "\n" +
                 "<table style=\"width:100%\">\n" +
                 "  <tr>\n" +
-                "    <th> Tank Number</th>\n" +
-                "    <th> Date </th>\n" +
-
-                "    <th>" + getResources().getString(R.string.ot_opt1) + "</th>\n" +
-                "    <th>" + getResources().getString(R.string.ot_opt2) + "</th> \n" +
-                "    <th>" + getResources().getString(R.string.ot_opt3) + "</th>\n" +
-                "    <th>" + getResources().getString(R.string.ot_opt4) + "</th> \n" +
-                "    <th>" + getResources().getString(R.string.ot_opt5) + "</th>\n" +
-                "    <th>" + getResources().getString(R.string.ot_opt6) + "</th> \n" +
-                "    <th>" + getResources().getString(R.string.ot_opt7) + "</th>\n" +
-                "    <th>" + getResources().getString(R.string.ot_opt8) + "</th> \n" +
-                "    <th> Initials </th>\n" +
-
+                "    <th> Tank</th>\n" +
+                "    <th>" + getResources().getString(R.string.dtr_opt1) + "</th>\n" +
+                "    <th>" + getResources().getString(R.string.dtr_opt2) + "</th> \n" +
+                "    <th>" + getResources().getString(R.string.dtr_opt3) + "</th>\n" +
+                "    <th>" + getResources().getString(R.string.dtr_opt4) + "</th> \n" +
+                "    <th>" + getResources().getString(R.string.dtr_opt5) + "</th>\n" +
                 "  </tr>\n";
 
         db = FirebaseFirestore.getInstance();
         mProgressDialog.show();
-        db.collection("OXYGEN_AND_TEMPERATURE").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("DRUG_TREATMENT_RECORD").whereEqualTo("Tank_ID", Constants.TANK_NUMBER).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 mProgressDialog.dismiss();
                 List<DocumentSnapshot> mDocuments = task.getResult().getDocuments();
+
 
                 for (int i = 0; i < mDocuments.size(); i++) {
 
@@ -102,32 +100,24 @@ public class OxygenTemperatureResults extends Activity {
                     htmlString = htmlString +
                             "  <tr>\n" +
                             "    <td>" + mDocument.get("Tank_ID") + "</td>\n" +
-                            "    <td>" + mDocument.get("Date") + "</td>\n" +
-                            "    <td>" + mDocument.get(getResources().getString(R.string.ot_opt1)) + "</td>\n" +
-                            "    <td>" + mDocument.get(getResources().getString(R.string.ot_opt2)) + "</td>\n" +
-                            "    <td>" + mDocument.get(getResources().getString(R.string.ot_opt3)) + "</td>\n" +
-                            "    <td>" + mDocument.get(getResources().getString(R.string.ot_opt4_key)) + "</td>\n" +
-                            "    <td>" + mDocument.get(getResources().getString(R.string.ot_opt5)) + "</td>\n" +
-                            "    <td>" + mDocument.get(getResources().getString(R.string.ot_opt6_key)) + "</td>\n" +
-                            "    <td>" + mDocument.get(getResources().getString(R.string.ot_opt7)) + "</td>\n" +
-                            "    <td>" + mDocument.get(getResources().getString(R.string.ot_opt8)) + "</td>\n" +
-                            "    <td>" + mDocument.get("Initials") + "</td>\n" +
+                            "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt1)) + "</td>\n" +
+                            "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt2)) + "</td>\n" +
+                            "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt3)) + "</td>\n" +
+                            "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt4)) + "</td>\n" +
+                            "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt5)) + "</td>\n" +
                             "  </tr>\n";
                 }
 
                 htmlString = htmlString + "</table>\n" +
-                       " <input type=\"button\" value=\"Print\" onClick=\"print()\" />"+
-                        "\n" +
-                        "<script type=\"text/javascript\">\n" +
-                        "        function print() {\n" +
-                        "            AndroidInterface.print();\n" +
-                        "        }\n" +
-                        "      </script>\n"+
                         "</body>\n" +
                         "</html>\n";
 
                 System.out.println(htmlString);
                 mWebView.loadData(htmlString, "text/html", "UTF-8");
+
+                if (mDocuments.size()==0){
+                    Toast.makeText(getApplicationContext(),"No Data Found",Toast.LENGTH_SHORT).show();
+                }
 
                /* mWebView.setWebViewClient(new WebViewClient() {
 
@@ -166,7 +156,7 @@ public class OxygenTemperatureResults extends Activity {
         // Save the job object for later status checking
         mPrintJobs.add(printJob);*/
     }
-//
+    //
     public void Print(View view) {
         createWebPrintJob(mWebView);
     }
@@ -194,7 +184,7 @@ public class OxygenTemperatureResults extends Activity {
     private class MyWebViewClient extends WebViewClient {
         @Override
         public void onPageFinished (WebView view, String url) {
-          //  view.loadUrl("javascript:alert(showVersion('called by Android'))");
+            //  view.loadUrl("javascript:alert(showVersion('called by Android'))");
         }
     }
 
@@ -208,5 +198,3 @@ public class OxygenTemperatureResults extends Activity {
         }
     }
 }
-
-
