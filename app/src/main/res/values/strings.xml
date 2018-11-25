@@ -135,7 +135,13 @@
     <string name="dtr_opt2">Date</string>
     <string name="dtr_opt3">Treatment Product</string>
     <string name="dtr_opt4">Treatment Style</string>
-    <string name="dtr_opt5">Notes</string>
+    <string name="dtr_opt5">Concentration</string>
+    <string name="dtr_opt6">Amount Used(ml or g)</string>
+    <string name="dtr_opt7">Drug Lot Number</string>
+    <string name="dtr_opt8">Start Time</string>
+    <string name="dtr_opt9">End Time</string>
+    <string name="dtr_opt10">Notes</string>
+
 
     <string-array name="treatment_products">
         <item>Salt</item>

@@ -83,6 +83,11 @@ public class DrugTreatmentResults extends AppCompatActivity {
                 "    <th>" + getResources().getString(R.string.dtr_opt3) + "</th>\n" +
                 "    <th>" + getResources().getString(R.string.dtr_opt4) + "</th> \n" +
                 "    <th>" + getResources().getString(R.string.dtr_opt5) + "</th>\n" +
+                "    <th>" + getResources().getString(R.string.dtr_opt6) + "</th>\n" +
+                "    <th>" + getResources().getString(R.string.dtr_opt7) + "</th> \n" +
+                "    <th>" + getResources().getString(R.string.dtr_opt8) + "</th>\n" +
+                "    <th>" + getResources().getString(R.string.dtr_opt9) + "</th> \n" +
+                "    <th>" + getResources().getString(R.string.dtr_opt10) + "</th>\n" +
                 "  </tr>\n";
 
         db = FirebaseFirestore.getInstance();
@@ -105,6 +110,11 @@ public class DrugTreatmentResults extends AppCompatActivity {
                             "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt3)) + "</td>\n" +
                             "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt4)) + "</td>\n" +
                             "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt5)) + "</td>\n" +
+                            "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt6)) + "</td>\n" +
+                            "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt7)) + "</td>\n" +
+                            "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt8)) + "</td>\n" +
+                            "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt9)) + "</td>\n" +
+                            "    <td>" + mDocument.get(getResources().getString(R.string.dtr_opt10)) + "</td>\n" +
                             "  </tr>\n";
                 }
 

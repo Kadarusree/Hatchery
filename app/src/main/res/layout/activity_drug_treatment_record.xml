@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.55"
+            android:layout_weight="0.95"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -173,6 +173,7 @@
                     android:paddingRight="@dimen/dp_5"
                   ></Spinner>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -186,6 +187,161 @@
                     android:layout_weight="0.4"
                     android:gravity="left|center"
                     android:text="@string/dtr_opt5"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_15" />
+
+                <EditText
+                    android:id="@+id/dtr_concentration"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="left|center"
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:paddingRight="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"></EditText>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:layout_weight="0.15">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:gravity="left|center"
+                    android:text="@string/dtr_opt6"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_15" />
+
+                <EditText
+                    android:id="@+id/dtr_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="left|center"
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:paddingRight="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"></EditText>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:layout_weight="0.15">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:gravity="left|center"
+                    android:text="@string/dtr_opt7"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_15" />
+
+                <EditText
+                    android:id="@+id/dtr_lot_number"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="left|center"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:paddingRight="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"></EditText>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:layout_weight="0.15">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:gravity="left|center"
+                    android:text="@string/dtr_opt8"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_15" />
+
+                <EditText
+                    android:id="@+id/dtr_start_time"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="left|center"
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:paddingRight="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"></EditText>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:layout_weight="0.15">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:gravity="left|center"
+                    android:text="@string/dtr_opt9"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_15" />
+
+                <EditText
+                    android:id="@+id/dtr_end_time"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="left|center"
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:paddingRight="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"></EditText>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:layout_weight="0.15">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:gravity="left|center"
+                    android:text="@string/dtr_opt10"
                     android:textColor="@color/black"
                     android:textSize="@dimen/dp_15" />
 
@@ -204,13 +360,12 @@
                     android:singleLine="true"
                     android:imeOptions="actionDone"></EditText>
             </LinearLayout>
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.45"
+            android:layout_weight="0.05"
             android:orientation="vertical">
 
 

@@ -149,7 +149,15 @@ databaseReference2 = mFirebaseDatabase.getReference(last_values_path);
                     d.setCancelable(false);
                     final EditText value = d.findViewById(R.id.edt_default_atu);
                     Button save= d.findViewById(R.id.atu_d_save);
+                    Button cancel= d.findViewById(R.id.atu_d_cancel);
 
+
+                    cancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            onBackPressed();
+                        }
+                    });
                     save.setOnClickListener(
                             new View.OnClickListener() {
                                 @Override
