@@ -78,6 +78,17 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:layout_margin="@dimen/dp_5"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:text="@string/opt10"
+                android:visibility="invisible"
+                android:background="@drawable/shape_blue_round"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:gravity="center"
                 android:layout_margin="@dimen/dp_5"
@@ -89,13 +100,14 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_weight="0.25"
                 android:gravity="center"
                 android:layout_margin="@dimen/dp_5"
                 android:textColor="@color/colorWhite"
                 android:textStyle="bold"
                 android:text="@string/opt10"
                 android:id="@+id/delv_status"
+                android:visibility="invisible"
                 android:background="@drawable/shape_blue_round"/>
         </LinearLayout>
         <LinearLayout

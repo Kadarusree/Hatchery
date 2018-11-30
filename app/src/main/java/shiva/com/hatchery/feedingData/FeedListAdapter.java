@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -35,6 +36,8 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.MyView
 
         public TextView date, initials, total, notes;
 
+        public LinearLayout layout_1, layout_2, layout_3, layout_4, layout_5, layout_6, layout_7;
+
 
         public MyViewHolder(View view) {
             super(view);
@@ -59,6 +62,14 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.MyView
             f5 = view.findViewById(R.id.f_amt_5);
             f6 = view.findViewById(R.id.f_amt_6);
             f7 = view.findViewById(R.id.f_amt_7);
+
+            layout_1 = view.findViewById(R.id.layoout_1);
+            layout_2 = view.findViewById(R.id.layoout_2);
+            layout_3 = view.findViewById(R.id.layoout_3);
+            layout_4 = view.findViewById(R.id.layoout_4);
+            layout_5 = view.findViewById(R.id.layoout_5);
+            layout_6= view.findViewById(R.id.layoout_6);
+            layout_7 = view.findViewById(R.id.layoout_7);
 
 
         }
@@ -100,6 +111,9 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.MyView
                holder.s1.setText(mStringTokenizer.nextToken());
                holder.f1.setText(mStringTokenizer.nextToken());
            }
+           else {
+               holder.layout_1.setVisibility(View.GONE);
+           }
 
            String data2 = mDocuments.get(position).get("F2").toString();
            if (!data2.equalsIgnoreCase("mm_")) {
@@ -107,40 +121,53 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.MyView
                holder.s2.setText(mStringTokenizer.nextToken());
                holder.f2.setText(mStringTokenizer.nextToken());
            }
-
+           else {
+               holder.layout_2.setVisibility(View.GONE);
+           }
            String data3 = mDocuments.get(position).get("F3").toString();
            if (!data3.equalsIgnoreCase("mm_")) {
                StringTokenizer mStringTokenizer = new StringTokenizer(data3, "_");
                holder.s3.setText(mStringTokenizer.nextToken());
                holder.f3.setText(mStringTokenizer.nextToken());
            }
-
+           else {
+               holder.layout_3.setVisibility(View.GONE);
+           }
            String data4 = mDocuments.get(position).get("F4").toString();
            if (!data4.equalsIgnoreCase("mm_")) {
                StringTokenizer mStringTokenizer = new StringTokenizer(data4, "_");
                holder.s4.setText(mStringTokenizer.nextToken());
                holder.f4.setText(mStringTokenizer.nextToken());
            }
-
+           else {
+               holder.layout_4.setVisibility(View.GONE);
+           }
            String data5 = mDocuments.get(position).get("F5").toString();
            if (!data5.equalsIgnoreCase("mm_")) {
                StringTokenizer mStringTokenizer = new StringTokenizer(data5, "_");
                holder.s5.setText(mStringTokenizer.nextToken());
                holder.f5.setText(mStringTokenizer.nextToken());
            }
-
+           else {
+               holder.layout_5.setVisibility(View.GONE);
+           }
            String data6 = mDocuments.get(position).get("F6").toString();
            if (!data6.equalsIgnoreCase("mm_")) {
                StringTokenizer mStringTokenizer = new StringTokenizer(data6, "_");
                holder.s6.setText(mStringTokenizer.nextToken());
                holder.f6.setText(mStringTokenizer.nextToken());
            }
-
+           else {
+               holder.layout_6.setVisibility(View.GONE);
+           }
            String data7 = mDocuments.get(position).get("F7").toString();
            if (!data7.equalsIgnoreCase("mm_")) {
                StringTokenizer mStringTokenizer = new StringTokenizer(data7, "_");
                holder.s7.setText(mStringTokenizer.nextToken());
                holder.f7.setText(mStringTokenizer.nextToken());
+           }
+           else {
+               holder.layout_7.setVisibility(View.GONE);
            }
        }
 

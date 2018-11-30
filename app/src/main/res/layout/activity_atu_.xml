@@ -137,7 +137,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="@dimen/dp_5"
                     android:layout_marginTop="@dimen/dp_5"
-                    android:layout_weight="0.6"
+                    android:layout_weight="0.5"
                     android:background="@drawable/bg_edittext"
                     android:gravity="left|center"
                     android:inputType="numberDecimal"
@@ -145,6 +145,15 @@
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
                     android:imeOptions="actionDone"></EditText>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:src="@drawable/edit"
+                    android:onClick="edit_atu"/>
             </LinearLayout>
 
 

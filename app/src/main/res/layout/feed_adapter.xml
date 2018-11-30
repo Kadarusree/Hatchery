@@ -88,6 +88,7 @@
                     android:layout_height="30dp"
                     android:background="@color/black"
                     android:orientation="horizontal"
+                    android:id="@+id/layoout_1"
                     >
                     <TextView
                         android:layout_width="0dp"
@@ -118,6 +119,8 @@
                     android:background="@color/black"
                     android:orientation="horizontal"
                     android:layout_marginTop="@dimen/dp_2"
+                    android:id="@+id/layoout_2"
+
                     >
                     <TextView
                         android:layout_width="0dp"
@@ -150,6 +153,8 @@
                     android:background="@color/black"
                     android:orientation="horizontal"
                     android:layout_marginTop="@dimen/dp_2"
+                    android:id="@+id/layoout_3"
+
                     >
                     <TextView
                         android:layout_width="0dp"
@@ -182,6 +187,8 @@
                     android:background="@color/black"
                     android:orientation="horizontal"
                     android:layout_marginTop="@dimen/dp_2"
+                    android:id="@+id/layoout_4"
+
                     >
                     <TextView
                         android:layout_width="0dp"
@@ -214,6 +221,8 @@
                     android:background="@color/black"
                     android:orientation="horizontal"
                     android:layout_marginTop="@dimen/dp_2"
+                    android:id="@+id/layoout_5"
+
                     >
                     <TextView
                         android:layout_width="0dp"
@@ -246,6 +255,8 @@
                     android:background="@color/black"
                     android:orientation="horizontal"
                     android:layout_marginTop="@dimen/dp_2"
+                    android:id="@+id/layoout_6"
+
                     >
                     <TextView
                         android:layout_width="0dp"
@@ -278,6 +289,7 @@
                     android:background="@color/black"
                     android:orientation="horizontal"
                     android:layout_marginTop="@dimen/dp_2"
+                    android:id="@+id/layoout_7"
                     >
                     <TextView
                         android:layout_width="0dp"

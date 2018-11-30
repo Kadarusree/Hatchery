@@ -229,6 +229,37 @@ databaseReference2 = mFirebaseDatabase.getReference(last_values_path);
         }, currentDate.get(Calendar.YEAR), currentDate.get(Calendar.MONTH), currentDate.get(Calendar.DATE)).show();
     }
 
+    public void edit_atu(View view) {
+        final  Dialog d = new Dialog(ATU_Activity.this);
+        d.setContentView(R.layout.dialog_atu);
+        d.setCancelable(false);
+        final EditText value = d.findViewById(R.id.edt_default_atu);
+        Button save= d.findViewById(R.id.atu_d_save);
+        Button cancel= d.findViewById(R.id.atu_d_cancel);
+        value.setText(atu.getText().toString());
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+        save.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (value.getText().toString().trim().length()>0&&!value.getText().toString().equals(".")){
+                            databaseReference2.setValue(value.getText().toString().trim());
+                            d.dismiss();
+                        }
+                        else {
+                            value.setError("Enter Value");
+                        }
+                    }
+                }
+        );
+        d.show();
+    }
+
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
         private int spanCount;
