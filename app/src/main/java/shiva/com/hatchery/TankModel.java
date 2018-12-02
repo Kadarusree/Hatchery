@@ -2,12 +2,29 @@ package shiva.com.hatchery;
 
 public class TankModel {
 
-    String tank_number, species, group, entry_date, last_sample_date, average_Weight, biomass, source_tank;
+    String tank_number;
+    String species;
+    String group;
+    String entry_date;
+    String last_sample_date;
+    String average_Weight;
+    String biomass;
+    String source_tank;
+
+    public String getInv_number() {
+        return inv_number;
+    }
+
+    public void setInv_number(String inv_number) {
+        this.inv_number = inv_number;
+    }
+
+    String inv_number;
 
     public TankModel() {
     }
 
-    public TankModel(String tank_number, String species, String group, String entry_date, String last_sample_date, String average_Weight, String biomass, String source_tank) {
+    public TankModel(String tank_number, String species, String group, String entry_date, String last_sample_date, String average_Weight, String biomass, String source_tank, String inv_number) {
         this.tank_number = tank_number;
         this.species = species;
         this.group = group;
@@ -16,6 +33,7 @@ public class TankModel {
         this.average_Weight = average_Weight;
         this.biomass = biomass;
         this.source_tank = source_tank;
+        this.inv_number = inv_number;
     }
 
     public String getTank_number() {

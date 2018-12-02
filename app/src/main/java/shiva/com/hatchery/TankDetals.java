@@ -8,6 +8,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -20,12 +22,19 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 public class TankDetals extends AppCompatActivity {
@@ -35,11 +44,15 @@ public class TankDetals extends AppCompatActivity {
 
     TextView btnSave;
 
+    EditText current_inv;
+
 
     FirebaseDatabase mFirebaseDatabase;
     DatabaseReference mDatabaseReference;
 
     private ProgressDialog mProgressDialog;
+    FirebaseFirestore db;
+    long mortality_count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,17 +68,22 @@ public class TankDetals extends AppCompatActivity {
         avg_weight = (EditText) findViewById(R.id.edt_avg_weight);
         biomass = (EditText) findViewById(R.id.edt_biomass);
         source_tank = (EditText) findViewById(R.id.edt_source_tank);
+        current_inv = (EditText) findViewById(R.id.edt_current_inventory_number);
+        current_inv.setEnabled(false);
         btnSave = findViewById(R.id.tv_save_tank_details);
 
         tank_number.setText(Constants.TANK_NUMBER);
         tank_number.setEnabled(false);
-
+        mProgressDialog = new ProgressDialog(this);
+        mProgressDialog.setMessage("Please Wait...");
+        mProgressDialog.setCancelable(false);
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mDatabaseReference = mFirebaseDatabase.getReference(Constants.TANK_DETAILS);
+        db = FirebaseFirestore.getInstance();
 
-        mProgressDialog = new ProgressDialog(this);
-        mProgressDialog.setMessage("Saving Tank Details...");
-        mProgressDialog.setCancelable(false);
+
+        getMortalityData();
+
 
         entry_date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,11 +118,37 @@ public class TankDetals extends AppCompatActivity {
         });
 
 
+        avg_weight.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (!inventory_number.getText().toString().trim().isEmpty() && !charSequence.toString().isEmpty()) {
+                    float biomass_ = Float.parseFloat(avg_weight.getText().toString()) * Integer.parseInt(inventory_number.getText().toString());
+                    biomass.setText(biomass_ + "");
+
+                } else {
+                    biomass.setText("0");
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (validations()){
+                if (validations()) {
                     mProgressDialog.show();
                     TankModel tankModel = new TankModel(tank_number.getText().toString().trim(),
                             species.getText().toString().trim(),
@@ -113,11 +157,10 @@ public class TankDetals extends AppCompatActivity {
                             last_sample_date.getText().toString().trim(),
                             avg_weight.getText().toString().trim(),
                             biomass.getText().toString().trim(),
-                            source_tank.getText().toString().trim());
+                            source_tank.getText().toString().trim(), inventory_number.getText().toString());
 
-                    String key = mDatabaseReference.push().getKey();
 
-                    mDatabaseReference.child(key).setValue(tankModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    mDatabaseReference.child(Constants.TANK_NUMBER).setValue(tankModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             mProgressDialog.dismiss();
@@ -131,15 +174,16 @@ public class TankDetals extends AppCompatActivity {
                                     public void onClick(DialogInterface dialogInterface, int i) {
                                         dialogInterface.dismiss();
 
-                                        tank_number.setText("");
-                                        species.setText("");
-                                        group.setText("");
-                                        entry_date.setText("");
-                                        last_sample_date.setText("");
-                                        inventory_number.setText("");
-                                        avg_weight.setText("");
-                                        biomass.setText("");
-                                        source_tank.setText("");
+                                        tank_number.setEnabled(false);
+                                        species.setEnabled(false);
+                                        group.setEnabled(false);
+                                        entry_date.setEnabled(false);
+                                        last_sample_date.setEnabled(false);
+                                        inventory_number.setEnabled(false);
+                                        avg_weight.setEnabled(false);
+                                        biomass.setEnabled(false);
+                                        source_tank.setEnabled(false);
+                                        current_inv.setEnabled(false);
                                     }
                                 });
                                 ad.setCancelable(false);
@@ -148,11 +192,68 @@ public class TankDetals extends AppCompatActivity {
 
                         }
                     });
-                }
-                else {
+                } else {
                     Toast.makeText(getApplicationContext(), "Enter All Fields", Toast.LENGTH_LONG).show();
                 }
 
+            }
+        });
+    }
+
+    private void getMortalityData() {
+        mProgressDialog.show();
+        db.collection("MORTALITY_COLLECTION").whereEqualTo("Tank_ID", Constants.TANK_NUMBER).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                mProgressDialog.dismiss();
+                mortality_count = 0;
+                List<DocumentSnapshot> mDocuments = task.getResult().getDocuments();
+                for (int i = 0; i < mDocuments.size(); i++) {
+                    DocumentSnapshot mDocument = mDocuments.get(i);
+                    mortality_count = mortality_count + Integer.parseInt(mDocument.get("Total").toString());
+                }
+                mProgressDialog.show();
+                mDatabaseReference.child(Constants.TANK_NUMBER).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        mProgressDialog.dismiss();
+                        if (dataSnapshot.getValue() != null) {
+                            TankModel mTank = dataSnapshot.getValue(TankModel.class);
+
+                            tank_number.setText(mTank.getTank_number());
+                            species.setText(mTank.getSpecies());
+                            group.setText(mTank.getGroup());
+                            entry_date.setText(mTank.getEntry_date());
+                            last_sample_date.setText(mTank.getLast_sample_date());
+                            inventory_number.setText(mTank.getInv_number());
+                            long inv_count = Long.parseLong(inventory_number.getText().toString()) - mortality_count;
+                            inventory_number.setText(inventory_number.getText().toString());
+                            avg_weight.setText(mTank.getAverage_Weight());
+                            current_inv.setText(inv_count + "");
+                            float biomass_ = Float.parseFloat(mTank.getAverage_Weight()) * inv_count;
+
+                            biomass.setText(biomass_ + "");
+                            source_tank.setText(mTank.getSource_tank());
+
+                            tank_number.setEnabled(false);
+                            species.setEnabled(false);
+                            group.setEnabled(false);
+                            entry_date.setEnabled(false);
+                            last_sample_date.setEnabled(false);
+                            inventory_number.setEnabled(false);
+                            avg_weight.setEnabled(false);
+                            biomass.setEnabled(false);
+                            source_tank.setEnabled(false);
+                            current_inv.setEnabled(false);
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
     }
@@ -184,9 +285,7 @@ public class TankDetals extends AppCompatActivity {
         }, currentDate.get(Calendar.YEAR), currentDate.get(Calendar.MONTH), currentDate.get(Calendar.DATE)).show();
     }
 
-
     public boolean validations() {
-
 
 
         boolean valid = true;
@@ -202,5 +301,20 @@ public class TankDetals extends AppCompatActivity {
             valid = false;
         }
         return valid;
+    }
+
+    public void edit_avg_weight(View view) {
+        avg_weight.setEnabled(true);
+    }
+
+    public void edit_fields(View view) {
+        species.setEnabled(true);
+        group.setEnabled(true);
+        entry_date.setEnabled(true);
+        last_sample_date.setEnabled(true);
+        inventory_number.setEnabled(true);
+        avg_weight.setEnabled(true);
+        biomass.setEnabled(true);
+        source_tank.setEnabled(true);
     }
 }
