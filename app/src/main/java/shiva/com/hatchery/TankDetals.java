@@ -2,6 +2,7 @@ package shiva.com.hatchery;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
@@ -14,8 +15,12 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -33,6 +38,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
@@ -54,6 +60,8 @@ public class TankDetals extends AppCompatActivity {
     FirebaseFirestore db;
     long mortality_count;
 
+    Spinner spn_species;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +77,7 @@ public class TankDetals extends AppCompatActivity {
         biomass = (EditText) findViewById(R.id.edt_biomass);
         source_tank = (EditText) findViewById(R.id.edt_source_tank);
         current_inv = (EditText) findViewById(R.id.edt_current_inventory_number);
+        spn_species = findViewById(R.id.spn_species);
         current_inv.setEnabled(false);
         btnSave = findViewById(R.id.tv_save_tank_details);
 
@@ -246,6 +255,14 @@ public class TankDetals extends AppCompatActivity {
                             source_tank.setEnabled(false);
                             current_inv.setEnabled(false);
 
+                            species.setVisibility(View.VISIBLE);
+                            spn_species.setVisibility(View.GONE);
+
+                        }
+                        else {
+                            loadSpecies();
+                            species.setVisibility(View.GONE);
+                            spn_species.setVisibility(View.VISIBLE);
                         }
                     }
 
@@ -316,5 +333,99 @@ public class TankDetals extends AppCompatActivity {
         avg_weight.setEnabled(true);
       //  biomass.setEnabled(true);
         source_tank.setEnabled(true);
+
+
+        spn_species.setVisibility(View.VISIBLE);
+        species.setVisibility(View.GONE);
+        loadSpecies();
+    }
+
+    public void add_speice(View view) {
+
+       final Dialog d = new Dialog(TankDetals.this);
+        d.setCancelable(false);
+        d.setContentView(R.layout.dialog_species);
+        Button cancel = (Button)d.findViewById(R.id.d_cancel);
+        Button save = (Button)d.findViewById(R.id.d_save);
+       final EditText name = (EditText)d.findViewById(R.id.edt_specie_name);
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                d.dismiss();
+            }
+        });
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              final FirebaseDatabase mDb = FirebaseDatabase.getInstance();
+              DatabaseReference mRef = mDb.getReference("Species");
+              String key = mRef.push().getKey();
+              if (name.getText().toString().trim().isEmpty()){
+
+              }
+              else {
+                  mProgressDialog.show();
+                  mRef.child(key).setValue(name.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                      @Override
+                      public void onComplete(@NonNull Task<Void> task) {
+                          mProgressDialog.dismiss();
+                          if (task.isSuccessful()){
+
+                              Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_LONG).show();
+                          }
+                          else {
+                              Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_LONG).show();
+
+                          }
+                      }
+                  });
+              }
+            }
+        });
+        d.show();
+
+    }
+
+
+    ArrayList<String> species_list;
+
+    public void loadSpecies(){
+        species_list = new ArrayList<>();
+        final FirebaseDatabase mDb = FirebaseDatabase.getInstance();
+        DatabaseReference mRef = mDb.getReference("Species");
+        mProgressDialog.show();
+        mRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                mProgressDialog.dismiss();
+                species_list.clear();
+                if (dataSnapshot!=null){
+                    for (DataSnapshot dpst :  dataSnapshot.getChildren())
+                    species_list.add(dpst.getValue(String.class));
+                }
+
+                ArrayAdapter<String> adp = new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_dropdown_item_1line,species_list);
+                spn_species.setAdapter(adp);
+                spn_species.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        species.setText(species_list.get(i));
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
+                adp.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }

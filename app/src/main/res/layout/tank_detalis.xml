@@ -76,7 +76,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="@dimen/dp_5"
                     android:layout_marginTop="@dimen/dp_5"
-                    android:layout_weight="0.6"
+                    android:layout_weight="0.5"
                     android:gravity="left|center"
                     android:background="@drawable/bg_edittext"
                     android:paddingLeft="@dimen/dp_5"
@@ -84,6 +84,29 @@
                     android:id="@+id/edt_species"
                     android:singleLine="true"
                     android:imeOptions="actionNext"/>
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center"
+                    style="@style/SpinnerTheme"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:maxLines="1"
+                    android:id="@+id/spn_species"
+                    android:singleLine="true"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1"
+                    android:src="@drawable/add"
+                    android:onClick="add_speice"/>
+
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
