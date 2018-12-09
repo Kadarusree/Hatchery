@@ -112,7 +112,7 @@
                     android:maxLength="4"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:imeOptions="actionNext"></EditText>
+                    android:imeOptions="actionDone"></EditText>
             </LinearLayout>
 
             <LinearLayout

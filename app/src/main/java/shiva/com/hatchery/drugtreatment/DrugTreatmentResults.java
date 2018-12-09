@@ -52,6 +52,8 @@ public class DrugTreatmentResults extends AppCompatActivity {
         mWebView.setWebViewClient(new DrugTreatmentResults.MyWebViewClient());
         mWebView.setWebChromeClient(new DrugTreatmentResults.MyWebChromeClient());
 
+        getSupportActionBar().setTitle("Drug Treatment Record : Tank "+ Constants.TANK_NUMBER);
+
 
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setMessage("Loading Data...");

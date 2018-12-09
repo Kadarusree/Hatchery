@@ -314,7 +314,7 @@ public class TankDetals extends AppCompatActivity {
         last_sample_date.setEnabled(true);
         inventory_number.setEnabled(true);
         avg_weight.setEnabled(true);
-        biomass.setEnabled(true);
+      //  biomass.setEnabled(true);
         source_tank.setEnabled(true);
     }
 }

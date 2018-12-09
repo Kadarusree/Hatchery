@@ -30,7 +30,7 @@ import java.util.List;
 
 import shiva.com.hatchery.R;
 
-public class EOD_CHK_History extends Activity {
+public class EOD_CHK_History extends AppCompatActivity {
 
 
     WebView mWebView;
@@ -49,6 +49,9 @@ public class EOD_CHK_History extends Activity {
         webSettings.setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new MyWebViewClient());
         mWebView.setWebChromeClient(new MyWebChromeClient());
+
+        getSupportActionBar().setTitle("End of the day Checklist : Tank "+ Constants.TANK_NUMBER);
+
 
         htmlString = "<!DOCTYPE html>\n" +
                 "<html>\n" +
@@ -90,7 +93,7 @@ public class EOD_CHK_History extends Activity {
                 "  </tr>\n";
 
         db = FirebaseFirestore.getInstance();
-        db.collection("EOD_CHECKLIST").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("EOD_CHECKLIST").whereEqualTo("Tank_ID", Constants.TANK_NUMBER).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 List<DocumentSnapshot> mDocuments = task.getResult().getDocuments();

@@ -26,6 +26,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
+import shiva.com.hatchery.Constants;
 import shiva.com.hatchery.R;
 import shiva.com.hatchery.oxygentemp.OxygenTemperatureResults;
 
@@ -47,6 +48,8 @@ public class MortalityHistory extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new MyWebViewClient());
         mWebView.setWebChromeClient(new MyWebChromeClient());
+
+        getSupportActionBar().setTitle("Mortality Collection : Tank "+ Constants.TANK_NUMBER);
 
         htmlString = "<!DOCTYPE html>\n" +
                 "<html>\n" +
@@ -93,7 +96,7 @@ public class MortalityHistory extends AppCompatActivity {
                 "  </tr>\n";
 
         db = FirebaseFirestore.getInstance();
-        db.collection("MORTALITY_COLLECTION").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("MORTALITY_COLLECTION").whereEqualTo("Tank_ID", Constants.TANK_NUMBER).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 List<DocumentSnapshot> mDocuments = task.getResult().getDocuments();

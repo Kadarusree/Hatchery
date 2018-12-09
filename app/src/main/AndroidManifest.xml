@@ -57,7 +57,8 @@
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".oxygentemp.OxygenTemperatureResults"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:parentActivityName=".oxygentemp.OxygenTemperature"/>
         <activity
             android:name=".EOD_CHK_History"
             android:parentActivityName=".EOD_Checkilist"

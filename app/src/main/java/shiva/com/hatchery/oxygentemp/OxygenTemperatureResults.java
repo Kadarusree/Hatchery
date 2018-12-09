@@ -29,9 +29,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
+import shiva.com.hatchery.Constants;
 import shiva.com.hatchery.R;
 
-public class OxygenTemperatureResults extends Activity {
+public class OxygenTemperatureResults extends AppCompatActivity {
 
 
     WebView mWebView;
@@ -45,6 +46,9 @@ public class OxygenTemperatureResults extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_oxygen_temperature_results);
+
+        getSupportActionBar().setTitle("Oxygen and Temperature Results : Tank "+ Constants.TANK_NUMBER);
+
         mWebView = findViewById(R.id.mWebView);
         mWebView.addJavascriptInterface(new WebAppInterface(this), "AndroidInterface"); // To call methods in Android from using js in the html, AndroidInterface.showToast, AndroidInterface.getAndroidVersion etc
         WebSettings webSettings = mWebView.getSettings();
@@ -90,7 +94,7 @@ public class OxygenTemperatureResults extends Activity {
 
         db = FirebaseFirestore.getInstance();
         mProgressDialog.show();
-        db.collection("OXYGEN_AND_TEMPERATURE").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("OXYGEN_AND_TEMPERATURE").whereEqualTo("Tank_ID", Constants.TANK_NUMBER).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 mProgressDialog.dismiss();
