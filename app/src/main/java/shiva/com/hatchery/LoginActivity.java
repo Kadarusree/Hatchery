@@ -60,8 +60,8 @@ public class LoginActivity extends Activity {
         password = findViewById(R.id.password);
 
 
-        username.setText("spanthul@flemingcollege.ca");
-        password.setText("1234567");
+        username.setText("srikanth@flemingcollege.ca");
+        password.setText("123456");
 
         mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabse = FirebaseDatabase.getInstance();

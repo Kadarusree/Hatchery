@@ -159,4 +159,38 @@
         <item>Drip</item>
     </string-array>
 
+
+
+    <string name="mrng_chklist_opt1">Lights on</string>
+    <string name="mrng_chklist_opt2">Safety Check</string>
+    <string name="mrng_chklist_opt3">Pump Sets Running- </string>
+
+    <string name="mrng_chklist_opt3_1">1-6</string>
+    <string name="mrng_chklist_opt3_2">7-18</string>
+    <string name="mrng_chklist_opt3_3">Incubation</string>
+
+    <string name="mrng_chklist_opt4">Blow off Moisture From air receiver</string>
+    <string name="mrng_chklist_opt5">O2 generator -</string>
+    <string name="mrng_chklist_opt5_1">Receiver Tank PSI</string>
+    <string name="mrng_chklist_opt5_2">Airsep feed pressure PSI</string>
+
+    <string name="mrng_chklist_opt6">Well flow</string>
+    <string name="mrng_chklist_opt7">Blower on degasser</string>
+    <string name="mrng_chklist_opt8">Iron Trench water level</string>
+    <string name="mrng_chklist_opt9">Bio Trench Water level</string>
+    <string name="mrng_chklist_opt10">Waste Sump level</string>
+    <string name="mrng_chklist_opt11">Bio filter bed moving</string>
+    <string name="mrng_chklist_opt12">Blowers running</string>
+    <string name="mrng_chklist_opt13">Drum filter working</string>
+    <string name="mrng_chklist_opt14">UVs running</string>
+    <string name="mrng_chklist_opt15">Visual on tank flows</string>
+    <string name="mrng_chklist_opt16">Visual on fish behaviour</string>
+    <string name="mrng_chklist_opt17">Feeders fed out-record non functioning</string>
+    <string name="mrng_chklist_opt18">Footbath disinfectant topped up</string>
+    <string name="mrng_chklist_opt19">Incubator flow checked</string>
+    <string name="mrng_chklist_opt20">Boiler running, thermostat on</string>
+
+
+
+
 </resources>

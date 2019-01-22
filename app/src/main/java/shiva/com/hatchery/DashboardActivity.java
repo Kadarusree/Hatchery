@@ -87,7 +87,7 @@ public class DashboardActivity extends Activity {
                 morning.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(getApplicationContext(), Morning_CheckList.class));
                     }
                 });
 
