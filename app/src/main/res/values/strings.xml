@@ -160,7 +160,6 @@
     </string-array>
 
 
-
     <string name="mrng_chklist_opt1">Lights on</string>
     <string name="mrng_chklist_opt2">Safety Check</string>
     <string name="mrng_chklist_opt3">Pump Sets Running- </string>
@@ -189,8 +188,6 @@
     <string name="mrng_chklist_opt18">Footbath disinfectant topped up</string>
     <string name="mrng_chklist_opt19">Incubator flow checked</string>
     <string name="mrng_chklist_opt20">Boiler running, thermostat on</string>
-
-
 
 
 </resources>
