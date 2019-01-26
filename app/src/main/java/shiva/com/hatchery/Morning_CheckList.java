@@ -258,7 +258,6 @@ public class Morning_CheckList extends AppCompatActivity {
             }
         });
 
-        OverScrollDecoratorHelper.setUpOverScroll()
         f18_yes.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
