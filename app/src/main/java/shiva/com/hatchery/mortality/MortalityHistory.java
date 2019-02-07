@@ -133,43 +133,36 @@ public class MortalityHistory extends AppCompatActivity {
                 }
 
                 htmlString = htmlString + "</table>\n" +
+                        "<p></p>"+
+                        "<table style=\"width:100%\">\n" +
                         "\n" +
-                       "<p>"+getResources().getString(R.string.mc_type_code_1)+"-"+getResources().getString(R.string.mc_type1)+
-                        "&#160&#160&#160&#160&#160" +
-                        getResources().getString(R.string.mc_type_code_2)+"-"+getResources().getString(R.string.mc_type2)+
-                        "&#160&#160&#160&#160&#160" +
-                        getResources().getString(R.string.mc_type_code_3)+"-"+getResources().getString(R.string.mc_type3)+
-                        "&#160&#160&#160&#160&#160" +
-                        getResources().getString(R.string.mc_type_code_4)+"-"+getResources().getString(R.string.mc_type4)+
-                        "&#160&#160&#160&#160&#160" +
-                        "</p>"+
-                        "<p>"+getResources().getString(R.string.mc_type_code_5)+"-"+getResources().getString(R.string.mc_type5)+
-                        "&#160&#160&#160&#160&#160" +
-                        getResources().getString(R.string.mc_type_code_6)+"-"+getResources().getString(R.string.mc_type6)+
-                        "&#160&#160&#160&#160&#160" +
-                        getResources().getString(R.string.mc_type_code_7)+"-"+getResources().getString(R.string.mc_type7)+
-                        "&#160&#160&#160&#160&#160" +
-                        getResources().getString(R.string.mc_type_code_8)+"-"+getResources().getString(R.string.mc_type8)+
-                        "&#160&#160&#160&#160&#160" +
-                        "</p>"+
-                        "<p>"+getResources().getString(R.string.mc_type_code_9)+"-"+getResources().getString(R.string.mc_type9)+
-                        "&#160&#160&#160&#160&#160" +
-                        getResources().getString(R.string.mc_type_code_10)+"-"+getResources().getString(R.string.mc_type10)+
-                        "&#160&#160&#160&#160&#160" +
-                        getResources().getString(R.string.mc_type_code_11)+"-"+getResources().getString(R.string.mc_type11)+
-                        "&#160&#160&#160&#160&#160" +
-                        getResources().getString(R.string.mc_type_code_12)+"-"+getResources().getString(R.string.mc_type12)+
-                        "&#160&#160&#160&#160&#160" +
-                        "</p>"+
-                        "<p>"+getResources().getString(R.string.mc_type_code_13)+"-"+getResources().getString(R.string.mc_type13)+
-                        "&#160&#160&#160&#160&#160" +
-                        getResources().getString(R.string.mc_type_code_14)+"-"+getResources().getString(R.string.mc_type14)+
-                        "&#160&#160&#160&#160&#160" +
-                        getResources().getString(R.string.mc_type_code_15)+"-"+getResources().getString(R.string.mc_type15)+
-                        "&#160&#160&#160&#160&#160" +
-                        getResources().getString(R.string.mc_type_code_16)+"-"+getResources().getString(R.string.mc_type16)+
-                        "&#160&#160&#160&#160&#160" +
-                        "</p>"+
+                        "  <tr>\n" +
+                        "    <td>PP-POOR PERFORMER</td>\n" +
+                        "    <td>FU-FUNGUS</td>\n" +
+                        "    <td>NC-NON CODEABLE</td>\n" +
+                        "    <td>FR-FRESHMORT</td>\n" +
+                        "  </tr>\n" +
+                        "  <tr>\n" +
+                        "    <td>VC-VACCINATION</td>\n" +
+                        "    <td>HE-HUMAN ERROR</td>\n" +
+                        "    <td>J-JUMPERS</td>\n" +
+                        "    <td>DF-DEFORMITY</td>\n" +
+                        "  </tr>\n" +
+                        "  \n" +
+                        "  <tr>\n" +
+                        "    <td>LS-LEATHEL SAMPLING</td>\n" +
+                        "    <td>EP-EYE PECK</td>\n" +
+                        "    <td>PR-PREDATOR</td>\n" +
+                        "    <td>DF-DEFORMITY</td>\n" +
+                        "  </tr>\n" +
+                        "  <tr>\n" +
+                        "    <td>DI-DISEASE</td>\n" +
+                        "    <td>TR-TRAN</td>\n" +
+                        "    <td>H-HANDLING</td>\n" +
+                        "    <td>CU-CULLED</td>\n" +
+                        "  </tr>\n" +
+                        " \n" +
+                        "</table>"+
                         "</body>\n" +
                         "</html>\n";
 

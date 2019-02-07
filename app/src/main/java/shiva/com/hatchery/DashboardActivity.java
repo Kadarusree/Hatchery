@@ -123,4 +123,8 @@ public class DashboardActivity extends Activity {
             }
         });
     }
+
+    public void aboutUS(View view) {
+        startActivity(new Intent(getApplicationContext(), AboutUS.class));
+    }
 }

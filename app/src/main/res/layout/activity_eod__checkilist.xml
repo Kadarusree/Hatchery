@@ -267,7 +267,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/eod_chkl_opt4"
                             android:textColor="@color/black"
@@ -319,7 +319,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/eod_chkl_opt5"
                             android:textColor="@color/black"
@@ -371,7 +371,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/eod_chkl_opt6"
                             android:textColor="@color/black"
@@ -422,7 +422,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/eod_chkl_opt7"
                             android:textColor="@color/black"
@@ -474,7 +474,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/eod_chkl_opt8"
                             android:textColor="@color/black"
@@ -525,7 +525,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/eod_chkl_opt9"
                             android:textColor="@color/black"
@@ -576,7 +576,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/eod_chkl_opt10"
                             android:textColor="@color/black"
@@ -628,7 +628,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/eod_chkl_opt11"
                             android:textColor="@color/black"
@@ -679,7 +679,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/eod_chkl_opt12"
                             android:textColor="@color/black"
@@ -731,7 +731,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/eod_chkl_opt13"
                             android:textColor="@color/black"

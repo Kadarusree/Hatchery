@@ -167,21 +167,21 @@ public class Morning_CheckList_History extends AppCompatActivity {
                     f20_yes.setText(mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt20)));
 
 
-                    String s = mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt3_1).replace("_"," AND "));
-                    f3_1.setText(s.replace("_"," AND "));
+                    String s = mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt3_1));
+                    f3_1.setText(s);
 
 
-                    s = mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt3_2).replace("_"," AND "));
-                    f3_3.setText(s.replace("_"," AND "));
+                    s = mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt3_2));
+                    f3_3.setText(s);
 
-                    s = mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt3_3).replace("_"," AND "));
-                    f3_5.setText(s.replace("_"," AND "));
+                    s = mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt3_3));
+                    f3_5.setText(s);
 
-                    s = mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt5_1).replace("_"," AND "));
-                    f5_1.setText(s.replace("_"," , "));
+                    s = mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt5_1));
+                    f5_1.setText(s);
 
-                    s = mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt5_2).replace("_"," AND "));
-                    f5_3.setText(s.replace("_"," , "));
+                    s = mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt5_2));
+                    f5_3.setText(s);
 
                     comment.setText(mDocuments.get(0).getString("Comment"));
                     initials.setText(mDocuments.get(0).getString("Initials"));

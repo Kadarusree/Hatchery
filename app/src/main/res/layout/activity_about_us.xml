@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="shiva.com.hatchery.AboutUS">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dp_15"
+        android:paddingLeft="@dimen/dp_10"
+        android:gravity="left"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:text="Developed For Hatchery Maintenance\n\nDesigned by Students of Applied Projects
+\n\n
+-Shivakumar Panthulu (10187091)\n
+-RakeshChowdary Nannaka (10186980)\n
+-Goutham Lekkala (10185902)\n"
+        android:typeface="monospace"/>
+
+</android.support.constraint.ConstraintLayout>

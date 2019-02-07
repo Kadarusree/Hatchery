@@ -186,17 +186,17 @@ public class Morning_CheckList extends AppCompatActivity {
         f3_1_yes = findViewById(R.id.mrng_f3_1_yes);
         f3_1_no = findViewById(R.id.mrng_f3_1_no);
         f3_1_yes.setChecked(true);
-        S3_1 = "";
+        S3_1 = "1";
 
         f3_2_yes = findViewById(R.id.mrng_f3_2_yes);
         f3_2_no = findViewById(R.id.mrng_f3_2_no);
         f3_2_yes.setChecked(true);
-        S3_2 = "";
+        S3_2 = "1";
 
         f3_3_no = findViewById(R.id.mrng_f3_3_no);
         f3_3_yes = findViewById(R.id.mrng_f3_3_yes);
         f3_3_yes.setChecked(true);
-        S3_3 = "";
+        S3_3 = "1";
 
 
         f5_1 = findViewById(R.id.mrng_f5_1);
