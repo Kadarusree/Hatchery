@@ -101,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <LinearLayout
+                   <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_marginLeft="@dimen/dp_15"
@@ -210,42 +210,36 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.5"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/mrng_chklist_opt3_1"
                             android:textColor="@color/black"
                             android:textSize="@dimen/dp_15" />
 
-                        <EditText
-                            android:id="@+id/mrng_f3_1"
-                            android:singleLine="true"
-                            android:imeOptions="actionNext"
+                        <CheckBox
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:layout_marginBottom="@dimen/dp_5"
                             android:layout_marginTop="@dimen/dp_5"
-                            android:layout_weight="0.25"
-                            android:background="@drawable/bg_edittext"
                             android:gravity="left|center"
-                            android:paddingLeft="@dimen/dp_5"
-                            android:paddingRight="@dimen/dp_5"
-                            android:layout_marginRight="@dimen/dp_5"></EditText>
-                        <EditText
-                            android:id="@+id/mrng_f3_2"
-                            android:singleLine="true"
-                            android:imeOptions="actionNext"
+                            android:text="YES"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f3_1_yes"/>
+                        <CheckBox
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:layout_marginBottom="@dimen/dp_5"
                             android:layout_marginTop="@dimen/dp_5"
-                            android:layout_weight="0.25"
-                            android:background="@drawable/bg_edittext"
                             android:gravity="left|center"
-                            android:paddingLeft="@dimen/dp_5"
-                            android:paddingRight="@dimen/dp_5"></EditText>
+                            android:text="NO"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f3_1_no"/>
+
 
                     </LinearLayout>
-                    <LinearLayout
+                   <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_marginLeft="@dimen/dp_15"
@@ -255,39 +249,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.5"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/mrng_chklist_opt3_2"
                             android:textColor="@color/black"
                             android:textSize="@dimen/dp_15" />
 
-                        <EditText
-                            android:id="@+id/mrng_f3_3"
-                            android:singleLine="true"
-                            android:imeOptions="actionNext"
+                        <CheckBox
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:layout_marginBottom="@dimen/dp_5"
                             android:layout_marginTop="@dimen/dp_5"
-                            android:layout_weight="0.25"
-                            android:background="@drawable/bg_edittext"
                             android:gravity="left|center"
-                            android:paddingLeft="@dimen/dp_5"
-                            android:paddingRight="@dimen/dp_5"
-                            android:layout_marginRight="@dimen/dp_5"></EditText>
-                        <EditText
-                            android:id="@+id/mrng_f3_4"
-                            android:singleLine="true"
-                            android:imeOptions="actionNext"
+                            android:text="YES"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f3_2_yes"/>
+                        <CheckBox
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:layout_marginBottom="@dimen/dp_5"
                             android:layout_marginTop="@dimen/dp_5"
-                            android:layout_weight="0.25"
-                            android:background="@drawable/bg_edittext"
                             android:gravity="left|center"
-                            android:paddingLeft="@dimen/dp_5"
-                            android:paddingRight="@dimen/dp_5"></EditText>
+                            android:text="NO"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f3_2_no"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -300,39 +287,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.5"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/mrng_chklist_opt3_3"
                             android:textColor="@color/black"
                             android:textSize="@dimen/dp_15" />
 
-                        <EditText
-                            android:id="@+id/mrng_f3_5"
-                            android:singleLine="true"
-                            android:imeOptions="actionNext"
+                        <CheckBox
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:layout_marginBottom="@dimen/dp_5"
                             android:layout_marginTop="@dimen/dp_5"
-                            android:layout_weight="0.25"
-                            android:background="@drawable/bg_edittext"
                             android:gravity="left|center"
-                            android:paddingLeft="@dimen/dp_5"
-                            android:paddingRight="@dimen/dp_5"
-                            android:layout_marginRight="@dimen/dp_5"></EditText>
-                        <EditText
-                            android:id="@+id/mrng_f3_6"
-                            android:singleLine="true"
-                            android:imeOptions="actionNext"
+                            android:text="YES"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f3_3_yes"/>
+                        <CheckBox
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:layout_marginBottom="@dimen/dp_5"
                             android:layout_marginTop="@dimen/dp_5"
-                            android:layout_weight="0.25"
-                            android:background="@drawable/bg_edittext"
                             android:gravity="left|center"
-                            android:paddingLeft="@dimen/dp_5"
-                            android:paddingRight="@dimen/dp_5"></EditText>
+                            android:text="NO"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f3_3_no"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -533,27 +513,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.5"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/mrng_chklist_opt7"
                             android:textColor="@color/black"
                             android:textSize="@dimen/dp_15" />
 
-                        <EditText
-                            android:id="@+id/mrng_f7"
+                        <CheckBox
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:layout_marginBottom="@dimen/dp_5"
                             android:layout_marginTop="@dimen/dp_5"
-                            android:layout_weight="0.5"
-                            android:background="@drawable/bg_edittext"
                             android:gravity="left|center"
-                            android:paddingLeft="@dimen/dp_5"
-                            android:singleLine="true"
-                            android:imeOptions="actionNext"
-                            android:paddingRight="@dimen/dp_5"></EditText>
-
-
+                            android:text="YES"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f7_yes"/>
+                        <CheckBox
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:gravity="left|center"
+                            android:text="NO"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f7_no"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -571,20 +556,26 @@
                             android:textColor="@color/black"
                             android:textSize="@dimen/dp_15" />
 
-                         <EditText
-                             android:id="@+id/mrng_f8"
-                             android:singleLine="true"
-                             android:imeOptions="actionNext"
-                             android:layout_width="0dp"
-                             android:layout_height="match_parent"
-                             android:layout_marginBottom="@dimen/dp_5"
-                             android:layout_marginTop="@dimen/dp_5"
-                             android:layout_weight="0.4"
-                             android:background="@drawable/bg_edittext"
-                             android:gravity="left|center"
-                             android:paddingLeft="@dimen/dp_5"
-                             android:paddingRight="@dimen/dp_5"></EditText>
-
+                        <CheckBox
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:gravity="left|center"
+                            android:text="YES"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f8_yes"/>
+                        <CheckBox
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:gravity="left|center"
+                            android:text="NO"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f8_no"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -602,21 +593,26 @@
                             android:textColor="@color/black"
                             android:textSize="@dimen/dp_15" />
 
-                        <EditText
-                            android:id="@+id/mrng_f9"
-                            android:singleLine="true"
-                            android:imeOptions="actionNext"
+                        <CheckBox
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="0.2"
                             android:layout_marginBottom="@dimen/dp_5"
                             android:layout_marginTop="@dimen/dp_5"
-                            android:layout_weight="0.4"
-                            android:background="@drawable/bg_edittext"
                             android:gravity="left|center"
-                            android:paddingLeft="@dimen/dp_5"
-                            android:paddingRight="@dimen/dp_5"></EditText>
-
-
+                            android:text="YES"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f9_yes"/>
+                        <CheckBox
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:gravity="left|center"
+                            android:text="NO"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f9_no"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -628,26 +624,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/mrng_chklist_opt10"
                             android:textColor="@color/black"
                             android:textSize="@dimen/dp_15" />
 
-                         <EditText
-                             android:id="@+id/mrng_f10"
-                             android:singleLine="true"
-                             android:imeOptions="actionNext"
-                             android:layout_width="0dp"
-                             android:layout_height="match_parent"
-                             android:layout_marginBottom="@dimen/dp_5"
-                             android:layout_marginTop="@dimen/dp_5"
-                             android:layout_weight="0.6"
-                             android:background="@drawable/bg_edittext"
-                             android:gravity="left|center"
-                             android:paddingLeft="@dimen/dp_5"
-                             android:paddingRight="@dimen/dp_5"></EditText>
-
+                        <CheckBox
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:gravity="left|center"
+                            android:text="YES"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f10_yes"/>
+                        <CheckBox
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:gravity="left|center"
+                            android:text="NO"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f10_no"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -659,7 +661,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/mrng_chklist_opt11"
                             android:textColor="@color/black"
@@ -695,7 +697,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/mrng_chklist_opt12"
                             android:textColor="@color/black"
@@ -733,7 +735,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/mrng_chklist_opt13"
                             android:textColor="@color/black"
@@ -783,25 +785,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.5"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/mrng_chklist_opt14"
                             android:textColor="@color/black"
                             android:textSize="@dimen/dp_15" />
 
-                         <EditText
-                             android:id="@+id/mrng_f14"
-                             android:singleLine="true"
-                             android:imeOptions="actionNext"
-                             android:layout_width="0dp"
-                             android:layout_height="match_parent"
-                             android:layout_marginBottom="@dimen/dp_5"
-                             android:layout_marginTop="@dimen/dp_5"
-                             android:layout_weight="0.5"
-                             android:background="@drawable/bg_edittext"
-                             android:gravity="left|center"
-                             android:paddingLeft="@dimen/dp_5"
-                             android:paddingRight="@dimen/dp_5"></EditText>
+                        <CheckBox
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:gravity="left|center"
+                            android:text="YES"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f14_yes"/>
+                        <CheckBox
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:gravity="left|center"
+                            android:text="NO"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f14_no"/>
 
 
                     </LinearLayout>
@@ -815,26 +824,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.5"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/mrng_chklist_opt15"
                             android:textColor="@color/black"
                             android:textSize="@dimen/dp_15" />
 
-                         <EditText
-                             android:id="@+id/mrng_f15"
-                             android:singleLine="true"
-                             android:imeOptions="actionNext"
-                             android:layout_width="0dp"
-                             android:layout_height="match_parent"
-                             android:layout_marginBottom="@dimen/dp_5"
-                             android:layout_marginTop="@dimen/dp_5"
-                             android:layout_weight="0.5"
-                             android:background="@drawable/bg_edittext"
-                             android:gravity="left|center"
-                             android:paddingLeft="@dimen/dp_5"
-                             android:paddingRight="@dimen/dp_5"></EditText>
-
+                        <CheckBox
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:gravity="left|center"
+                            android:text="YES"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f15_yes"/>
+                        <CheckBox
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:gravity="left|center"
+                            android:text="NO"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f15_no"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -847,26 +862,32 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.5"
+                            android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/mrng_chklist_opt16"
                             android:textColor="@color/black"
                             android:textSize="@dimen/dp_15" />
 
-                        <EditText
-                             android:id="@+id/mrng_f16"
-                             android:singleLine="true"
-                             android:imeOptions="actionDone"
-                             android:layout_width="0dp"
-                             android:layout_height="match_parent"
-                             android:layout_marginBottom="@dimen/dp_5"
-                             android:layout_marginTop="@dimen/dp_5"
-                             android:layout_weight="0.5"
-                             android:background="@drawable/bg_edittext"
-                             android:gravity="left|center"
-                             android:paddingLeft="@dimen/dp_5"
-                             android:paddingRight="@dimen/dp_5"></EditText>
-                    </LinearLayout>
+                        <CheckBox
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:gravity="left|center"
+                            android:text="YES"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f16_yes"/>
+                        <CheckBox
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:gravity="left|center"
+                            android:text="NO"
+                            android:textColor="@color/black"
+                            android:id="@+id/mrng_f16_no"/></LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
