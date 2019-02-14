@@ -32,14 +32,16 @@ public class EOD_Checkilist extends AppCompatActivity {
 
 
     EditText date, initials;
-    CheckBox f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13;
-    CheckBox f1_no, f2_no, f3_no, f4_no, f5_no, f6_no, f7_no, f8_no, f9_no, f10_no, f11_no, f12_no, f13_no;
+    CheckBox f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f12, f13;
+    CheckBox f1_no, f2_no, f3_no, f4_no, f5_no, f6_no, f7_no, f8_no, f9_no, f10_no, f12_no, f13_no;
 
     FirebaseFirestore db;
     private ProgressDialog mProgressDialog;
 
 
-    String c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13;
+    String c1, c2, c3, c4, c5, c6, c7, c8, c9, c10,  c12, c13;
+
+    EditText f11;
 
     EditText comment;
 
@@ -67,7 +69,7 @@ public class EOD_Checkilist extends AppCompatActivity {
         f8 = findViewById(R.id.f8_yes);
         f9 = findViewById(R.id.f9_yes);
         f10 = findViewById(R.id.f10_yes);
-        f11 = findViewById(R.id.f11_yes);
+        f11 = findViewById(R.id.eod_f11);
         f12 = findViewById(R.id.f12_yes);
         f13 = findViewById(R.id.f13_yes);
 
@@ -81,7 +83,6 @@ public class EOD_Checkilist extends AppCompatActivity {
         f8_no = findViewById(R.id.f8_no);
         f9_no = findViewById(R.id.f9_no);
         f10_no = findViewById(R.id.f10_no);
-        f11_no = findViewById(R.id.f11_no);
         f12_no = findViewById(R.id.f12_no);
         f13_no = findViewById(R.id.f13_no);
 
@@ -311,24 +312,7 @@ public class EOD_Checkilist extends AppCompatActivity {
             }
         });
 
-        f11.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    f11_no.setChecked(false);
-                    c11 = f11.getText().toString();
-                }
-            }
-        });
-        f11_no.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    f11.setChecked(false);
-                    c11 = f11_no.getText().toString();
-                }
-            }
-        });
+
 
         f12.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -399,7 +383,7 @@ public class EOD_Checkilist extends AppCompatActivity {
         checklist.put(getResources().getString(R.string.eod_chkl_opt8), c8);
         checklist.put(getResources().getString(R.string.eod_chkl_opt9), c9);
         checklist.put(getResources().getString(R.string.eod_chkl_opt10), c10);
-        checklist.put(getResources().getString(R.string.eod_chkl_opt11), c11);
+        checklist.put(getResources().getString(R.string.eod_chkl_opt11), f11.getText().toString());
         checklist.put(getResources().getString(R.string.eod_chkl_opt12), c12);
         checklist.put(getResources().getString(R.string.eod_chkl_opt13), c13);
         checklist.put("Comment", comment.getText().toString());
@@ -435,7 +419,7 @@ public class EOD_Checkilist extends AppCompatActivity {
                                     f8.setChecked(false);
                                     f9.setChecked(false);
                                     f10.setChecked(false);
-                                    f11.setChecked(false);
+                                    f11.setText("");
                                     f12.setChecked(false);
                                     f13.setChecked(false);
 
@@ -450,7 +434,6 @@ public class EOD_Checkilist extends AppCompatActivity {
                                     f8_no.setChecked(false);
                                     f9_no.setChecked(false);
                                     f10_no.setChecked(false);
-                                    f11_no.setChecked(false);
                                     f12_no.setChecked(false);
                                     f13_no.setChecked(false);
 
@@ -509,9 +492,9 @@ public class EOD_Checkilist extends AppCompatActivity {
         } else if (!f12.isChecked() && !f12_no.isChecked()) {
             isValid = false;
             Toast.makeText(getApplicationContext(), "Select " + getResources().getString(R.string.eod_chkl_opt12), Toast.LENGTH_SHORT).show();
-        } else if (!f11.isChecked() && !f11_no.isChecked()) {
+        } else if (f11.getText().toString().length()==0) {
             isValid = false;
-            Toast.makeText(getApplicationContext(), "Select " + getResources().getString(R.string.eod_chkl_opt11), Toast.LENGTH_SHORT).show();
+            f11.setError("");
         } else if (!f13.isChecked() && !f13_no.isChecked()) {
             isValid = false;
             Toast.makeText(getApplicationContext(), "Select " + getResources().getString(R.string.eod_chkl_opt13), Toast.LENGTH_SHORT).show();

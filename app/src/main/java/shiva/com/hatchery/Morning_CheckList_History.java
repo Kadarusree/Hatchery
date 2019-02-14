@@ -40,7 +40,7 @@ public class Morning_CheckList_History extends AppCompatActivity {
     FirebaseFirestore db;
     private ProgressDialog mProgressDialog;
     TextView comment;
-
+TextView mrng_apc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +83,7 @@ public class Morning_CheckList_History extends AppCompatActivity {
 
         getData(date.getText().toString());
 
-
+        mrng_apc = findViewById(R.id.mrng_fapc);
         f1_yes = findViewById(R.id.mrng_f1_yes);
         f11_yes = findViewById(R.id.mrng_f11_yes);
         f12_yes = findViewById(R.id.mrng_f12_yes);
@@ -149,7 +149,7 @@ public class Morning_CheckList_History extends AppCompatActivity {
 
                     f1_yes.setText(mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt1)));
                     f2.setText(mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt2)));
-                    f4.setText(mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt4))+" Hours");
+                    f4.setText(mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt4)));
                     f6.setText(mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt6)));
                     f7.setText(mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt7)));
                     f8.setText(mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt8)));
@@ -165,7 +165,7 @@ public class Morning_CheckList_History extends AppCompatActivity {
                     f18_yes.setText(mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt18)));
                     f19_yes.setText(mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt19)));
                     f20_yes.setText(mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt20)));
-
+                    mrng_apc.setText(mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt_acp))+" Hours");
 
                     String s = mDocuments.get(0).getString(getResources().getString(R.string.mrng_chklist_opt3_1));
                     f3_1.setText(s);

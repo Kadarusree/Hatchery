@@ -158,7 +158,7 @@
                     android:singleLine="true"
                     android:inputType="number"
                     android:id="@+id/feed1"
-                    android:hint="Amount Fed"
+                    android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"
                     ></EditText>
             </LinearLayout>
@@ -200,7 +200,7 @@
                     android:singleLine="true"
                     android:inputType="number"
                     android:id="@+id/feed2"
-                    android:hint="Amount Fed"
+                    android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
             <LinearLayout
@@ -241,7 +241,7 @@
                     android:singleLine="true"
                     android:inputType="number"
                     android:id="@+id/feed3"
-                    android:hint="Amount Fed"
+                    android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
             <LinearLayout
@@ -282,7 +282,7 @@
                     android:singleLine="true"
                     android:inputType="number"
                     android:id="@+id/feed4"
-                    android:hint="Amount Fed"
+                    android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
             <LinearLayout
@@ -310,21 +310,21 @@
                     android:id="@+id/feed_size5"></EditText>
 
                 <EditText
+                    android:id="@+id/feed5"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="@dimen/dp_5"
+                    android:layout_marginLeft="@dimen/dp_10"
                     android:layout_marginTop="@dimen/dp_5"
                     android:layout_weight="0.6"
-                    android:layout_marginLeft="@dimen/dp_10"
                     android:background="@drawable/bg_edittext"
                     android:gravity="left|center"
+                    android:hint="Amount Fed in gm"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
-                    android:singleLine="true"
-                    android:inputType="number"
-                    android:id="@+id/feed5"
-                    android:hint="Amount Fed"
-                    android:imeOptions="actionNext"></EditText>
+                    android:singleLine="true"></EditText>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -364,7 +364,7 @@
                     android:singleLine="true"
                     android:inputType="number"
                     android:id="@+id/feed6"
-                    android:hint="Amount Fed"
+                    android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
             <LinearLayout
@@ -405,7 +405,7 @@
                     android:singleLine="true"
                     android:inputType="number"
                     android:id="@+id/feed7"
-                    android:hint="Amount Fed"
+                    android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
             <View android:layout_width="match_parent"

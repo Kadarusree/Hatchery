@@ -167,6 +167,7 @@
     <string name="mrng_chklist_opt3_1">1-6</string>
     <string name="mrng_chklist_opt3_2">7-18</string>
     <string name="mrng_chklist_opt3_3">Incubation</string>
+    <string name="mrng_chklist_opt_acp">Air compresser hours</string>
 
     <string name="mrng_chklist_opt4">Blow off Moisture From air receiver</string>
     <string name="mrng_chklist_opt5">O2 generator -</string>

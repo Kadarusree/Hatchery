@@ -39,14 +39,13 @@ public class Morning_CheckList extends AppCompatActivity {
 
     CheckBox f7_yes,f7_no, f8_yes, f8_no, f9_yes, f9_no, f10_yes, f10_no;
 
-    CheckBox f14_yes, f14_no, f15_yes, f15_no, f16_yes, f16_no;
+    CheckBox f14_yes, f14_no, f15_yes, f15_no, f16_yes, f16_no,f17_yes, f17_no;
 
-
+    CheckBox f2_yes, f2_no, f4_yes, f4_no, f6_yes, f6_no;
     CheckBox f3_1_yes, f3_1_no, f3_2_yes, f3_2_no, f3_3_yes, f3_3_no;
 
-    EditText f2, f4, f5_1, f5_2, f5_3, f5_4, f6;
+    EditText   f5_1, f5_2, f5_3, f5_4,  mrng_apc;
 
-    EditText  f17;
 
     EditText initials, date;
 
@@ -56,7 +55,7 @@ public class Morning_CheckList extends AppCompatActivity {
 
 
 
-    String S1, S11, S12, S13, S18, S19, S20, S7, S8, S9, S10, S14, S15, S16;
+    String S1, S2, S4, S6, S11, S12, S13, S18, S19, S20, S7, S8, S9, S10, S14, S15, S16, S17;
     String S3_1, S3_2, S3_3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +106,27 @@ public class Morning_CheckList extends AppCompatActivity {
         f1_yes.setChecked(true);
         S1= "YES";
 
+        mrng_apc = findViewById(R.id.mrng_apc);
+        f2_yes = findViewById(R.id.mrng_f2_yes);
+        f2_no = findViewById(R.id.mrng_f2_no);
+        f2_yes.setChecked(true);
+        S2= "YES";
+
+        f6_yes = findViewById(R.id.mrng_f6_yes);
+        f6_no = findViewById(R.id.mrng_f6_no);
+        f6_yes.setChecked(true);
+        S6= "YES";
+
+        f17_yes = findViewById(R.id.mrng_f17_yes);
+        f17_no = findViewById(R.id.mrng_f17_no);
+        f17_yes.setChecked(true);
+        S17= "YES";
+
+        f4_yes = findViewById(R.id.mrng_f4_yes);
+        f4_no = findViewById(R.id.mrng_f4_no);
+        f4_yes.setChecked(true);
+        S4= "YES";
+
         f11_yes = findViewById(R.id.mrng_f11_yes);
         f11_no = findViewById(R.id.mrng_f11_no);
         f11_yes.setChecked(true);
@@ -139,10 +159,7 @@ public class Morning_CheckList extends AppCompatActivity {
 
 
 
-        f2 = findViewById(R.id.mrng_f2);
-        f4 = findViewById(R.id.mrng_f4);
 
-        f6 = findViewById(R.id.mrng_f6);
         f7_yes = findViewById(R.id.mrng_f7_yes);
         f7_no = findViewById(R.id.mrng_f7_yes);
         f7_yes.setChecked(true);
@@ -180,7 +197,6 @@ public class Morning_CheckList extends AppCompatActivity {
         S16 = "YES";
 
 
-        f17 = findViewById(R.id.mrng_f17);
 
 
         f3_1_yes = findViewById(R.id.mrng_f3_1_yes);
@@ -226,6 +242,76 @@ public class Morning_CheckList extends AppCompatActivity {
                     f1_yes.setChecked(false);
                     f1_no.setChecked(true);
                     S1 = "NO";
+                }
+
+            }
+        });
+
+        f6_yes.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    f6_yes.setChecked(true);
+                    f6_no.setChecked(false);
+                    S6 = "YES";
+                }
+
+            }
+        });
+        f6_no.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    f6_yes.setChecked(false);
+                    f6_no.setChecked(true);
+                    S6 = "NO";
+                }
+
+            }
+        });
+
+
+        f2_yes.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    f2_yes.setChecked(true);
+                    f2_no.setChecked(false);
+                    S2 = "YES";
+                }
+
+            }
+        });
+        f2_no.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    f2_yes.setChecked(false);
+                    f2_no.setChecked(true);
+                    S2 = "NO";
+                }
+
+            }
+        });
+
+        f4_yes.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    f4_yes.setChecked(true);
+                    f4_no.setChecked(false);
+                    S4 = "YES";
+                }
+
+            }
+        });
+        f4_no.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    f4_yes.setChecked(false);
+                    f4_no.setChecked(true);
+                    S4 = "NO";
                 }
 
             }
@@ -391,6 +477,30 @@ public class Morning_CheckList extends AppCompatActivity {
 
             }
         });
+
+        f17_yes.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    f17_yes.setChecked(true);
+                    f17_no.setChecked(false);
+                    S17 = "YES";
+                }
+
+            }
+        });
+        f17_no.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    f17_yes.setChecked(false);
+                    f17_no.setChecked(true);
+                    S17 = "NO";
+                }
+
+            }
+        });
+
         f3_1_yes.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -626,14 +736,14 @@ startActivity(new Intent(getApplicationContext(),Morning_CheckList_History.class
             checklist.put("Date", date.getText().toString());
             checklist.put("Initials", initials.getText().toString());
             checklist.put(getResources().getString(R.string.mrng_chklist_opt1), S1);
-            checklist.put(getResources().getString(R.string.mrng_chklist_opt2), f2.getText().toString());
+            checklist.put(getResources().getString(R.string.mrng_chklist_opt2), S2);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt3_1), S3_1 );
             checklist.put(getResources().getString(R.string.mrng_chklist_opt3_2), S3_2);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt3_3), S3_3);
-            checklist.put(getResources().getString(R.string.mrng_chklist_opt4), f4.getText().toString());
+            checklist.put(getResources().getString(R.string.mrng_chklist_opt4), S4);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt5_1), f5_1.getText().toString()+"_"+f5_2.getText().toString());
             checklist.put(getResources().getString(R.string.mrng_chklist_opt5_2), f5_3.getText().toString()+"_"+f5_4.getText().toString());
-            checklist.put(getResources().getString(R.string.mrng_chklist_opt6), f6.getText().toString());
+            checklist.put(getResources().getString(R.string.mrng_chklist_opt6), S6);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt7), S7);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt8), S8);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt9), S9);
@@ -644,10 +754,11 @@ startActivity(new Intent(getApplicationContext(),Morning_CheckList_History.class
             checklist.put(getResources().getString(R.string.mrng_chklist_opt14), S14);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt15), S15);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt16), S16);
-            checklist.put(getResources().getString(R.string.mrng_chklist_opt17), f17.getText().toString());
+            checklist.put(getResources().getString(R.string.mrng_chklist_opt17), S17);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt18), S18);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt19), S19);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt20), S20);
+            checklist.put(getResources().getString(R.string.mrng_chklist_opt_acp), mrng_apc.getText().toString());
 
             checklist.put("Comment", comment.getText().toString());
 
@@ -711,11 +822,6 @@ startActivity(new Intent(getApplicationContext(),Morning_CheckList_History.class
     public boolean validations(){
         boolean isValid = true;
 
-        if (f2.getText().toString().trim().length()==0)
-        {
-            f2.setError("");
-            isValid = false;
-        }
         if (f5_1.getText().toString().trim().length()==0)
         {
             f5_1.setError("");
@@ -736,18 +842,10 @@ startActivity(new Intent(getApplicationContext(),Morning_CheckList_History.class
             f5_4.setError("");
             isValid = false;
         }
-        if (f4.getText().toString().trim().length()==0)
-        {
-            f4.setError("");
-            isValid = false;
-        }
-        if (f6.getText().toString().trim().length()==0) {
-            f6.setError("");
-            isValid = false;
-        }
-        if (f17.getText().toString().trim().length()==0)
-        {
-            f17.setError("");
+
+
+        if (mrng_apc.getText().toString().trim().length()==0) {
+            mrng_apc.setError("");
             isValid = false;
         }
 
