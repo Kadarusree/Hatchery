@@ -47,7 +47,7 @@ public class Morning_CheckList extends AppCompatActivity {
     EditText   f5_1, f5_2, f5_3, f5_4,  mrng_apc;
 
 
-    EditText initials, date;
+    EditText initials, date,f17_comment;
 
     FirebaseFirestore db;
     private ProgressDialog mProgressDialog;
@@ -65,6 +65,7 @@ public class Morning_CheckList extends AppCompatActivity {
         initials = findViewById(R.id.mrng_chk_initials);
         date = findViewById(R.id.mrng_chk_date);
         comment = findViewById(R.id.mrng_comments);
+        f17_comment = findViewById(R.id.f17_comment);
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setMessage("Saving Data...");
         mProgressDialog.setCancelable(false);
@@ -754,7 +755,7 @@ startActivity(new Intent(getApplicationContext(),Morning_CheckList_History.class
             checklist.put(getResources().getString(R.string.mrng_chklist_opt14), S14);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt15), S15);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt16), S16);
-            checklist.put(getResources().getString(R.string.mrng_chklist_opt17), S17);
+            checklist.put(getResources().getString(R.string.mrng_chklist_opt17), S17+",  "+f17_comment.getText().toString());
             checklist.put(getResources().getString(R.string.mrng_chklist_opt18), S18);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt19), S19);
             checklist.put(getResources().getString(R.string.mrng_chklist_opt20), S20);

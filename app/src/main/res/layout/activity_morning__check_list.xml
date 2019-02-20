@@ -949,40 +949,75 @@
                             android:id="@+id/mrng_f16_no"/></LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="60dp"
                         android:layout_marginLeft="@dimen/dp_15"
                         android:layout_marginRight="@dimen/dp_15"
                         android:layout_weight="0.15">
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="0.6"
                             android:gravity="left|center"
                             android:text="@string/mrng_chklist_opt17"
                             android:textColor="@color/black"
                             android:textSize="@dimen/dp_15" />
 
-                        <CheckBox
+                        <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.2"
-                            android:layout_marginBottom="@dimen/dp_5"
-                            android:layout_marginTop="@dimen/dp_5"
-                            android:gravity="left|center"
-                            android:text="YES"
-                            android:textColor="@color/black"
-                            android:id="@+id/mrng_f17_yes"/>
-                        <CheckBox
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.2"
-                            android:layout_marginBottom="@dimen/dp_5"
-                            android:layout_marginTop="@dimen/dp_5"
-                            android:gravity="left|center"
-                            android:text="NO"
-                            android:textColor="@color/black"
-                            android:id="@+id/mrng_f17_no"/>
+                            android:layout_weight="0.4"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="0.5">
+                                <CheckBox
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.2"
+                                    android:layout_marginBottom="@dimen/dp_5"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:gravity="left|center"
+                                    android:text="YES"
+                                    android:textColor="@color/black"
+                                    android:id="@+id/mrng_f17_yes"/>
+                                <CheckBox
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.2"
+                                    android:layout_marginBottom="@dimen/dp_5"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:gravity="left|center"
+                                    android:text="NO"
+                                    android:textColor="@color/black"
+                                    android:id="@+id/mrng_f17_no"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="0.5">
+                                <EditText
+                                    android:id="@+id/f17_comment"
+                                    android:hint="Comment"
+                                    android:singleLine="true"
+                                    android:imeOptions="actionNext"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="@dimen/dp_5"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:layout_weight="0.25"
+                                    android:background="@drawable/bg_edittext"
+                                    android:gravity="left|center"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/dp_5"
+                                    android:paddingRight="@dimen/dp_5"
+                                    android:layout_marginRight="@dimen/dp_5"></EditText>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
