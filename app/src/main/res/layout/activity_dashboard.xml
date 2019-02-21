@@ -178,6 +178,7 @@ android:id="@+id/dtr"
                 android:text="@string/opt5"
                 android:textColor="@color/colorWhite"
                 android:textStyle="bold"
+                android:onClick="transfer"
                 android:background="@drawable/shape_blue_round"/>
             <Button
                 android:layout_width="0dp"
