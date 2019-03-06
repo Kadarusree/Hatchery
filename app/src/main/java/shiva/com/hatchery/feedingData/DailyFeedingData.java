@@ -486,4 +486,7 @@ public class DailyFeedingData extends AppCompatActivity {
     public void history(View view) {
         startActivity(new Intent(getApplicationContext(),FeedingHistory.class));
     }
+
+
+
 }

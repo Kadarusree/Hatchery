@@ -38,7 +38,7 @@
                     android:textSize="@dimen/dp_15" />
 
                 <EditText
-                    android:id="@+id/mrng_chk_initials"
+                    android:id="@+id/tg_team_members"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="@dimen/dp_5"
@@ -70,7 +70,7 @@
                     android:textSize="@dimen/dp_15" />
 
                 <EditText
-                    android:id="@+id/mrng_chk_date"
+                    android:id="@+id/tg_date"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="@dimen/dp_5"
@@ -101,6 +101,7 @@
                     android:textSize="@dimen/dp_15" />
 
                 <EditText
+                    android:id="@+id/tg_temp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="@dimen/dp_5"
@@ -163,6 +164,7 @@
                                 android:layout_height="match_parent"
                                 android:background="@color/black"></View>
                             <EditText
+                                android:id="@+id/tg_sourcetank"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="0.6"
@@ -206,6 +208,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/bg_edittext"
+                                android:id="@+id/tg_st_avg_weight"
 
                                 android:layout_weight="0.6"
                                 android:gravity="left|center"
@@ -254,6 +257,7 @@
                                 android:singleLine="true"
                                 android:textSize="@dimen/dp_15"
                                 android:background="@drawable/bg_edittext"
+                                android:id="@+id/tg_st_inventory"
 
                                 android:imeOptions="actionNext"></EditText>
                             <View
@@ -295,7 +299,7 @@
                                 android:inputType="numberDecimal"
                                 android:singleLine="true"
                                 android:background="@drawable/bg_edittext"
-
+                                android:id="@+id/tg_st_biomass"
                                 android:imeOptions="actionNext"></EditText>
                             <View
                                 android:layout_width="1dp"
@@ -372,7 +376,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:background="@drawable/bg_edittext"
-
+                                    android:id="@+id/tg_top_tank_num"
                                     android:layout_weight="0.6"
                                     android:gravity="left|center"
                                     android:paddingLeft="@dimen/dp_5"
@@ -413,6 +417,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:background="@drawable/bg_edittext"
+                                    android:id="@+id/tg_top_avg_wt"
 
                                     android:layout_weight="0.6"
                                     android:gravity="left|center"
@@ -460,6 +465,7 @@
                                     android:inputType="numberDecimal"
                                     android:singleLine="true"
                                     android:background="@drawable/bg_edittext"
+                                    android:id="@+id/tg_top_inv"
 
                                     android:textSize="@dimen/dp_15"
                                     android:imeOptions="actionNext"></EditText>
@@ -502,6 +508,7 @@
                                     android:inputType="numberDecimal"
                                     android:singleLine="true"
                                     android:background="@drawable/bg_edittext"
+                                    android:id="@+id/tg_top_biomass"
 
                                     android:imeOptions="actionNext"></EditText>
                                 <View
@@ -573,6 +580,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:background="@drawable/bg_edittext"
+                                    android:id="@+id/tg_mid_tank_num"
 
                                     android:layout_weight="0.6"
                                     android:gravity="left|center"
@@ -614,6 +622,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:background="@drawable/bg_edittext"
+                                    android:id="@+id/tg_mid_avg_wt"
 
                                     android:layout_weight="0.6"
                                     android:gravity="left|center"
@@ -662,6 +671,7 @@
                                     android:singleLine="true"
                                     android:textSize="@dimen/dp_15"
                                     android:background="@drawable/bg_edittext"
+                                    android:id="@+id/tg_mid_inv"
 
                                     android:imeOptions="actionNext"></EditText>
                                 <View
@@ -703,6 +713,7 @@
                                     android:inputType="numberDecimal"
                                     android:singleLine="true"
                                     android:background="@drawable/bg_edittext"
+                                    android:id="@+id/tg_mid_biomass"
 
                                     android:imeOptions="actionNext"></EditText>
                                 <View
@@ -782,6 +793,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:background="@drawable/bg_edittext"
+                                    android:id="@+id/tg_bottom_tank_num"
 
                                     android:layout_weight="0.6"
                                     android:gravity="left|center"
@@ -823,6 +835,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:background="@drawable/bg_edittext"
+                                    android:id="@+id/tg_bottom_avg_wt"
 
                                     android:layout_weight="0.6"
                                     android:gravity="left|center"
@@ -870,7 +883,7 @@
                                     android:inputType="numberDecimal"
                                     android:singleLine="true"
                                     android:background="@drawable/bg_edittext"
-
+                                    android:id="@+id/tg_bottom_inv"
                                     android:textSize="@dimen/dp_15"
                                     android:imeOptions="actionNext"></EditText>
                                 <View
@@ -910,6 +923,7 @@
                                     android:paddingLeft="@dimen/dp_5"
                                     android:paddingRight="@dimen/dp_5"
                                     android:background="@drawable/bg_edittext"
+                                    android:id="@+id/tg_bottom_biomass"
 
                                     android:inputType="numberDecimal"
                                     android:singleLine="true"
@@ -983,7 +997,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:background="@drawable/bg_edittext"
-
+                                    android:id="@+id/tg_culling_num_of_fish"
                                     android:layout_weight="0.6"
                                     android:gravity="left|center"
                                     android:paddingLeft="@dimen/dp_5"
@@ -1024,6 +1038,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:background="@drawable/bg_edittext"
+                                    android:id="@+id/tg_culling_avg_wt"
 
                                     android:layout_weight="0.6"
                                     android:gravity="left|center"
@@ -1071,6 +1086,7 @@
                                     android:inputType="numberDecimal"
                                     android:singleLine="true"
                                     android:background="@drawable/bg_edittext"
+                                    android:id="@+id/tg_culling_biomass"
 
                                     android:textSize="@dimen/dp_15"
                                     android:imeOptions="actionNext"></EditText>
@@ -1157,6 +1173,7 @@
                                 android:gravity="left|center"
                                 android:paddingLeft="@dimen/dp_5"
                                 android:background="@drawable/bg_edittext"
+                                android:id="@+id/tg_final_inv"
 
                                 android:paddingRight="@dimen/dp_5"
                                 android:inputType="numberDecimal"
@@ -1199,6 +1216,7 @@
                                 android:paddingLeft="@dimen/dp_5"
                                 android:paddingRight="@dimen/dp_5"
                                 android:background="@drawable/bg_edittext"
+                                android:id="@+id/tg_final_graded"
 
                                 android:inputType="numberDecimal"
                                 android:singleLine="true"
@@ -1232,18 +1250,18 @@
                                 android:layout_width="1dp"
                                 android:layout_height="match_parent"
                                 android:background="@color/black"></View>
+
                             <EditText
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginBottom="@dimen/dp_5"
-                                android:layout_marginTop="@dimen/dp_5"
                                 android:layout_weight="0.6"
                                 android:gravity="left|center"
                                 android:paddingLeft="@dimen/dp_5"
                                 android:paddingRight="@dimen/dp_5"
+                                android:background="@drawable/bg_edittext"
+                                android:id="@+id/tg_final_culled"
                                 android:inputType="numberDecimal"
                                 android:singleLine="true"
-                                android:hint="Names Separated by Comma"
                                 android:imeOptions="actionNext"></EditText>
                             <View
                                 android:layout_width="1dp"
@@ -1281,6 +1299,7 @@
                                 android:gravity="left|center"
                                 android:paddingLeft="@dimen/dp_5"
                                 android:background="@drawable/bg_edittext"
+                                android:id="@+id/tg_final_plusminus"
 
                                 android:paddingRight="@dimen/dp_5"
                                 android:inputType="numberDecimal"
@@ -1324,6 +1343,7 @@
                             android:paddingRight="@dimen/dp_5"
                             android:inputType="text"
                             android:singleLine="true"
+                            android:id="@+id/tg_commnents"
                             android:imeOptions="actionDone"></EditText>
                     </LinearLayout>
                 </LinearLayout>
