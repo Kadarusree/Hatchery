@@ -45,6 +45,29 @@
     </string-array>
 
 
+    <string-array name="tanks_2">
+        <item>None</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+    </string-array>
+
+
     <string name="first_name">First Name :</string>
     <string name="last_name">Last Name :</string>
     <string name="student_id">Student/Faculty ID :</string>
@@ -189,6 +212,46 @@
     <string name="mrng_chklist_opt18">Footbath disinfectant topped up</string>
     <string name="mrng_chklist_opt19">Incubator flow checked</string>
     <string name="mrng_chklist_opt20">Boiler running, thermostat on</string>
+
+
+
+
+    <string name="tg_initials">Initials</string>
+    <string name="tg_team_members">Team Members</string>
+    <string name="tg_date">Date</string>
+    <string name="tg_temp">Temperature</string>
+
+    <string name="tg_source_tank">Source Tank</string>
+    <string name="tg_source_tank_inv">Source Tank Inventory</string>
+    <string name="tg_source_tank_avg_wt">Source Tank Average Weight</string>
+    <string name="tg_source_tank_biomass">Source Tan Biomassk</string>
+
+
+    <string name="tg_top_tank">Top Level Tank</string>
+    <string name="tg_top_tank_inv">Top Level Tank Inventory</string>
+    <string name="tg_top_tank_avg_wt">Top Level Average Weight</string>
+    <string name="tg_top_tank_biomass">Top Level Biomass</string>
+
+    <string name="tg_mid_tank">Mid Level Tank</string>
+    <string name="tg_mid_tank_inv">Mid Level Tank Inventory</string>
+    <string name="tg_mid_tank_avg_wt">Mid Level Average Weight</string>
+    <string name="tg_mid_tank_biomass">Mid Level Biomass</string>
+
+    <string name="tg_bottom_tank">Bottom Level Tank</string>
+    <string name="tg_bottom_tank_inv">Bottom Level Tank Inventory</string>
+    <string name="tg_bottom_tank_avg_wt">Bottom Level Average Weight</string>
+    <string name="tg_bottom_tank_biomass">Bottom Level Biomass</string>
+
+    <string name="tg_culled_number">Culled Fish</string>
+    <string name="tg_culled_avg_wt">Culled Average Weight</string>
+    <string name="tg_culled_biomass">Culled Biomass</string>
+
+    <string name="tg_final_inv">Final Inventory</string>
+    <string name="tg_final_graded">Final Graded</string>
+    <string name="tg_final_culled">Final Culled</string>
+    <string name="tg_final_plus_minus">Final Plus Minus</string>
+
+    <string name="tg_comments">Comments</string>
 
 
 </resources>

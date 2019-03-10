@@ -20,7 +20,38 @@
             android:layout_marginTop="@dimen/dp_5"
             android:layout_weight="0.3"
             android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:layout_weight="0.15">
 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:gravity="left|center"
+                    android:text="Initials"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_15" />
+
+                <EditText
+                    android:id="@+id/tg_initials"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="left|center"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:paddingRight="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:textSize="@dimen/dp_10"
+                    android:hint="Initials"
+                    android:imeOptions="actionNext"></EditText>
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -121,7 +152,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.8">
+            android:layout_weight="0.7">
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -372,19 +403,15 @@
                                     android:layout_width="1dp"
                                     android:layout_height="match_parent"
                                     android:background="@color/black"></View>
-                                <EditText
+                                <Spinner
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:background="@drawable/bg_edittext"
                                     android:id="@+id/tg_top_tank_num"
                                     android:layout_weight="0.6"
                                     android:gravity="left|center"
                                     android:paddingLeft="@dimen/dp_5"
                                     android:paddingRight="@dimen/dp_5"
-                                    android:inputType="numberDecimal"
-                                    android:singleLine="true"
-                                    android:textSize="@dimen/dp_15"
-                                    android:imeOptions="actionNext"></EditText>
+                                    android:entries="@array/tanks_2"></Spinner>
                                 <View
                                     android:layout_width="1dp"
                                     android:layout_height="match_parent"
@@ -462,7 +489,7 @@
                                     android:gravity="left|center"
                                     android:paddingLeft="@dimen/dp_5"
                                     android:paddingRight="@dimen/dp_5"
-                                    android:inputType="numberDecimal"
+                                    android:inputType="number"
                                     android:singleLine="true"
                                     android:background="@drawable/bg_edittext"
                                     android:id="@+id/tg_top_inv"
@@ -576,20 +603,16 @@
                                     android:layout_width="1dp"
                                     android:layout_height="match_parent"
                                     android:background="@color/black"></View>
-                                <EditText
+                                <Spinner
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:background="@drawable/bg_edittext"
                                     android:id="@+id/tg_mid_tank_num"
 
                                     android:layout_weight="0.6"
                                     android:gravity="left|center"
                                     android:paddingLeft="@dimen/dp_5"
                                     android:paddingRight="@dimen/dp_5"
-                                    android:inputType="numberDecimal"
-                                    android:singleLine="true"
-                                    android:textSize="@dimen/dp_15"
-                                    android:imeOptions="actionNext"></EditText>
+                                    android:entries="@array/tanks_2"></Spinner>
                                 <View
                                     android:layout_width="1dp"
                                     android:layout_height="match_parent"
@@ -667,7 +690,7 @@
                                     android:gravity="left|center"
                                     android:paddingLeft="@dimen/dp_5"
                                     android:paddingRight="@dimen/dp_5"
-                                    android:inputType="numberDecimal"
+                                    android:inputType="number"
                                     android:singleLine="true"
                                     android:textSize="@dimen/dp_15"
                                     android:background="@drawable/bg_edittext"
@@ -789,20 +812,16 @@
                                     android:layout_width="1dp"
                                     android:layout_height="match_parent"
                                     android:background="@color/black"></View>
-                                <EditText
+                                <Spinner
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:background="@drawable/bg_edittext"
                                     android:id="@+id/tg_bottom_tank_num"
 
                                     android:layout_weight="0.6"
                                     android:gravity="left|center"
                                     android:paddingLeft="@dimen/dp_5"
                                     android:paddingRight="@dimen/dp_5"
-                                    android:inputType="numberDecimal"
-                                    android:singleLine="true"
-                                    android:textSize="@dimen/dp_15"
-                                    android:imeOptions="actionNext"></EditText>
+                                    android:entries="@array/tanks_2"></Spinner>
                                 <View
                                     android:layout_width="1dp"
                                     android:layout_height="match_parent"
@@ -880,7 +899,7 @@
                                     android:gravity="left|center"
                                     android:paddingLeft="@dimen/dp_5"
                                     android:paddingRight="@dimen/dp_5"
-                                    android:inputType="numberDecimal"
+                                    android:inputType="number"
                                     android:singleLine="true"
                                     android:background="@drawable/bg_edittext"
                                     android:id="@+id/tg_bottom_inv"
