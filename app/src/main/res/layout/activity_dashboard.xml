@@ -39,7 +39,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.1"
-                android:src="@drawable/ic_aquarium"
+                android:src="@drawable/new_logo"
                 android:onClick="aboutUS"></ImageView>
         </LinearLayout>
     </LinearLayout>
