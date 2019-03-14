@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -481,7 +482,7 @@ saveData();
     }
 
     public void history(View view) {
-        Toast.makeText(getApplicationContext(), "Coming Soon", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(getApplicationContext(), Transfer_Grading_History.class));
     }
 
 

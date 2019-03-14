@@ -348,7 +348,7 @@
                             android:layout_marginTop="@dimen/dp_5"
                             android:layout_weight="0.4"
                             android:hint="Hours"
-                            android:maxLength="2"
+                            android:maxLength="8"
                             android:background="@drawable/bg_edittext"
                             android:gravity="left|center"
                             android:inputType="number"

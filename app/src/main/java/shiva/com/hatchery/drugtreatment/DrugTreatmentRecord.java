@@ -263,10 +263,10 @@ public class DrugTreatmentRecord extends AppCompatActivity {
             amount.setError("Enter Amount");
             isvalid = false;
         }
-        if (lotnumber.getText().toString().trim().equalsIgnoreCase("")) {
+       /* if (lotnumber.getText().toString().trim().equalsIgnoreCase("")) {
             lotnumber.setError("Enter Lot Number");
             isvalid = false;
-        }
+        }*/
         if (start_time.getText().toString().trim().equalsIgnoreCase("")) {
             start_time.setError("Enter Start Time");
             isvalid = false;
