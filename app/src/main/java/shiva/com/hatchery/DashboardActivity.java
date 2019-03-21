@@ -19,6 +19,7 @@ import shiva.com.hatchery.mortality.MortalityActivity;
 import shiva.com.hatchery.oxygentemp.OxygenTemperature;
 import shiva.com.hatchery.oxygentemp.OxygenTemperatureResults;
 import shiva.com.hatchery.transfer_grading.Transfer_Grading;
+import shiva.com.hatchery.weightSample.WeightSample;
 
 
 public class DashboardActivity extends Activity {
@@ -131,5 +132,11 @@ public class DashboardActivity extends Activity {
 
     public void transfer(View view) {
         startActivity(new Intent(getApplicationContext(), Transfer_Grading.class));
+    }
+
+    public void weightSample(View view) {
+
+        startActivity(new Intent(getApplicationContext(), WeightSample.class));
+
     }
 }

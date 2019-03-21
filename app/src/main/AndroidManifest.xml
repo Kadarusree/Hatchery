@@ -109,11 +109,23 @@
             android:parentActivityName=".DashboardActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".transfer_grading.Transfer_Grading_History"
+        <activity
+            android:name=".transfer_grading.Transfer_Grading_History"
             android:label="Transfer &amp; Grading History"
             android:parentActivityName=".transfer_grading.Transfer_Grading"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".weightSample.WeightSample"
+            android:label="Weight Sample"
+            android:parentActivityName=".DashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".weightSample.WeightSampleHistory"
+            android:label="Weight Sample History"
+            android:parentActivityName=".weightSample.WeightSample"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" ></activity>
     </application>
 
 </manifest>

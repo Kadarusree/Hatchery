@@ -205,6 +205,7 @@ android:id="@+id/dtr"
                 android:text="@string/opt7"
                 android:textColor="@color/colorWhite"
                 android:textStyle="bold"
+                android:onClick="weightSample"
                 android:background="@drawable/shape_blue_round"/>
             <Button
                 android:layout_width="0dp"
