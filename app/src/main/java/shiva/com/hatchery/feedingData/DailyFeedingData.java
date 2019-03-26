@@ -23,6 +23,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.DateFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -44,7 +46,7 @@ public class DailyFeedingData extends AppCompatActivity {
 
     EditText notes, total;
 
-    int total_feed, feed_count1, feed_count2, feed_count3, feed_count4, feed_count5, feed_count6, feed_count7;
+    float total_feed, feed_count1, feed_count2, feed_count3, feed_count4, feed_count5, feed_count6, feed_count7;
 
 
     FirebaseFirestore db;
@@ -112,7 +114,7 @@ public class DailyFeedingData extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() > 0) {
-                    feed_count1 = Integer.parseInt(charSequence.toString());
+                    feed_count1 = getFloatFrom(feed1);
                 } else {
                     feed_count1 = 0;
                 }
@@ -144,7 +146,7 @@ public class DailyFeedingData extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() > 0) {
-                    feed_count2 = Integer.parseInt(charSequence.toString());
+                    feed_count2 = getFloatFrom(feed2);
                 } else {
                     feed_count2 = 0;
                 }
@@ -176,7 +178,7 @@ public class DailyFeedingData extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() > 0) {
-                    feed_count3 = Integer.parseInt(charSequence.toString());
+                    feed_count3 = getFloatFrom(feed3);
                 } else {
                     feed_count3 = 0;
                 }
@@ -209,7 +211,7 @@ public class DailyFeedingData extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() > 0) {
-                    feed_count4 = Integer.parseInt(charSequence.toString());
+                    feed_count4 = getFloatFrom(feed4);
                 } else {
                     feed_count4 = 0;
                 }
@@ -241,7 +243,7 @@ public class DailyFeedingData extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() > 0) {
-                    feed_count5 = Integer.parseInt(charSequence.toString());
+                    feed_count5 = getFloatFrom(feed5);
                 } else {
                     feed_count5 = 0;
                 }
@@ -273,7 +275,7 @@ public class DailyFeedingData extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() > 0) {
-                    feed_count6 = Integer.parseInt(charSequence.toString());
+                    feed_count6 = getFloatFrom(feed6);
                 } else {
                     feed_count6 = 0;
                 }
@@ -304,7 +306,7 @@ public class DailyFeedingData extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() > 0) {
-                    feed_count7 = Integer.parseInt(charSequence.toString());
+                    feed_count7 = getFloatFrom(feed7);
                 } else {
                     feed_count7 = 0;
                 }
@@ -487,6 +489,12 @@ public class DailyFeedingData extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),FeedingHistory.class));
     }
 
-
+    float getFloatFrom(EditText txt) {
+        try {
+            return NumberFormat.getInstance().parse(txt.getText().toString()).floatValue();
+        } catch (ParseException e) {
+            return 0.0f;
+        }
+    }
 
 }

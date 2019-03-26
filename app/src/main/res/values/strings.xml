@@ -252,4 +252,48 @@
     <string name="tg_comments">Comments</string>
 
 
+
+
+
+
+    <string name="w_initials">Initials</string>
+    <string name="w_team_members">Team Members</string>
+    <string name="w_date">Date</string>
+    <string name="w_comments">Comments</string>
+
+    <string name="r1_sw">R1_SW</string>
+    <string name="r1_num">R1_Number</string>
+    <string name="r1_gm">R1_gms</string>
+    <string name="r1_kg">R1_kg</string>
+
+    <string name="r2_sw">R2_SW</string>
+    <string name="r2_num">R2_Number</string>
+    <string name="r2_gm">R2_gms</string>
+    <string name="r2_kg">R2_kg</string>
+
+    <string name="r3_sw">R3_SW</string>
+    <string name="r3_num">R3_Number</string>
+    <string name="r3_gm">R3_gms</string>
+    <string name="r3_kg">R3_kg</string>
+
+    <string name="r4_sw">R4_SW</string>
+    <string name="r4_num">R4_Number</string>
+    <string name="r4_gm">R4_gms</string>
+    <string name="r4_kg">R4_kg</string>
+
+    <string name="r5_sw">R5_SW</string>
+    <string name="r5_num">R5_Number</string>
+    <string name="r5_gm">R5_gms</string>
+    <string name="r5_kg">R5_kg</string>
+
+    <string name="tt_sample_wt">Total Sample Weight</string>
+    <string name="tt_no_of_fish">Total Number of Fish</string>
+    <string name="tt_avg_wt">Total Avg Weight</string>
+    <string name="tt_biomass">Total_biomass</string>
+
+
+
+
+
+
 </resources>

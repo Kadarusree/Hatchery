@@ -1,8 +1,10 @@
 package shiva.com.hatchery.weightSample;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -10,17 +12,21 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -30,8 +36,10 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import shiva.com.hatchery.Constants;
 import shiva.com.hatchery.R;
@@ -39,7 +47,7 @@ import shiva.com.hatchery.TankModel;
 import shiva.com.hatchery.transfer_grading.Transfer_Grading;
 
 public class WeightSample extends AppCompatActivity {
-    EditText team_members, date;
+
 
     FirebaseDatabase mFirebaseDatabase;
     DatabaseReference mDatabaseReference;
@@ -48,8 +56,7 @@ public class WeightSample extends AppCompatActivity {
     FirebaseFirestore db;
 
     EditText initials;
-
-
+    EditText team_members, date;
     EditText Sw1, no_of_fish_1, avg_wt_kg_1, avg_wt_gms_1;
     EditText Sw2, no_of_fish_2, avg_wt_kg_2, avg_wt_gms_2;
     EditText Sw3, no_of_fish_3, avg_wt_kg_3, avg_wt_gms_3;
@@ -57,7 +64,6 @@ public class WeightSample extends AppCompatActivity {
     EditText Sw5, no_of_fish_5, avg_wt_kg_5, avg_wt_gms_5;
 
     EditText last_sample_wt, last_sample_date, last_biomass, inv_number, species;
-
 
     float sample_wt_1, avg_kg_1, avg_gm_1;
     int number_1;
@@ -77,6 +83,8 @@ public class WeightSample extends AppCompatActivity {
 
     float total_ample_wt, total_avg_wt, biomass;
     int number_of_fish;
+
+    float total_sample_weight = 0.0f;
 
 
     @Override
@@ -336,7 +344,7 @@ public class WeightSample extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().length()>0&&!s.toString().endsWith(".")){
-                    sample_wt_5 = getFloatFrom(Sw5);
+                    sample_wt_4 = getFloatFrom(Sw4);
                     if(sample_wt_4>0&&number_4>0){
                         avg_kg_4 = sample_wt_4/number_4;
                         avg_wt_kg_4.setText(avg_kg_4+"");
@@ -462,10 +470,39 @@ public class WeightSample extends AppCompatActivity {
     public void history(View view) {
         startActivity(new Intent(getApplicationContext(), WeightSampleHistory.class));
     }
-
+String cooment;
     public void mrng_chk_save(View view) {
-        Dialog d = new Dialog(WeightSample.this);
+        total_sample_weight = sample_wt_1+sample_wt_2+sample_wt_3+sample_wt_4+sample_wt_5;
+        number_of_fish = number_1+number_2+number_3+number_4+number_5;
+        total_avg_wt = total_sample_weight/number_of_fish;
+        biomass = total_avg_wt * number_of_fish;
+      final  Dialog d = new Dialog(WeightSample.this);
         d.setContentView(R.layout.dialog_weightsave);
+
+        TextView total_sample, total_avg_wt_, total_biomass, total_no_of_fish;
+      final  EditText comment = d.findViewById(R.id.comment);
+        final Button save = d.findViewById(R.id.savedata);
+
+        total_sample = d.findViewById(R.id.ttl_sample_wt);
+        total_avg_wt_ = d.findViewById(R.id.ttl_avg_wt);
+        total_biomass = d.findViewById(R.id.ttl_biomass);
+        total_no_of_fish = d.findViewById(R.id.ttl_fish);
+
+
+        total_sample.setText("Total Sample Weight : "+total_sample_weight+"");
+        total_avg_wt_.setText("Total Avg Weight(Kg) : "+total_avg_wt+" ");
+        total_biomass.setText("Biomass : "+biomass+"");
+        total_no_of_fish.setText("Total # Fish : "+number_of_fish+"");
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cooment= comment.getText().toString();
+                saveData();
+                d.dismiss();
+            }
+        });
+
         d.show();
     }
 
@@ -528,5 +565,69 @@ public class WeightSample extends AppCompatActivity {
         } catch (ParseException e) {
             return 0.0f;
         }
+    }
+
+    public void saveData(){
+        Map<String, Object> feedData = new HashMap<>();
+        feedData.put("Tank_ID", Constants.TANK_NUMBER);
+
+        feedData.put(getResources().getString(R.string.w_initials), Constants.username);
+        feedData.put(getResources().getString(R.string.w_team_members), team_members.getText().toString());
+        feedData.put(getResources().getString(R.string.w_date), date.getText().toString());
+        feedData.put(getResources().getString(R.string.w_comments), cooment);
+
+        feedData.put(getResources().getString(R.string.r1_sw), Sw1.getText().toString());
+        feedData.put(getResources().getString(R.string.r1_num), no_of_fish_1.getText().toString());
+        feedData.put(getResources().getString(R.string.r1_gm), avg_wt_gms_1.getText().toString());
+        feedData.put(getResources().getString(R.string.r1_kg), avg_wt_kg_1.getText().toString());
+
+        feedData.put(getResources().getString(R.string.r2_sw), Sw2.getText().toString());
+        feedData.put(getResources().getString(R.string.r2_num), no_of_fish_2.getText().toString());
+        feedData.put(getResources().getString(R.string.r2_gm), avg_wt_gms_2.getText().toString());
+        feedData.put(getResources().getString(R.string.r2_kg), avg_wt_kg_2.getText().toString());
+
+        feedData.put(getResources().getString(R.string.r3_sw), Sw3.getText().toString());
+        feedData.put(getResources().getString(R.string.r3_num), no_of_fish_3.getText().toString());
+        feedData.put(getResources().getString(R.string.r3_gm), avg_wt_gms_3.getText().toString());
+        feedData.put(getResources().getString(R.string.r3_kg), avg_wt_kg_3.getText().toString());
+
+        feedData.put(getResources().getString(R.string.r4_sw), Sw4.getText().toString());
+        feedData.put(getResources().getString(R.string.r4_num), no_of_fish_4.getText().toString());
+        feedData.put(getResources().getString(R.string.r4_gm), avg_wt_gms_4.getText().toString());
+        feedData.put(getResources().getString(R.string.r4_kg), avg_wt_kg_4.getText().toString());
+
+        feedData.put(getResources().getString(R.string.r5_sw), Sw5.getText().toString());
+        feedData.put(getResources().getString(R.string.r5_num), no_of_fish_5.getText().toString());
+        feedData.put(getResources().getString(R.string.r5_gm), avg_wt_gms_5.getText().toString());
+        feedData.put(getResources().getString(R.string.r5_kg), avg_wt_kg_5.getText().toString());
+
+        feedData.put(getResources().getString(R.string.tt_sample_wt), total_sample_weight+"");
+        feedData.put(getResources().getString(R.string.tt_no_of_fish), number_of_fish+"");
+        feedData.put(getResources().getString(R.string.tt_avg_wt), total_avg_wt+"");
+        feedData.put(getResources().getString(R.string.tt_biomass), biomass+"");
+
+
+        FirebaseFirestore db
+                = FirebaseFirestore.getInstance();
+        mProgressDialog.show();
+        db.collection("WEIGHT_SAMPLE").add(feedData).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                mProgressDialog.dismiss();
+                final AlertDialog.Builder alert = new AlertDialog.Builder(WeightSample.this);
+                alert.setTitle(getResources().getString(R.string.app_name));
+                alert.setMessage("Data Saved");
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                alert.show();
+            }
+        });
+
+
+
     }
 }

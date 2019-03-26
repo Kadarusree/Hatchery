@@ -107,7 +107,7 @@ public class OxygenTemperature extends AppCompatActivity {
     }
 
     public void saveData(View view) {
-        if (validations()) {
+
             Map<String, Object> checklist = new HashMap<>();
             checklist.put("Tank_ID", Constants.TANK_NUMBER);
             checklist.put("Date", date.getText().toString());
@@ -141,10 +141,7 @@ public class OxygenTemperature extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Saveing Failed", Toast.LENGTH_LONG).show();
                         }
                     });
-        } else {
-            Toast.makeText(getApplicationContext(), "Enter all fields", Toast.LENGTH_LONG).show();
 
-        }
 
     }
 

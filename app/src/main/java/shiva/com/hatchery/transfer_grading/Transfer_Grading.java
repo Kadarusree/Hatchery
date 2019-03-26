@@ -138,7 +138,7 @@ public class Transfer_Grading extends AppCompatActivity {
         final_graded = findViewById(R.id.tg_final_graded);
         final_culled = findViewById(R.id.tg_final_culled);
         finalplus_minus = findViewById(R.id.tg_final_plusminus);
-
+        final_culled.setText("0");
         comments = findViewById(R.id.tg_commnents);
 
         st_number.setText(Constants.TANK_NUMBER);

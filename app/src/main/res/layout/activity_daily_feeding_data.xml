@@ -156,7 +156,7 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:id="@+id/feed1"
                     android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"
@@ -198,7 +198,7 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:id="@+id/feed2"
                     android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"></EditText>
@@ -239,7 +239,7 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:id="@+id/feed3"
                     android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"></EditText>
@@ -280,7 +280,7 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:id="@+id/feed4"
                     android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"></EditText>
@@ -321,7 +321,7 @@
                     android:gravity="left|center"
                     android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"></EditText>
@@ -362,7 +362,7 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:id="@+id/feed6"
                     android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"></EditText>
@@ -403,7 +403,7 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:id="@+id/feed7"
                     android:hint="Amount Fed in gm"
                     android:imeOptions="actionNext"></EditText>
@@ -438,7 +438,7 @@
                     android:paddingLeft="@dimen/dp_5"
                     android:paddingRight="@dimen/dp_5"
                     android:singleLine="true"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:id="@+id/feed_total"
                     android:imeOptions="actionNext"></EditText>
             </LinearLayout>
