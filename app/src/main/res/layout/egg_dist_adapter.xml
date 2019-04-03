@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_weight="0.15">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_weight="0.6"
+            android:gravity="left|center"
+            android:hint="Tray/Basket Number"
+            android:imeOptions="actionNext"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
+            android:singleLine="true"
+            android:layout_marginRight="@dimen/dp_5"
+            android:id="@+id/tv1"
+            android:textSize="@dimen/dp_10"></TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_weight="0.6"
+            android:gravity="left|center"
+            android:hint="Volume of Eggs"
+            android:imeOptions="actionNext"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
+            android:singleLine="true"
+            android:id="@+id/tv2"
+            android:layout_marginRight="@dimen/dp_5"
+            android:textSize="@dimen/dp_10"></TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_weight="0.6"
+            android:gravity="left|center"
+            android:hint="Number of Eggs"
+            android:imeOptions="actionNext"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
+            android:singleLine="true"
+            android:layout_marginRight="@dimen/dp_5"
+            android:id="@+id/tv3"
+            android:textSize="@dimen/dp_10"></TextView>
+    </LinearLayout>
+</LinearLayout>

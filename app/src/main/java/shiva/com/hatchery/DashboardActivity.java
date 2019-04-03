@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import shiva.com.hatchery.drugtreatment.DrugTreatmentRecord;
+import shiva.com.hatchery.egg.Egg_Receiving_Sheet;
 import shiva.com.hatchery.feedingData.DailyFeedingData;
 import shiva.com.hatchery.mortality.MortalityActivity;
 import shiva.com.hatchery.oxygentemp.OxygenTemperature;
@@ -62,7 +63,28 @@ public class DashboardActivity extends Activity {
         atu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ATU_Activity.class));
+
+                final Dialog d = new Dialog(DashboardActivity.this);
+                d.setContentView(R.layout.dialog_select);
+                Button morning = d.findViewById(R.id.morning);
+                Button eod = d.findViewById(R.id.eod);
+
+                morning.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getApplicationContext(), ATU_Activity.class));
+                    }
+                });
+
+                eod.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getApplicationContext(), Egg_Receiving_Sheet.class));
+
+                    }
+                });
+                d.show();
+
             }
         });
         daily_feedingData.setOnClickListener(new View.OnClickListener() {

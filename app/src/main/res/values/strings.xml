@@ -252,10 +252,6 @@
     <string name="tg_comments">Comments</string>
 
 
-
-
-
-
     <string name="w_initials">Initials</string>
     <string name="w_team_members">Team Members</string>
     <string name="w_date">Date</string>
@@ -292,6 +288,41 @@
     <string name="tt_biomass">Total_biomass</string>
 
 
+    <string name="egg_initials">egg_initials</string>
+    <string name="egg_date">egg_date</string>
+    <string name="egg_species">egg_species</string>
+    <string name="egg_source">egg_source</string>
+    <string name="egg_farm_inv">egg_farm_inv</string>
+    <string name="egg_lot_num">egg_lot_num</string>
+    <string name="egg_avg_eggs">egg_avg_eggs</string>
+    <string name="egg_avg_eggpl">egg_avg_eggpl</string>
+    <string name="egg_avg_diameter">egg_avg_diameter</string>
+
+    <string name="egg_r1_eggs">egg_r1_eggs</string>
+    <string name="egg_r1_eggspl">egg_r1_eggspl</string>
+    <string name="egg_r1_eggsdiameter">egg_r1_eggsdiameter</string>
+
+    <string name="egg_r2_eggs">egg_r2_eggs</string>
+    <string name="egg_r2_eggspl">egg_r2_eggspl</string>
+    <string name="egg_r2_eggsdiameter">egg_r2_eggsdiameter</string>
+
+    <string name="egg_r3_eggs">egg_r3_eggs</string>
+    <string name="egg_r3_eggspl">egg_r3_eggspl</string>
+    <string name="egg_r3_eggsdiameter">egg_r3_eggsdiameter</string>
+
+    <string name="egg_r4_eggs">egg_r4_eggs</string>
+    <string name="egg_r4_eggspl">egg_r4_eggspl</string>
+    <string name="egg_r4_eggsdiameter">egg_r4_eggsdiameter</string>
+
+    <string name="egg_r5_eggs">egg_r5_eggs</string>
+    <string name="egg_r5_eggspl">egg_r5_eggspl</string>
+    <string name="egg_r5_eggsdiameter">egg_r5_eggsdiameter</string>
+
+    <string name="egg_r6_eggs">egg_r6_eggs</string>
+    <string name="egg_r6_eggspl">egg_r6_eggspl</string>
+    <string name="egg_r6_eggsdiameter">egg_r6_eggsdiameter</string>
+
+    <string name="egg_r6_eggsdist">egg_r6_eggsdist</string>
 
 
 
