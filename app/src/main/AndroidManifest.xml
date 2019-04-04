@@ -127,9 +127,15 @@
             android:parentActivityName=".weightSample.WeightSample"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".egg.Egg_Receiving_Sheet"
+        <activity
+            android:name=".egg.Egg_Receiving_Sheet"
             android:label="Egg Receiving Datasheet"
             android:parentActivityName=".DashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".egg.Egg_History"
+            android:label="Egg Receiving Datasheet Hisory"
+            android:parentActivityName=".egg.Egg_Receiving_Sheet"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" ></activity>
     </application>

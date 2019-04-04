@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -57,7 +58,6 @@ public class Egg_Receiving_Sheet extends AppCompatActivity {
     EditText initials, date,species, egg_source, farm_inventory, lot_number, avg_eggs, avg_egspl, avg_egg_diameter;
 
 
-    DatabaseReference mDatabaseReference;
 
     private ProgressDialog mProgressDialog;
     FirebaseFirestore db;
@@ -211,8 +211,7 @@ public class Egg_Receiving_Sheet extends AppCompatActivity {
     }
 
     public void history(View view) {
-        Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_LONG).show();
-    }
+startActivity(new Intent(getApplicationContext(),Egg_History.class));}
 
     public void showEntryDatePicker() {
         final Calendar currentDate = Calendar.getInstance();
