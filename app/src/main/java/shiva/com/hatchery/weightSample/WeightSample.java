@@ -225,7 +225,7 @@ public class WeightSample extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().length()>0&&!s.toString().endsWith(".")){
-                    sample_wt_2 = getFloatFrom(Sw1);
+                    sample_wt_2 = getFloatFrom(Sw2);
 
                     if(sample_wt_2>0&&number_2>0){
                         avg_kg_2 = sample_wt_2/number_2;
@@ -284,7 +284,7 @@ public class WeightSample extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().length()>0&&!s.toString().endsWith(".")){
-                    sample_wt_3 = getFloatFrom(Sw1);
+                    sample_wt_3 = getFloatFrom(Sw3);
 
                     if(sample_wt_3>0&&number_3>0){
                         avg_kg_3 = sample_wt_3/number_3;

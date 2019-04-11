@@ -62,6 +62,10 @@ public class Egg_Receiving_Sheet extends AppCompatActivity {
     private ProgressDialog mProgressDialog;
     FirebaseFirestore db;
 
+    int total_eggs = 0;
+    int total_eggs_pl = 0;
+    int total_diamter = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -143,10 +147,12 @@ public class Egg_Receiving_Sheet extends AppCompatActivity {
 
         Helper.getListViewSize(mList);
         mAdapter.notifyDataSetChanged();
+        Toast.makeText(getApplicationContext(),"Added into Distribution List",Toast.LENGTH_SHORT).show();
     }
 
 
     public void mrng_chk_save(View view) {
+        caluclate_avg_values();
         Map<String, Object> feedData = new HashMap<>();
         feedData.put("Tank_ID", Constants.TANK_NUMBER);
 
@@ -224,5 +230,77 @@ startActivity(new Intent(getApplicationContext(),Egg_History.class));}
                 date.setText(fmt.format(date_.getTime()));
             }
         }, currentDate.get(Calendar.YEAR), currentDate.get(Calendar.MONTH), currentDate.get(Calendar.DATE)).show();
+    }
+
+    public void caluclate_avg_values(){
+        if(r1_eggs.getText().toString().length()>0){
+            total_eggs = total_eggs+Integer.parseInt(r1_eggs.getText().toString());
+        }
+        if(r2_eggs.getText().toString().length()>0){
+            total_eggs = total_eggs+Integer.parseInt(r2_eggs.getText().toString());
+        }
+        if(r3_eggs.getText().toString().length()>0){
+            total_eggs = total_eggs+Integer.parseInt(r3_eggs.getText().toString());
+        }
+        if(r4_eggs.getText().toString().length()>0){
+            total_eggs = total_eggs+Integer.parseInt(r4_eggs.getText().toString());
+        }
+        if(r5_eggs.getText().toString().length()>0){
+            total_eggs = total_eggs+Integer.parseInt(r5_eggs.getText().toString());
+        }
+        if(r6_eggs.getText().toString().length()>0){
+            total_eggs = total_eggs+Integer.parseInt(r6_eggs.getText().toString());
+        }
+        //-------------------------------------------------------------------------//
+        if(r1_eggspl.getText().toString().length()>0){
+            total_eggs_pl = total_eggs_pl+Integer.parseInt(r1_eggspl.getText().toString());
+        }
+        if(r2_eggspl.getText().toString().length()>0){
+            total_eggs_pl = total_eggs_pl+Integer.parseInt(r2_eggspl.getText().toString());
+        }
+        if(r3_eggspl.getText().toString().length()>0){
+            total_eggs_pl = total_eggs_pl+Integer.parseInt(r3_eggspl.getText().toString());
+        }
+        if(r4_eggspl.getText().toString().length()>0){
+            total_eggs_pl = total_eggs_pl+Integer.parseInt(r4_eggspl.getText().toString());
+        }
+        if(r5_eggspl.getText().toString().length()>0){
+            total_eggs_pl = total_eggs_pl+Integer.parseInt(r5_eggspl.getText().toString());
+        }
+        if(r6_eggspl.getText().toString().length()>0){
+            total_eggs_pl = total_eggs_pl+Integer.parseInt(r6_eggspl.getText().toString());
+        }
+        //-------------------------------------------------------------------------------//
+        if(r1_diameter.getText().toString().length()>0){
+            total_diamter = total_diamter+Integer.parseInt(r1_diameter.getText().toString());
+        }
+        if(r2_diameter.getText().toString().length()>0){
+            total_diamter = total_diamter+Integer.parseInt(r2_diameter.getText().toString());
+        }
+        if(r3_diameter.getText().toString().length()>0){
+            total_diamter = total_diamter+Integer.parseInt(r3_diameter.getText().toString());
+        }
+        if(r4_diameter.getText().toString().length()>0){
+            total_diamter = total_diamter+Integer.parseInt(r4_diameter.getText().toString());
+        }
+        if(r5_diameter.getText().toString().length()>0){
+            total_diamter = total_diamter+Integer.parseInt(r5_diameter.getText().toString());
+        }
+        if(r6_diameter.getText().toString().length()>0){
+            total_diamter = total_diamter+Integer.parseInt(r6_diameter.getText().toString());
+        }
+
+        if(total_eggs>0){
+           float avg__eggs = total_eggs/6;
+           avg_eggs.setText("Avg # Eggs : "+avg__eggs+"");
+        }
+        if(total_eggs_pl>0){
+            float avg_eggs_pl = total_eggs_pl/6;
+            avg_egspl.setText("Avg Egg/L : "+avg_eggs_pl+"");
+        }
+        if(total_diamter>0){
+            float avg_diameter = total_diamter/6;
+            avg_egg_diameter.setText("Avg Egg Diameter(mm) : "+avg_diameter+"");
+        }
     }
 }
