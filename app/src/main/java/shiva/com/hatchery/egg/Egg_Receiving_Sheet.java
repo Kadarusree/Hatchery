@@ -233,74 +233,102 @@ startActivity(new Intent(getApplicationContext(),Egg_History.class));}
     }
 
     public void caluclate_avg_values(){
+        int divider1 = 0;
+        int divider2 = 0;
+        int divider3 = 0;
         if(r1_eggs.getText().toString().length()>0){
             total_eggs = total_eggs+Integer.parseInt(r1_eggs.getText().toString());
+            divider1++;
         }
         if(r2_eggs.getText().toString().length()>0){
             total_eggs = total_eggs+Integer.parseInt(r2_eggs.getText().toString());
+            divider1++;
         }
         if(r3_eggs.getText().toString().length()>0){
             total_eggs = total_eggs+Integer.parseInt(r3_eggs.getText().toString());
+            divider1++;
         }
         if(r4_eggs.getText().toString().length()>0){
             total_eggs = total_eggs+Integer.parseInt(r4_eggs.getText().toString());
+            divider1++;
         }
         if(r5_eggs.getText().toString().length()>0){
             total_eggs = total_eggs+Integer.parseInt(r5_eggs.getText().toString());
+            divider1++;
         }
         if(r6_eggs.getText().toString().length()>0){
             total_eggs = total_eggs+Integer.parseInt(r6_eggs.getText().toString());
+            divider1++;
         }
         //-------------------------------------------------------------------------//
         if(r1_eggspl.getText().toString().length()>0){
             total_eggs_pl = total_eggs_pl+Integer.parseInt(r1_eggspl.getText().toString());
+             divider2++;
         }
         if(r2_eggspl.getText().toString().length()>0){
             total_eggs_pl = total_eggs_pl+Integer.parseInt(r2_eggspl.getText().toString());
+            divider2++;
         }
         if(r3_eggspl.getText().toString().length()>0){
             total_eggs_pl = total_eggs_pl+Integer.parseInt(r3_eggspl.getText().toString());
+            divider2++;
         }
         if(r4_eggspl.getText().toString().length()>0){
             total_eggs_pl = total_eggs_pl+Integer.parseInt(r4_eggspl.getText().toString());
+            divider2++;
         }
         if(r5_eggspl.getText().toString().length()>0){
             total_eggs_pl = total_eggs_pl+Integer.parseInt(r5_eggspl.getText().toString());
+            divider2++;
         }
         if(r6_eggspl.getText().toString().length()>0){
             total_eggs_pl = total_eggs_pl+Integer.parseInt(r6_eggspl.getText().toString());
+            divider2++;
         }
         //-------------------------------------------------------------------------------//
         if(r1_diameter.getText().toString().length()>0){
             total_diamter = total_diamter+Integer.parseInt(r1_diameter.getText().toString());
+            divider3++;
         }
         if(r2_diameter.getText().toString().length()>0){
             total_diamter = total_diamter+Integer.parseInt(r2_diameter.getText().toString());
+            divider3++;
         }
         if(r3_diameter.getText().toString().length()>0){
             total_diamter = total_diamter+Integer.parseInt(r3_diameter.getText().toString());
+            divider3++;
         }
         if(r4_diameter.getText().toString().length()>0){
             total_diamter = total_diamter+Integer.parseInt(r4_diameter.getText().toString());
+            divider3++;
         }
         if(r5_diameter.getText().toString().length()>0){
             total_diamter = total_diamter+Integer.parseInt(r5_diameter.getText().toString());
+            divider3++;
         }
         if(r6_diameter.getText().toString().length()>0){
             total_diamter = total_diamter+Integer.parseInt(r6_diameter.getText().toString());
+            divider3++;
         }
 
         if(total_eggs>0){
-           float avg__eggs = total_eggs/6;
+           float avg__eggs = total_eggs/divider1;
            avg_eggs.setText("Avg # Eggs : "+avg__eggs+"");
+           divider1 = 0;
+           total_eggs = 0;
         }
         if(total_eggs_pl>0){
-            float avg_eggs_pl = total_eggs_pl/6;
+            float avg_eggs_pl = total_eggs_pl/divider2;
             avg_egspl.setText("Avg Egg/L : "+avg_eggs_pl+"");
+            total_eggs_pl = 0;
+            divider2 = 0;
+
         }
         if(total_diamter>0){
-            float avg_diameter = total_diamter/6;
+            float avg_diameter = total_diamter/divider3;
             avg_egg_diameter.setText("Avg Egg Diameter(mm) : "+avg_diameter+"");
+            total_diamter = 0;
+            divider3 = 0;
         }
     }
 }
