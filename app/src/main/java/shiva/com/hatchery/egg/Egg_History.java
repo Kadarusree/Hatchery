@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.DateFormat;
@@ -186,7 +187,7 @@ public class Egg_History extends AppCompatActivity {
         mProgressDialog.show();
         db = FirebaseFirestore.getInstance();
         db.collection("EGG_RECEIVING").whereEqualTo("Tank_ID", Constants.TANK_NUMBER)
-                .whereEqualTo("egg_date", Date).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                .whereEqualTo("egg_date", Date).orderBy("time", Query.Direction.DESCENDING).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 mProgressDialog.dismiss();

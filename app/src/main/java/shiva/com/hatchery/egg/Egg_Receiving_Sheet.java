@@ -189,6 +189,7 @@ public class Egg_Receiving_Sheet extends AppCompatActivity {
         feedData.put(getResources().getString(R.string.egg_r6_eggs), r6_eggs.getText().toString());
         feedData.put(getResources().getString(R.string.egg_r6_eggspl), r6_eggspl.getText().toString());
         feedData.put(getResources().getString(R.string.egg_r6_eggsdiameter), r6_diameter.getText().toString());
+        feedData.put("time", System.currentTimeMillis());
 
         String egg_dist = "";
         for(int i =0; i<egg_dist_list.size();i++){
