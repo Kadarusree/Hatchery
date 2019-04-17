@@ -605,7 +605,7 @@ String cooment;
         feedData.put(getResources().getString(R.string.tt_no_of_fish), number_of_fish+"");
         feedData.put(getResources().getString(R.string.tt_avg_wt), total_avg_wt+"");
         feedData.put(getResources().getString(R.string.tt_biomass), biomass+"");
-
+        feedData.put("time", System.currentTimeMillis());
 
         FirebaseFirestore db
                 = FirebaseFirestore.getInstance();

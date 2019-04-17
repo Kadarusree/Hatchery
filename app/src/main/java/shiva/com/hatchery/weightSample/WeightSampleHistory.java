@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.DateFormat;
@@ -238,7 +239,7 @@ public class WeightSampleHistory extends AppCompatActivity {
         mProgressDialog.show();
         db = FirebaseFirestore.getInstance();
         db.collection("WEIGHT_SAMPLE").whereEqualTo("Tank_ID", Constants.TANK_NUMBER)
-                .whereEqualTo("Date", Date).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                .whereEqualTo("Date", Date).orderBy("time", Query.Direction.DESCENDING).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 mProgressDialog.dismiss();
